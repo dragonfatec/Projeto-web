@@ -1,6 +1,6 @@
 <div align="center">
  
- ![Capa DRAGON](https://github-production-user-asset-6210df.s3.amazonaws.com/94874696/264498711-f2019a7f-3faa-40df-937a-5cbabc2b8c4f.png)
+![Capa DRAGON](https://github-production-user-asset-6210df.s3.amazonaws.com/94874696/264498943-bfa42051-eb5b-40d5-ae6d-fc1f3f6c3fcf.png)
 
 </div>
 </br>
