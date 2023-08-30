@@ -59,7 +59,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
  </tr>
  
 <tr>
- <td><img src="https://avatars.githubusercontent.com/u/111407920?v=4" width="50" height="50"></td>
+ <td><img src="https://avatars.githubusercontent.com/u/71735146?v=4" width="50" height="50"></td>
  <td><strong>Isaque Costa Beirao</strong></td>
  <td><em>Desenvolvedor</em></td>
  <td><a href="http://github.com/isaquebeirao"><img src="https://camo.githubusercontent.com/34f11e6964319f34c6c7153d65d7e5a9df4ba3ab0f7ea9a97a1db25c885f1c47/68747470733a2f2f6269742e6c792f336639586f3050" alt="" data-canonical-src="https://bit.ly/3f9Xo0P" style="max-width: 100%;"></a></td>
