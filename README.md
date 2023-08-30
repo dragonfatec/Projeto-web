@@ -1,7 +1,7 @@
 <div align="center">
  
-![Capa DRAGON](https://user-images.githubusercontent.com/111617449/226095576-86edb6ff-c411-401a-8347-f37f1b7fe10f.png)
- 
+ ![Capa DRAGON](https://github-production-user-asset-6210df.s3.amazonaws.com/94874696/264498711-f2019a7f-3faa-40df-937a-5cbabc2b8c4f.png)
+
 </div>
 </br>
 
