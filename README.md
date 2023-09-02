@@ -1,9 +1,6 @@
-<h1> TESTE </h1>
-
-
 <div align="center">
- 
-![Capa DRAGON](https://github-production-user-asset-6210df.s3.amazonaws.com/94874696/264498943-bfa42051-eb5b-40d5-ae6d-fc1f3f6c3fcf.png)
+
+![Dragon Logo - API](https://github.com/dragonfatec/Projeto-web/assets/94874696/5eb88b18-ae1f-4093-b75b-593e82f9521c)
 
 </div>
 </br>
@@ -11,17 +8,17 @@
 <br>
 
 <div align="center">
- 
-![Objetivo](https://user-images.githubusercontent.com/111617449/226420067-8dd376b4-c7f0-4073-9fa3-b89afe4d7f38.png)
- 
- Desenvolver uma ferramenta que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras, controle das horas extras e sobreavisos.<b>
+
+![Objetivo](https://github.com/dragonfatec/Projeto-web/assets/94874696/12a1923f-ad28-4d14-86b6-f9264330c0b0)
+
+Desenvolver uma ferramenta que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras, controle das horas extras e sobreavisos.<b>
 Acesso de administrador para o departamento de RH, gestor para aprovação e lançamento das horas e colaborador para apontar horas extras.<b>
 
 </div>
 
 </br>
 
-![Equipe de desenvolvimento](https://user-images.githubusercontent.com/111617449/227279289-39f6f145-321b-4940-8db0-28e12f9007ac.png)
+![Time](https://github.com/dragonfatec/Projeto-web/assets/94874696/dadcade6-8f3e-438f-ac79-124877cbeba6)
 
 <div align="center">
 
