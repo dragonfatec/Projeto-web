@@ -1,12 +1,8 @@
-<div align="center">
 
 ![Dragon Logo - API](https://github.com/dragonfatec/Projeto-web/assets/94874696/5eb88b18-ae1f-4093-b75b-593e82f9521c)
 
-</div>
-</br>
 
 <br>
-
 <div align="center">
 
 ![Objetivo](https://github.com/dragonfatec/Projeto-web/assets/94874696/12a1923f-ad28-4d14-86b6-f9264330c0b0)
@@ -15,13 +11,35 @@ Desenvolver uma ferramenta web que faça o controle da jornada de trabalho do co
 Acesso de administrador para o departamento de RH, gestor para aprovação e lançamento das horas e colaborador para apontar horas extras.<b>
 
 </div>
-
 </br>
+
+
+<br>
+<div align="center">
+
+![Backlog](https://github.com/dragonfatec/Projeto-web/assets/94874696/038072e3-d06f-4b44-b0b5-45d83e41e8e5)
+
+| Prioridade | US | Sprint |
+| :-: | :----------: | :---: |
+| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22" target="_blank"> Funcionalidade de lançamento de horas </a> | Sprint 1 |
+| 2 | Tela de lançamento de horas | Sprint 1 |
+| 3 | Funcionalidade de cadastro de usuários,clientes e times | Sprint 2 |
+| 4 | Tela de cadastro de usuários, clientes e times | Sprint 2 |
+| 5 | Tela de visualização das horas | Sprint 2 |
+| 6 | Funcionalidade de visualização das horas | Sprint 2 |
+| 7 | Lógica da parametrização | Sprint 2 |
+| 8 | Funcionalidade de aprovação de horas | Sprint 3 |
+| 9 | Tela de aprovação de horas | Sprint 3 |
+| 10 | Funcionalidade de edição de Usuário/Time | Sprint 4 |
+| 11 | Tela de edição de Usuário/Time | Sprint 4 |
+
+</div>
+</br>
+
 
 ![Time](https://github.com/dragonfatec/Projeto-web/assets/94874696/dadcade6-8f3e-438f-ac79-124877cbeba6)
 
 <div align="center">
-
  <table>
  <thead>
  <tr>
@@ -33,7 +51,6 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
  </tr>
  </thead>
  <tbody>
-
  <tr>
  <td><img src="https://avatars.githubusercontent.com/u/94874696?v=4" width="50" height="50"></td>
  <td><strong>Lukas Fernando Berto</strong></td>
@@ -81,11 +98,10 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
  <td><a href="https://github.com/lucasjonathangomes"><img src="https://camo.githubusercontent.com/34f11e6964319f34c6c7153d65d7e5a9df4ba3ab0f7ea9a97a1db25c885f1c47/68747470733a2f2f6269742e6c792f336639586f3050" alt="" data-canonical-src="https://bit.ly/3f9Xo0P" style="max-width: 100%;"></a></td>
  <td><a href="https://www.linkedin.com/in/lucasjonathancordeirogomes/" rel="nofollow"><img src="https://camo.githubusercontent.com/e804cb8a525c57bff5e5d5d978558cd7497b03c08c7734a1bf6eb9ac7e6b6909/68747470733a2f2f6269742e6c792f3250315a6f674d" alt="" data-canonical-src="https://bit.ly/2P1ZogM" style="max-width: 100%;"></a></td>
  </tr>
- 
  </tbody>
  </table>
- 
 </div>
+
 
 ![Tecnologias](https://github.com/dragonfatec/Projeto-web/assets/94874696/23379c1c-e6cf-48f7-9c69-0d72246b4080)
 
