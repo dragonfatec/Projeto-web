@@ -11,7 +11,7 @@
 
 ![Objetivo](https://github.com/dragonfatec/Projeto-web/assets/94874696/12a1923f-ad28-4d14-86b6-f9264330c0b0)
 
-Desenvolver uma ferramenta que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras, controle das horas extras e sobreavisos.<b>
+Desenvolver uma ferramenta web que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras, controle das horas extras e sobreavisos.<b>
 Acesso de administrador para o departamento de RH, gestor para aprovação e lançamento das horas e colaborador para apontar horas extras.<b>
 
 </div>
