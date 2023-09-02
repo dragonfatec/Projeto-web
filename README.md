@@ -21,18 +21,17 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 
 | Prioridade | US | Sprint |
 | :-: | :----------: | :---: |
-| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22" target="_blank"> Funcionalidade de lançamento de horas </a> | Sprint 1 |
-|0|<a href="https://www.amazon.com.br" target="_blank">Buscar no Bing</a>|o|
-| 2 | Tela de lançamento de horas | Sprint 1 |
-| 3 | Funcionalidade de cadastro de usuários,clientes e times | Sprint 2 |
-| 4 | Tela de cadastro de usuários, clientes e times | Sprint 2 |
-| 5 | Tela de visualização das horas | Sprint 2 |
-| 6 | Funcionalidade de visualização das horas | Sprint 2 |
-| 7 | Lógica da parametrização | Sprint 2 |
-| 8 | Funcionalidade de aprovação de horas | Sprint 3 |
-| 9 | Tela de aprovação de horas | Sprint 3 |
-| 10 | Funcionalidade de edição de Usuário/Time | Sprint 4 |
-| 11 | Tela de edição de Usuário/Time | Sprint 4 |
+| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/11"> Funcionalidade de lançamento de horas </a> | Sprint 1 |
+| 2 | <a href="https://github.com/dragonfatec/Projeto-web/issues/10"> Tela de lançamento de horas </a> | Sprint 1 |
+| 3 | <a href="https://github.com/dragonfatec/Projeto-web/issues/9"> Funcionalidade de cadastro de usuários,clientes e times </a> | Sprint 2 |
+| 4 | <a href="https://github.com/dragonfatec/Projeto-web/issues/16"> Tela de cadastro de usuários, clientes e times </a> | Sprint 2 |
+| 5 | <a href="https://github.com/dragonfatec/Projeto-web/issues/12"> Tela de visualização das horas </a> | Sprint 2 |
+| 6 | <a href="https://github.com/dragonfatec/Projeto-web/issues/15"> Funcionalidade de visualização das horas </a> | Sprint 2 |
+| 7 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22"> Lógica da parametrização </a> | Sprint 2 |
+| 8 | <a href="https://github.com/dragonfatec/Projeto-web/issues/18"> Funcionalidade de aprovação de horas </a> | Sprint 3 |
+| 9 | <a href="https://github.com/dragonfatec/Projeto-web/issues/17"> Tela de aprovação de horas </a> | Sprint 3 |
+| 10 | <a href="https://github.com/dragonfatec/Projeto-web/issues/19"> Funcionalidade de edição de Usuário/Time </a> | Sprint 4 |
+| 11 | <a href="https://github.com/dragonfatec/Projeto-web/issues/20"> Tela de edição de Usuário/Time </a> | Sprint 4 |
 
 </div>
 </br>
