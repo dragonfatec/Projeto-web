@@ -22,6 +22,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 | Prioridade | US | Sprint |
 | :-: | :----------: | :---: |
 | 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22" target="_blank"> Funcionalidade de lançamento de horas </a> | Sprint 1 |
+|0|<a href="https://www.amazon.com.br" target="_blank">Buscar no Bing</a>|o|
 | 2 | Tela de lançamento de horas | Sprint 1 |
 | 3 | Funcionalidade de cadastro de usuários,clientes e times | Sprint 2 |
 | 4 | Tela de cadastro de usuários, clientes e times | Sprint 2 |
