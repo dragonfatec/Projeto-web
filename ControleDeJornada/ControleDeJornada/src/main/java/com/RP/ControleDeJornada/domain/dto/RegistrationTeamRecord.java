@@ -3,6 +3,6 @@ package com.RP.ControleDeJornada.domain.dto;
 import jakarta.validation.constraints.NotBlank;
 
 
-public record DadosCadastroTime(@NotBlank StringBuilder nome) {
+public record RegistrationTeamRecord(@NotBlank StringBuilder nome) {
 
 }
