@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.domain.entidades.time;
 
-import com.RP.ControleDeJornada.domain.dto.DadosCadastroTime;
+import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -16,7 +16,7 @@ public class Time {
     @Id
     private StringBuilder nome;
 
-    public Time(DadosCadastroTime dados){
+    public Time(RegistrationTeamRecord dados){
         this.nome = dados.nome();
     }
 

@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.domain.entidades.usuario;
 
-import com.RP.ControleDeJornada.domain.dto.DadosCadastroUsuario;
+import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.entidades.time.Time;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class Usuario {
     @ManyToOne
     private Time time;
 
-    public Usuario(DadosCadastroUsuario dados){
+    public Usuario(RegistrationUserRecord dados){
         this.nome = dados.nome();
         this.cargo = dados.cargo();
         this.time = dados.time();

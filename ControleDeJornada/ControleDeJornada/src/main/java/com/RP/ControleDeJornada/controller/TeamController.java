@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.controller;
 
-import com.RP.ControleDeJornada.domain.dto.DadosCadastroTime;
+import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
 import com.RP.ControleDeJornada.domain.service.TimeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/time")
-public class TimeController {
+public class TeamController {
 
     @Autowired
     private TimeService timeService;
@@ -24,7 +24,7 @@ public class TimeController {
 
     @PostMapping
     @Transactional
-    public String salvar(@Valid DadosCadastroTime dados){
+    public String salvar(@Valid RegistrationTeamRecord dados){
         timeService.salvar(dados);
 
         return "hellow";

@@ -5,7 +5,7 @@ import com.RP.ControleDeJornada.domain.entidades.usuario.Cargo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DadosCadastroUsuario(
+public record RegistrationUserRecord(
         @NotBlank
         StringBuilder nome,
         @NotNull
