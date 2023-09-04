@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.domain.entidades.usuario;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.entidades.time.Time;
+import com.RP.ControleDeJornada.domain.entidades.time.Team;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,20 +12,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Usuario {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private StringBuilder nome;
     @Enumerated(EnumType.STRING)
-    private Cargo cargo;
+    private Rule rule;
     @ManyToOne
-    private Time time;
+    private Team team;
 
-    public Usuario(RegistrationUserRecord dados){
+    public User(RegistrationUserRecord dados){
         this.nome = dados.nome();
-        this.cargo = dados.cargo();
-        this.time = dados.time();
+        this.rule = dados.rule();
+        this.team = dados.team();
     }
 }

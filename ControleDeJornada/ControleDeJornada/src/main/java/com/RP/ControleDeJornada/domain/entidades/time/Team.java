@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @Table(name = "time")
 @Getter
 @NoArgsConstructor
-public class Time {
+public class Team {
 
     @Id
     private StringBuilder nome;
 
-    public Time(RegistrationTeamRecord dados){
+    public Team(RegistrationTeamRecord dados){
         this.nome = dados.nome();
     }
 

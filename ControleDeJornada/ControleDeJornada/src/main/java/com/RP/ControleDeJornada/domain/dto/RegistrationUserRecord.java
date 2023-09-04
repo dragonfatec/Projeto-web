@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.domain.dto;
 
-import com.RP.ControleDeJornada.domain.entidades.time.Time;
-import com.RP.ControleDeJornada.domain.entidades.usuario.Cargo;
+import com.RP.ControleDeJornada.domain.entidades.time.Team;
+import com.RP.ControleDeJornada.domain.entidades.usuario.Rule;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -9,7 +9,7 @@ public record RegistrationUserRecord(
         @NotBlank
         StringBuilder nome,
         @NotNull
-        Cargo cargo,
+        Rule rule,
         @NotNull
-        Time time) {
+        Team team) {
 }

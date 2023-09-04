@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.domain.entidades.usuario;
 
-public enum Cargo {
+public enum Rule {
     ADMINISTRADOR,
     COLABORADOR,
     GESTOR
