@@ -21,10 +21,10 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 
 | Prioridade | US | Sprint |
 | :-: | :----------: | :---: |
-| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/11"> Funcionalidade de lançamento de horas </a> | Sprint 1 |
-| 2 | <a href="https://github.com/dragonfatec/Projeto-web/issues/10"> Tela de lançamento de horas </a> | Sprint 1 |
-| 3 | <a href="https://github.com/dragonfatec/Projeto-web/issues/9"> Funcionalidade de cadastro de usuários,clientes e times </a> | Sprint 2 |
-| 4 | <a href="https://github.com/dragonfatec/Projeto-web/issues/16"> Tela de cadastro de usuários, clientes e times </a> | Sprint 2 |
+| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/9"> Funcionalidade de cadastro de usuários,clientes e times </a> | Sprint 1 |
+| 2 | <a href="https://github.com/dragonfatec/Projeto-web/issues/16"> Tela de cadastro de usuários, clientes e times </a> | Sprint 1 |
+| 3 | <a href="https://github.com/dragonfatec/Projeto-web/issues/11"> Funcionalidade de lançamento de horas </a> | Sprint 2 |
+| 4 | <a href="https://github.com/dragonfatec/Projeto-web/issues/10"> Tela de lançamento de horas </a> | Sprint 2 |
 | 5 | <a href="https://github.com/dragonfatec/Projeto-web/issues/12"> Tela de visualização das horas </a> | Sprint 2 |
 | 6 | <a href="https://github.com/dragonfatec/Projeto-web/issues/15"> Funcionalidade de visualização das horas </a> | Sprint 2 |
 | 7 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22"> Lógica da parametrização </a> | Sprint 2 |
