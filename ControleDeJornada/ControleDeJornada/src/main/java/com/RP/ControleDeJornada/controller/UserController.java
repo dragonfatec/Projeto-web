@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
-import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
-import com.RP.ControleDeJornada.domain.service.TeamService;
+import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
+import com.RP.ControleDeJornada.domain.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,24 +11,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/time")
-public class TeamController {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
-    private TeamService teamService;
+    private UserService userService;
 
     @GetMapping
-    public String acesso(){
-        return "hellow";
+    public String formRegister(){
+
+        return " HTML ";
     }
 
     @PostMapping
     @Transactional
-    public String salvar(@Valid RegistrationTeamRecord dados){
-        teamService.salvar(dados);
-
-        return "hellow";
+    public String register(@Valid RegistrationUserRecord dada){
+        userService.register(dada);
+        return " HTML ";
     }
-
 
 }
