@@ -2,7 +2,7 @@ package com.RP.ControleDeJornada.domain.entitys.user;
 
 import com.RP.ControleDeJornada.domain.Status;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.entitys.team.Rc;
+import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,14 +22,14 @@ public class User {
     @Enumerated(EnumType.STRING)
     private JobRole jobRole;
     @ManyToOne
-    private Rc rc;
+    private ResultCenter resultCenter;
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public User(RegistrationUserRecord dada){
-        this.name = dada.name();
-        this.jobRole = dada.jobRole();
-        this.rc = dada.rc();
+    public User(RegistrationUserRecord data){
+        this.name = data.name();
+        this.jobRole = data.jobRole();
+        this.resultCenter = data.resultCenter();
         this.status = Status.ACTIVE;
     }
 }
