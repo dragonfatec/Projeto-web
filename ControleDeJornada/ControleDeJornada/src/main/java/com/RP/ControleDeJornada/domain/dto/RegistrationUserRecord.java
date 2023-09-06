@@ -1,15 +1,15 @@
 package com.RP.ControleDeJornada.domain.dto;
 
-import com.RP.ControleDeJornada.domain.entidades.time.Team;
-import com.RP.ControleDeJornada.domain.entidades.usuario.Rule;
+import com.RP.ControleDeJornada.domain.entitys.team.Rc;
+import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record RegistrationUserRecord(
         @NotBlank
-        StringBuilder nome,
+        StringBuilder name,
         @NotNull
-        Rule rule,
+        JobRole jobRole,
         @NotNull
-        Team team) {
+        Rc rc) {
 }
