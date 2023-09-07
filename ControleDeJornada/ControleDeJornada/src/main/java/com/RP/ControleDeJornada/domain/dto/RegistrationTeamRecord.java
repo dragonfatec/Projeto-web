@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotBlank;
 
 public record RegistrationTeamRecord(
         @NotBlank
-        StringBuilder codeRc,
+        String codeRc,
         @NotBlank
-        StringBuilder rc,
+        String rc,
         @NotBlank
-        StringBuilder acronym
+        String acronym
 ){}

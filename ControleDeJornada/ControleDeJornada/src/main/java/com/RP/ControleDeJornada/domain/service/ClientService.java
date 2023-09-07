@@ -11,8 +11,8 @@ public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    public void register(RegistrationClientRecord dada){
-        Client client = new Client(dada);
+    public void register(RegistrationClientRecord data){
+        Client client = new Client(data);
         clientRepository.save(client);
     }
 }

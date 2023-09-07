@@ -19,10 +19,10 @@ public class Client {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Client (RegistrationClientRecord dada){
-        this.cnpj = dada.cnpj();
-        this.razaoSocial = dada.razaoSocial();
-        this.nameCompany = dada.nameCompany();
+    public Client (RegistrationClientRecord data){
+        this.cnpj = data.cnpj();
+        this.razaoSocial = data.razaoSocial();
+        this.nameCompany = data.nameCompany();
         this.status = Status.ACTIVE;
     }
 
