@@ -19,13 +19,13 @@ public class ClientController {
     @GetMapping
     public String formRegister(){
 
-        return " HTML ";
+        return "register/registerClient";
     }
 
     @PostMapping
     @Transactional
     public String register(@Valid RegistrationClientRecord dada){
         clientService.register(dada);
-        return " HTML ";
+        return "register/registerClient";
     }
 }

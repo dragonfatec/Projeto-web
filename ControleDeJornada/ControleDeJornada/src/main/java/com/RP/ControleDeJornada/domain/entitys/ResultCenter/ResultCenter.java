@@ -20,9 +20,9 @@ public class ResultCenter {
     private Status status;
 
     public ResultCenter(RegistrationTeamRecord data){
-        this.codeRc = data.codeRc();
-        this.rc = data.rc();
-        this.acronym = data.acronym();
+        this.codeRc = data.codeRc().toUpperCase().trim();
+        this.rc = data.rc().toUpperCase().trim();
+        this.acronym = data.acronym().toUpperCase().trim();
         this.status = Status.ACTIVE;
     }
 }

@@ -19,7 +19,7 @@ public class RcController {
 
     @GetMapping
     public String formRegister(){
-        return " HTML ";
+        return "register/registerRC";
     }
 
     @PostMapping
@@ -27,7 +27,7 @@ public class RcController {
     public String register(@Valid RegistrationTeamRecord dada){
         rcService.register(dada);
 
-        return " HTML ";
+        return "register/registerRC";
     }
 
 

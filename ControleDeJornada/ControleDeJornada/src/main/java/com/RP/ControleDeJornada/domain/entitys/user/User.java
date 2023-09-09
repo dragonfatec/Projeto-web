@@ -18,18 +18,17 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private StringBuilder name;
+    private String name;
     @Enumerated(EnumType.STRING)
-    private JobRole jobRole;
+    private JobRole jobrole;
     @ManyToOne
     private ResultCenter resultCenter;
     @Enumerated(EnumType.STRING)
     private Status status;
 
     public User(RegistrationUserRecord data){
-        this.name = data.name();
-        this.jobRole = data.jobRole();
-        this.resultCenter = data.resultCenter();
+        this.name = data.name().toUpperCase().trim();
+        this.jobrole = data.jobrole();
         this.status = Status.ACTIVE;
     }
 }
