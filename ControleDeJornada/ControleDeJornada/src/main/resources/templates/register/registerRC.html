@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Register View</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h2 class="title">Register Result Center</h2>
+        <div class="container mt-3">
+            <form method="post" class="row g-3">
+                <div class="col-md-6">
+                    <label for="codeRc" class="form-label">Code Result Center</label>
+                    <input id="codeRc" name="codeRc" type="text" class="form-control" placeholder="123456">
+                </div>
+                <div class="col-md-6">
+                    <label for="rc" class="form-label">Result Center</label>
+                    <input id="rc" name="rc" type="text" class="form-control" placeholder="Description of Result Center">
+                </div>
+                <div class="col-md-6">
+                    <label for="acronym" class="form-label">Acronym</label>
+                    <input id="acronym" name="acronym" type="text" class="form-control" placeholder="Acronym for your description">
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
