@@ -1,0 +1,19 @@
+
+.header_template{
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    text-align: center;
+    margin: 2em 5em;
+    font-size: 26px;
+    font-weight: 700;
+} 
+
+.image_icon {
+    justify-content: start;
+    width: 8em;
+    height: 8em;
+}
