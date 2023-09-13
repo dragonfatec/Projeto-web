@@ -36,6 +36,9 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 </div>
 </br>
 
+![Mockup](https://github.com/dragonfatec/Projeto-web/assets/94874696/7ab90f1c-7cb0-42a8-9f45-41d55c9f3671)
+
+
 
 ![Time](https://github.com/dragonfatec/Projeto-web/assets/94874696/dadcade6-8f3e-438f-ac79-124877cbeba6)
 
