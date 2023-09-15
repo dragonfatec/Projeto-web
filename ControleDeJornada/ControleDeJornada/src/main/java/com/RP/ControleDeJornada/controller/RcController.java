@@ -24,7 +24,7 @@ public class RcController {
 
     @PostMapping
     @Transactional
-    public String register(@Valid RegistrationTeamRecord dada){
+    public String register( @Valid RegistrationTeamRecord dada){
         rcService.register(dada);
 
         return "register/registerRC";
