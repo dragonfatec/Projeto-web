@@ -47,21 +47,21 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 <div align="center"> Tela de Cadastro de Usuario</div>
 <details align="center">
  
- ![Cadastro de Usuario](https://github.com/dragonfatec/Projeto-web/assets/94874696/accf2ea7-36f0-4055-80cd-3f7d69df11c4)
+ ![Cadastro de Usuario](https://github.com/dragonfatec/Projeto-web/assets/94874696/5f993215-6031-48e8-a113-875260fb2b0a)
  
 </details>
 
 <div align="center"> Tela de Cadastro de Cliente</div>
 <details align="center">
  
- ![Cadastro de Cliente](https://github.com/dragonfatec/Projeto-web/assets/94874696/f92d1a39-d977-4bda-9133-6309ebc392bd)
+ ![Cadastro de Cliente](https://github.com/dragonfatec/Projeto-web/assets/94874696/e5362c89-d9dc-43f1-9a08-68908365a4a1)
  
 </details>
 
 <div align="center"> Tela de Cadastro de CR (Centro de Resultado) </div>
 <details align="center">
  
- ![Cadastro de CR](https://github.com/dragonfatec/Projeto-web/assets/94874696/bfd96775-be1e-4a95-b266-991f2e89883d)
+ ![Cadastro de CR](https://github.com/dragonfatec/Projeto-web/assets/94874696/cb0f08d3-a57c-42e6-8e2c-ab071ef12723)
  
 </details>
 
