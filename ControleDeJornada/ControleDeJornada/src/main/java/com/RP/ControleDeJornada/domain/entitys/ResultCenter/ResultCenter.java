@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "result_center")
+@Table(name = "tb_result_center")
 @Getter
 @NoArgsConstructor
 public class ResultCenter {
