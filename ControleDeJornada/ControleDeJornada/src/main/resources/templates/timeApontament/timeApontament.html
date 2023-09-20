@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="container mt-5">
+            <h1 class="mb-4">Apontamento de Tempo</h1>
+            <form>
+                <div class="form-group">
+                    <label for="idUser">User:</label>
+                    <select id="idUser" name="idUser" class="form_input">
+                        <option value="null">Select User</option>
+                        <option th:each="user : ${usuarios}"
+                                th:text="${usuario.nome}"
+                                th:value="${usuario.email}"/>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data-hora-inicio">Data e Hora de Início:</label>
+                    <input type="datetime-local" class="form-control" id="data-hora-inicio">
+                </div>
+                <div class="form-group">
+                    <label for="data-hora-fim">Data e Hora de Término:</label>
+                    <input type="datetime-local" class="form-control" id="data-hora-fim">
+                </div>
+                <div class="form-group">
+                    <label for="atividade">Type Time:</label>
+                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade">
+                </div>
+                <div class="form-group">
+                    <label for="atividade">Result Center:</label>
+                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade">
+                </div>
+                <div class="form-group">
+                    <label for="atividade">Client:</label>
+                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade">
+                </div>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+
+        <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>
