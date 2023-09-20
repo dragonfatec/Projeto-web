@@ -10,6 +10,8 @@ import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SendTimeService {
 
@@ -27,5 +29,15 @@ public class SendTimeService {
         User user = userService.getReferenceById(data.idUser());
         time.setUser(user);
         repository.save(time);
+    }
+
+    public List<User> getAllUsers() {
+        List<User> users = userService.findAll();
+        return users;
+    }
+
+    public List<ResultCenter> getAllResult() {
+        List<ResultCenter> rcs = rcService.findAll();
+        return rcs;
     }
 }

@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,8 +22,8 @@ public class SendTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date startDate;
-    private Date finishDate;
+    private LocalDateTime startDate;
+    private LocalDateTime finishDate;
     @Enumerated(EnumType.STRING)
     private TypeSend typeSend;
     @ManyToOne
