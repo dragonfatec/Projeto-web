@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.dto.UpdateUser;
+import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
@@ -19,19 +19,20 @@ public class UserService {
 
     public void register(RegistrationUserRecord data){
         User user = new User(data);
-        ResultCenter rc = rcService.findById(data.resultCenter());
+        ResultCenter rc = rcService.findById(data.codeRc());
         user.setResultCenter(rc);
 
         userRepository.save(user);
     }
 
-    public void updateUser(Integer id, UpdateUser data){
+    public void updateUser(Integer id, UpdateUserRecord data){
         User user = userRepository.getReferenceById(id);
-        if(data.jobRole() != null){
-            user.setJobrole(data.jobRole());
+        if(data.jobrole() != null){
+            user.setJobrole(data.jobrole());
         }
-        if (data.resultCenter() != null){
-            user.setResultCenter(data.resultCenter());
+        if (data.codeRc() != null){
+            ResultCenter rc = rcService.getReferenceById(data.codeRc());
+            user.setResultCenter(rc);
         }
         if (data.status() != null){
             user.setStatus(data.status());
@@ -39,8 +40,18 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public List<ResultCenter> findAll() {
+    public List<ResultCenter> findAllResultCenter() {
         List<ResultCenter> rc = rcService.findAll();
         return rc;
+    }
+
+    public User getUserById(Integer id) {
+        User user = userRepository.getReferenceById(id);
+        return user;
+    }
+
+    public List<User> findAllUser() {
+        List<User> users = userRepository.findAll();
+        return users;
     }
 }

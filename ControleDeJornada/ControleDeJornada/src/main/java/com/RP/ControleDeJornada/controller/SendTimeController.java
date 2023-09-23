@@ -24,10 +24,16 @@ public class SendTimeController {
         return "timeApontament/timeApontament";
     }
 
+    @GetMapping("/consult")
+    public String Consult(Model model) {
+        model.addAttribute("apontaments", sendTimeService.findAll());
+
+        return "consult/consultHours";
+    }
+
     @PostMapping
     @Transactional
     public String sendTime(@Valid ResgistrationSendTimeRecord data) {
-        System.out.println(data.idUser().toString() + " , " + data.startDate().toString()+ " , " + data.finishDate().toString());
         sendTimeService.saveTime(data);
         return "timeApontament/timeApontament";
 

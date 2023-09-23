@@ -40,4 +40,9 @@ public class SendTimeService {
         List<ResultCenter> rcs = rcService.findAll();
         return rcs;
     }
+
+    public List<SendTime> findAll() {
+        List<SendTime>  sendTime = repository.findAll();
+        return sendTime;
+    }
 }
