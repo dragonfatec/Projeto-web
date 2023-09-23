@@ -13,11 +13,13 @@
             <form method="post" class="row g-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
-                    <input id="name" name="name" type="text" class="form-control" placeholder="Name">
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Name"
+                    style="width: 400px;">
                 </div>
                 <div class="col-md-6">
                     <label for="jobrole" class="form-label">Jobrole</label>
-                    <select id="jobrole" name="jobrole" class="form-select">
+                    <select id="jobrole" name="jobrole" class="form-select"
+                    style="width: 200px;">
                         <option value="null">Choose your jobrole</option>
                         <option value="ADMINISTRADOR">Administrator</option>
                         <option value="EMPLOYEE">Employee</option>
@@ -26,7 +28,8 @@
                 </div>
                 <div class="col-12">
                     <label for="resultCenter" class="form-label">Result Center</label>
-                    <select id="resultCenter" name="resultCenter" class="form-select" >
+                    <select id="resultCenter" name="resultCenter" class="form-select" 
+                    style="width: 200px;">
                         <option value="null">Choose your Result Center</option>
                         <option th:each="rc : ${resultCenter}"
                                 th:text="${rc.rc}"
