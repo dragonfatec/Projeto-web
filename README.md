@@ -43,31 +43,9 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 <div align="center"> Tela de Lançamento de Horas</div>
 <details align="center">
  
- ![Lançamento de horas](https://github.com/dragonfatec/Projeto-web/assets/94874696/a8712243-fa2d-422f-92dc-d7d908a99d5d)
- 
-</details>
+ ![2023-10-03-22-48-40](https://github.com/dragonfatec/Projeto-web/assets/94874696/78bfbdb7-6a59-4ebf-8093-bcbd70001a35)
 
-<div align="center"> Tela de Cadastro de Usuario</div>
-<details align="center">
- 
- ![Cadastro de Usuario](https://github.com/dragonfatec/Projeto-web/assets/94874696/5f993215-6031-48e8-a113-875260fb2b0a)
- 
 </details>
-
-<div align="center"> Tela de Cadastro de Cliente</div>
-<details align="center">
- 
- ![Cadastro de Cliente](https://github.com/dragonfatec/Projeto-web/assets/94874696/e5362c89-d9dc-43f1-9a08-68908365a4a1)
- 
-</details>
-
-<div align="center"> Tela de Cadastro de CR (Centro de Resultado) </div>
-<details align="center">
- 
- ![Cadastro de CR](https://github.com/dragonfatec/Projeto-web/assets/94874696/cb0f08d3-a57c-42e6-8e2c-ab071ef12723)
- 
-</details>
-
 
 ![Time](https://github.com/dragonfatec/Projeto-web/assets/94874696/dadcade6-8f3e-438f-ac79-124877cbeba6)
 
