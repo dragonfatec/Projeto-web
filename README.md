@@ -40,7 +40,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 </br>
 
 ![Mockup](https://github.com/dragonfatec/Projeto-web/assets/94874696/7ab90f1c-7cb0-42a8-9f45-41d55c9f3671)
-<div align="center"> Tela de Lançamento de Horas</div>
+<div align="center"> Mockup </div>
 <details align="center">
  
  ![2023-10-03-22-48-40](https://github.com/dragonfatec/Projeto-web/assets/94874696/78bfbdb7-6a59-4ebf-8093-bcbd70001a35)
