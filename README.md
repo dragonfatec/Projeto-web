@@ -31,8 +31,8 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 | 8 | <a href=""> Como Admin quero uma parametrização, para que na hora do pagamento eu tenha todas as informações das horas e em quais verbas estão </a> | Sprint 2 |
 | 9 | <a href="https://dragonprojetos.atlassian.net/browse/DA-24"> Como Usuário quero poder Logar no sistema para ter acesso a todas as funcionalidades de acordo com o meu cargo </a> | Sprint 2 |
 | 10 | <a href="https://dragonprojetos.atlassian.net/browse/DA-30"> Como Gerente/Admin quero poder aprovar as horas extras e sobreaviso dos meus colaboradores </a> | Sprint 3 |
-| 11 | <a href="https://dragonprojetos.atlassian.net/browse/DA-32"> Como Admin quero poder editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 4 |
-| 12 | <a href="https://dragonprojetos.atlassian.net/browse/DA-38"> Como Admin quero poder visualizar em um dashboard as horas registradas, para fazer uma analise de como os colaboradores estão trabalhando e assim conseguir aplicar alguma estratégia de negócio </a> | Sprint 4 |
+| 11 | <a href="https://dragonprojetos.atlassian.net/browse/DA-32"> Como Admin quero poder editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 3 |
+| 12 | <a href="https://dragonprojetos.atlassian.net/browse/DA-38"> Como Admin quero poder visualizar em um dashboard as horas registradas, para fazer uma analise de como os colaboradores estão trabalhando e assim conseguir aplicar alguma estratégia de negócio </a> | Sprint 3 |
 | 13 | <a href="https://dragonprojetos.atlassian.net/browse/DA-50"> Como Admin quero poder extrair um relatório, para que eu consiga analisar/monitorar os lançamentos de horas </a> | Sprint 4 |
 
 </div>
