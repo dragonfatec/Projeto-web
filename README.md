@@ -26,16 +26,15 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 | 3 | <a href="https://github.com/dragonfatec/Projeto-web/issues/36"> Como Admin quero cadastrar CR, para que cada cliente tenha um grupo de pessoas para resolver problemas </a> | Sprint 1 |
 | 4 | <a href="https://github.com/dragonfatec/Projeto-web/issues/16"> Como Admin quero cadastrar usuários, CR e clientes. Assim eles vão poder acessar o nosso site e lançar suas horas extras e sobreaviso </a> | Sprint 1 |
 | 5 | <a href="https://github.com/dragonfatec/Projeto-web/issues/10"> Como Colaborador/Gerente quero poder lançar minhas horas extras e sobreaviso, para realizar o lançamento quero uma tela com as informações necessarias </a> | Sprint 2 |
-| 6 | <a href="https://github.com/dragonfatec/Projeto-web/issues/11"> Como Colaborador/Gerente quero poder lançar as minhas horas, para que meu supervisor possa aprovar/reprovar </a> | Sprint 2 |
-| 7 | <a href="https://github.com/dragonfatec/Projeto-web/issues/12"> Como Usuário gostaria de saber o status das minhas horas extras/sobreaviso, assim poderei saberei se foram aprovadas ou aprovadas </a> | Sprint 2 |
-| 8 | <a href="https://github.com/dragonfatec/Projeto-web/issues/15"> Como Usuário gostaria de ter uma visualização das minhas horas lançadas, aprovadas e reprovadas. Assim, poderei saber se e quando minhas horas foram aprovadas e o motivo </a> | Sprint 2 |
-| 9 | <a href="https://github.com/dragonfatec/Projeto-web/issues/22"> Como Admin quero uma parametrização, para que na hora do pagamento eu tenha todas as informações das horas e em quais verbas estão </a> | Sprint 2 |
-| 10 | <a href="https://github.com/dragonfatec/Projeto-web/issues/54"> Como Usuario quero conseguir entrar no site para ter acesso a todas as funcionalidades de acordo com o meu cargo </a> | Sprint 3 |
-| 11 | <a href="https://github.com/dragonfatec/Projeto-web/issues/55"> Como Usuario quero uma tela para conseguir entrar no site, assim poderei acessar as funcionalidades de lançar, visualizar e aprovar horas </a> | Sprint 3 |
-| 12 | <a href="https://github.com/dragonfatec/Projeto-web/issues/18"> Como Gerente e Admin quero poder aprovar as horas extras e sobreaviso das pessoas do meu time (no caso do Admin, aprovar horas dos gerentes) </a> | Sprint 3 |
-| 13 | <a href="https://github.com/dragonfatec/Projeto-web/issues/17"> Como Gerente e Admin quero uma tela onde poderei aprovar as horas das pessoas do meu time (para Gerente) ou aprovar as horas dos Gerentes (para Admin) </a> | Sprint 3 |
-| 14 | <a href="https://github.com/dragonfatec/Projeto-web/issues/19"> Como Admin quero conseguir editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 4 |
-| 15 | <a href="https://github.com/dragonfatec/Projeto-web/issues/20"> Como Admin quero uma tela para editar as informações dos usuários, assim se um usuário sair de nossa empresa poderei desativar esse usuário, para que não tenha mais acesso ao nosso sistema </a> | Sprint 4 |
+| 6 | <a href="https://dragonprojetos.atlassian.net/browse/DA-17"> Como Colaborador/Gerente quero poder lançar as minhas horas, para que meu supervisor possa aprovar/reprovar </a> | Sprint 2 |
+| 7 | <a href="https://dragonprojetos.atlassian.net/browse/DA-18"> Como Colaborador/Gerente quero poder ver o status das minhas horas extras/sobreaviso, assim poderei saber se foram aprovadas ou reprovadas </a> | Sprint 2 |
+| 8 | <a href=""> Como Admin quero uma parametrização, para que na hora do pagamento eu tenha todas as informações das horas e em quais verbas estão </a> | Sprint 2 |
+| 9 | <a href="https://dragonprojetos.atlassian.net/browse/DA-24"> Como Usuário quero poder Logar no sistema para ter acesso a todas as funcionalidades de acordo com o meu cargo </a> | Sprint 2 |
+| 10 | <a href="https://dragonprojetos.atlassian.net/browse/DA-30"> Como Gerente/Admin quero poder aprovar as horas extras e sobreaviso dos meus colaboradores </a> | Sprint 3 |
+| 11 | <a href="https://dragonprojetos.atlassian.net/browse/DA-32"> Como Admin quero poder editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 3 |
+| 12 | <a href="https://dragonprojetos.atlassian.net/browse/DA-38"> Como Admin quero poder visualizar em um dashboard as horas registradas, para fazer uma analise de como os colaboradores estão trabalhando e assim conseguir aplicar alguma estratégia de negócio </a> | Sprint 3 |
+| 13 | <a href="https://dragonprojetos.atlassian.net/browse/DA-50"> Como Admin quero poder extrair um relatório, para que eu consiga analisar/monitorar os lançamentos de horas </a> | Sprint 4 |
+
 </div>
 </br>
 
