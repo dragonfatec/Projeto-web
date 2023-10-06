@@ -1,0 +1,27 @@
+
+.title{
+    text-align: center;
+    margin: 2em 5em;
+    font-size: 26px;
+    font-weight: 700;
+} 
+
+.image_icon {
+    justify-content: start;
+    width: 80%;
+    height: 4em;
+}
+body{
+    background-image: url("../image/bg_gray.png");
+    background-size: 100%;
+  
+}
+
+#side_bar{
+    background-color: darkslategray;
+    width: 250px;
+    height: 100%;
+}
+.t1{
+    background-image: url('../image/bg_gray.png');
+}
