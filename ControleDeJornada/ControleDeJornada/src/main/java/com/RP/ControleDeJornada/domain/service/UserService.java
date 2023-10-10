@@ -6,6 +6,7 @@ import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,5 +43,9 @@ public class UserService {
     public List<ResultCenter> findAll() {
         List<ResultCenter> rc = rcService.findAll();
         return rc;
+    }
+
+    public UserDetails findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
