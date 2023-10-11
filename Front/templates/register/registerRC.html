@@ -9,14 +9,19 @@
     <script src="../../static/js/resultCenter.js" defer></script>
 </head>
 <body>
+    <div class="linebg">
+        <video autoplay muted loop id="linebg">
+            <source src="../../static/image/lines.mp4" type="video/mp4">
+        </video>
+    </div>
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 px-sm-2 px-0 bg-dark">
+            <div class="col-auto col-md-3 px-sm-2 px-0 menuside">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
                     <a href="../home/home.html">
                         <img src="../../static/image/icon_2rp.png" class="image_icon" alt="Home">
                     </a>
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark ">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -44,8 +49,8 @@
                 </div>
             </div>
             <div>
-                <h2 class="title">Register Result Center</h2>
-                <div class="container mt-3">
+                <div class="container mt-3 registerrc">
+                    <h1 class="title">Register Result Center</h1>
                     <form method="post" class="row g-3" id="form_rc">
                         <div class="col-md-6">
                             <label for="codeRc" class="form-label">Code Result Center</label>
