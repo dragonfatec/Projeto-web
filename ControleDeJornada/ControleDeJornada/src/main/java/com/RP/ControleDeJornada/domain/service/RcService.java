@@ -18,7 +18,7 @@ public class RcService {
         rcRepository.save(resultCenter);
     }
 
-    public List<ResultCenter> findAll() {
+    public List<ResultCenter> findAllResultCenter() {
         List<ResultCenter> rc = rcRepository.findAll();
         return rc;
     }

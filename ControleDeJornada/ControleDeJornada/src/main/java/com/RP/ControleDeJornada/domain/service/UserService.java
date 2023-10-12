@@ -1,11 +1,12 @@
 package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateUser;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,20 +20,19 @@ public class UserService {
 
     public void register(RegistrationUserRecord data){
         User user = new User(data);
-        ResultCenter rc = rcService.findById(data.codeRc());
+        ResultCenter rc = rcService.findById(data.resultCenter());
         user.setResultCenter(rc);
 
         userRepository.save(user);
     }
 
-    public void updateUser(Integer id, UpdateUserRecord data){
+    public void updateUser(Integer id, UpdateUser data){
         User user = userRepository.getReferenceById(id);
-        if(data.jobrole() != null){
-            user.setJobrole(data.jobrole());
+        if(data.jobRole() != null){
+            user.setJobrole(data.jobRole());
         }
-        if (data.codeRc() != null){
-            ResultCenter rc = rcService.getReferenceById(data.codeRc());
-            user.setResultCenter(rc);
+        if (data.resultCenter() != null){
+            user.setResultCenter(data.resultCenter());
         }
         if (data.status() != null){
             user.setStatus(data.status());
@@ -41,16 +41,15 @@ public class UserService {
     }
 
     public List<ResultCenter> findAllResultCenter() {
-        List<ResultCenter> rc = rcService.findAll();
+        List<ResultCenter> rc = rcService.findAllResultCenter();
         return rc;
     }
 
-    public User getUserById(Integer id) {
-        User user = userRepository.getReferenceById(id);
-        return user;
+    public UserDetails findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
-    public List<User> findAllUser() {
+    public List<User> findAllUsers() {
         List<User> users = userRepository.findAll();
         return users;
     }

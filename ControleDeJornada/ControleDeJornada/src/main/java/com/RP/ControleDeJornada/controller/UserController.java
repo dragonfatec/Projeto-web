@@ -1,20 +1,19 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
+import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
+@CrossOrigin("*")
 @RequestMapping("/user")
 public class UserController {
 
@@ -22,36 +21,20 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public String formRegister(Integer id, Model model){
-        if (id != null){
-            User user = userService.getUserById(id);
-            model.addAttribute("user", user);
-        }
-        model.addAttribute("resultCenter", userService.findAllResultCenter());
-
-        return "register/registerUser";
+    public ResponseEntity<List<ResultCenter>> formRegister(){
+        List<ResultCenter> rcs = userService.findAllResultCenter();
+        return ResponseEntity.ok(rcs);
     }
 
     @GetMapping("/consult")
-    public String consult(Model model){
-        model.addAttribute("users", userService.findAllUser());
-        return "consult/consultUser";
+    public ResponseEntity<List<User>> consultUser(){
+        List<User> users = userService.findAllUsers();
+        return ResponseEntity.ok(users);
     }
-
-    @PutMapping
-    @Transactional
-    public String update(UpdateUserRecord data){
-        User user = userService.getUserById(data.id());
-        user.update(data);
-
-        return "redirect:/user/consult";
-    }
-
     @PostMapping
     @Transactional
-    public String register(@Valid RegistrationUserRecord data){
+    public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
-        return "register/registerUser";
+        return ResponseEntity.ok("Success!");
     }
-
 }
