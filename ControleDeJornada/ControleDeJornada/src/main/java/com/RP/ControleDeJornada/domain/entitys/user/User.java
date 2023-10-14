@@ -31,4 +31,8 @@ public class User {
         this.jobrole = data.jobrole();
         this.status = Status.ACTIVE;
     }
+
+    public Integer getId() {
+        return id;
+    }
 }

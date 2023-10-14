@@ -14,9 +14,9 @@ public class RcService {
     @Autowired
     private RcRepository rcRepository;
 
-    public void register(RegistrationTeamRecord data){
+    public ResultCenter register(RegistrationTeamRecord data){
         ResultCenter resultCenter = new ResultCenter(data);
-        rcRepository.save(resultCenter);
+        return rcRepository.save(resultCenter);
     }
 
     public List<ResultCenter> findAll() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/sendtime")
 public class SendTimeController {
 
@@ -26,7 +26,7 @@ public class SendTimeController {
 
     @PostMapping
     @Transactional
-    public String sendTime(@Valid ResgistrationSendTimeRecord data) {
+    public String sendTime(@RequestBody @Valid ResgistrationSendTimeRecord data) {
         System.out.println(data.idUser().toString() + " , " + data.startDate().toString()+ " , " + data.finishDate().toString());
         sendTimeService.saveTime(data);
         return "timeApontament/timeApontament";
