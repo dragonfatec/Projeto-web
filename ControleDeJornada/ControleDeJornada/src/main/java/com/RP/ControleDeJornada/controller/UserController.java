@@ -7,9 +7,7 @@ import com.RP.ControleDeJornada.domain.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,13 +22,19 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<ResultCenter>> formRegister(){
-        List<ResultCenter> rcs = userService.findAll();
+        List<ResultCenter> rcs = userService.findAllResultCenter();
         return ResponseEntity.ok(rcs);
+    }
+
+    @GetMapping("/consult")
+    public ResponseEntity<List<User>> consultUser(){
+        List<User> users = userService.findAllUsers();
+        return ResponseEntity.ok(users);
     }
     @PostMapping
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
-        return ResponseEntity.ok("Sucesso!");
+        return ResponseEntity.ok("Success!");
     }
 }

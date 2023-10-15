@@ -40,12 +40,17 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public List<ResultCenter> findAll() {
-        List<ResultCenter> rc = rcService.findAll();
+    public List<ResultCenter> findAllResultCenter() {
+        List<ResultCenter> rc = rcService.findAllResultCenter();
         return rc;
     }
 
     public UserDetails findByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    public List<User> findAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users;
     }
 }
