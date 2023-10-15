@@ -4,7 +4,7 @@ import com.RP.ControleDeJornada.domain.Status;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 
-public record UpdateUser(
+public record UpdateUserRecord(
         JobRole jobRole,
-        ResultCenter resultCenter,
+        String codeRc,
         Status status){}

@@ -17,5 +17,5 @@ public record RegistrationUserRecord(
         @NotNull
         JobRole jobrole,
         @NotBlank
-        String resultCenter) {
+        String codeRc) {
 }

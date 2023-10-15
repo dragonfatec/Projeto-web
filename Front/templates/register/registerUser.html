@@ -6,7 +6,7 @@
     <title>Register User</title>
     <link rel="stylesheet" href="../../static/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="../../static/js/user.js" defer></script>
+    <script src="../../static/js/user/user.js" defer></script>
 </head>
 <body>
     <div class="linebg">
@@ -40,7 +40,18 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../register/registerUser.html">User</a></li>
                                         <li><a class="dropdown-item" href="../register/registerRC.html">Result Center</a></li>
-                                        <li><a class="dropdown-item" href="../register/registerClient.html">Company</a></li>
+                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Company</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Consult
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="../consult/consultUser.html">User</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultResultCenter.html">Result Center</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultCompany.html">Company</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultApontamentTime.html">Time Apontament</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -69,8 +80,8 @@
                             </select>
                         </div>
                         <div class="col-12">
-                            <label for="resultCenter" class="form-label">Result Center</label>
-                            <select id="resultCenter" name="resultCenter" class="form-select" style="width: 200px;">
+                            <label for="codeRc" class="form-label">Result Center</label>
+                            <select id="codeRc" name="codeRc" class="form-select" style="width: 200px;">
                                 <option value="null">Choose your Result Center</option>
                             </select>
                         </div>

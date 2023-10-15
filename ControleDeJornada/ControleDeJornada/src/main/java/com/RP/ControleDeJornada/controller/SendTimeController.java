@@ -3,6 +3,7 @@ package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.CustomResponse;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.SendTimeService;
@@ -31,6 +32,12 @@ public class SendTimeController {
         CustomResponse cr = new CustomResponse(users,rcs);
 
         return ResponseEntity.ok(cr);
+    }
+
+    @GetMapping("/consult")
+    public ResponseEntity<List<SendTime>> getSendTimes(){
+        List<SendTime> sendTimes = sendTimeService.findAllSendTime();
+        return ResponseEntity.ok(sendTimes);
     }
 
     @PostMapping
