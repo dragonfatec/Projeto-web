@@ -2,6 +2,7 @@ package com.RP.ControleDeJornada.domain.entitys.user;
 
 import com.RP.ControleDeJornada.domain.Status;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -30,6 +31,23 @@ public class User {
         this.name = data.name().toUpperCase().trim();
         this.jobrole = data.jobrole();
         this.status = Status.ACTIVE;
+    }
+
+    public void update(UpdateUserRecord data) {
+        if(data.name() != null){
+            this.name = data.name();
+        }
+        if (data.jobrole() != null){
+            this.jobrole = data.jobrole();
+        }
+        if(data.status() != null){
+            this.status = data.status();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
     public Integer getId() {

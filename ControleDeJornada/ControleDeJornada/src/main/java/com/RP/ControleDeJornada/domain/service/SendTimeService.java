@@ -1,6 +1,5 @@
 package com.RP.ControleDeJornada.domain.service;
 
-import com.RP.ControleDeJornada.domain.dto.DataListingTime;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class SendTimeService {
@@ -43,4 +41,9 @@ public class SendTimeService {
         return rcs;
     }
 
+
+    public List<SendTime> findAllSendTime() {
+        List<SendTime> sendTimes = repository.findAll();
+        return sendTimes;
+    }
 }

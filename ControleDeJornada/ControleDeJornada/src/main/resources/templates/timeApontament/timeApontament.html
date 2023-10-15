@@ -9,12 +9,11 @@
 <body>
     <div layout:fragment="content">
         <div class="container mt-5">
-            <h1 class="mb-4">Time Tracking</h1>
+            <h1 class="mb-4">Time Apontament</h1>
             <form method="post">
                 <div class="form-group">
                     <label for="idUser">User:</label>
-                    <select id="idUser" name="idUser" class="form-select"
-                    style="width: 200px;">
+                    <select id="idUser" name="idUser" class="form-select">
                         <option value="null">Select User</option>
                         <option th:each="user : ${users}"
                                 th:text="${user.name}"
@@ -23,18 +22,15 @@
                 </div>
                 <div class="form-group">
                     <label for="startDate">Start date time:</label>
-                    <input id="startDate" name="startDate" type="datetime-local" class="form-control"
-                    style="width: 200px;" >
+                    <input id="startDate" name="startDate" type="datetime-local" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label for="finishDate">End date time:</label>
-                    <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" 
-                    style="width: 200px;">
+                    <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label for="typeSend">Type Time:</label>
-                    <select id="typeSend" name="typeSend" class="form-select"
-                    style="width: 200px;">
+                    <select id="typeSend" name="typeSend" class="form-select">
                         <option value="null">Select User</option>
                         <option value="EXTRA">Extra</option>
                         <option value="WARNINGTIME">Warning Time</option>
@@ -42,27 +38,20 @@
                 </div>
                 <div class="form-group">
                     <label for="codeRc">Result Center:</label>
-                    <select id="codeRc" name="codeRc" class="form-select"
-                    style="width: 200px;">
+                    <select id="codeRc" name="codeRc" class="form-select">
                         <option value="null">Select Result Center</option>
                         <option th:each="rc : ${rcs}"
                                 th:text="${rc.rc}"
                                 th:value="${rc.codeRc}"/>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="atividade">Client:</label>
-                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade"
-                    style="width: 200px;">
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="atividade">Client:</label>-->
+<!--                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade">-->
+<!--                </div>-->
                 <button type="submit" class="btn btn-primary">Registrar</button>
             </form>
         </div>
-
-        <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
     </div>
 </body>
 </html>

@@ -3,9 +3,12 @@ package com.RP.ControleDeJornada.domain.repository;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
+    UserDetails findByEmail(String email);
     List<User> findByResultCenter(ResultCenter rc);
+
 }

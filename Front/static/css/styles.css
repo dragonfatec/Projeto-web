@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+.title{
+    text-align: center;
+    margin: 2em 5em;
+    font-size: 26px;
+    font-weight: 700;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url('texturas-hexadecimais-para-redes.jpg');
+    background-size: cover;
+    background-position: center; */
+}
+.image_icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+}
+#linebg{ 
+    position: absolute;
+    left: 0; /*mudar para esquerda do video */
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.menuside{
+    /* position: fixed; */
+    background: transparent;
+    backdrop-filter: blur(8px) brightness(70%);
+    width: 250px;
+    height: 100%;
+    /* margin-right: 70px;
+    margin-left: auto;
+    height: 100vh; */
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 1px 30px #0606af56;
+}
+
+/* .side-nav{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 100px 0;
+    transition: .5s;
+    overflow: hidden;
+
+    
+} */
+
+/* .side-nav::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('texturas-hexadecimais-para-redes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    filter:blur(10px);
+} */
+
+/* ul.nav-item{
+    list-style: none;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: capitalize;
+} */
+.nav-item-container{
+    width: 100%;
+    height: auto;
+
+}
+
+ul.nav-link{
+    color: #fff;
+    list-style: none;
+    padding: 18px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+a.nav-link:hover, a.nav-link:active{
+    font-size: 150%;
+}
+.dropdown-item:hover{
+    background: rgba(19, 144, 228, 0.555);
+}
+h1{
+    font-weight: bold;
+}
+
+.timebody{
+  font-family: 'Poppins', sans-serif;
+  /* display: flex; */
+  position: relative;
+  font-weight: bold;
+}
+.registerclient{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+.registerrc{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+.registeruser{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}

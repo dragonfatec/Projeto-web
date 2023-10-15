@@ -1,7 +1,6 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.DataListingTime;
-import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.service.HoursService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +21,6 @@ public class HoursController {
         return hoursService.viewHoursForCollaborator(id);
 
     }
-
-
-//Ideia de mudar o nome de SendTimeController para TimeController e passar esse endpoint para la.
+    
 
 }

@@ -11,16 +11,18 @@
         <h2 class="title">Register User</h2>
         <div class="container mt-3">
             <form method="post" class="row g-3">
+
+                <input type="hidden" name="_method" value="put" th:if="${user != null}" >
+                <input type="hidden" name="id" th:value="${user?.id}">
+
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
-                    <input id="name" name="name" type="text" class="form-control" placeholder="Name"
-                    style="width: 400px;">
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Name" th:value="${user?.name}">
                 </div>
                 <div class="col-md-6">
                     <label for="jobrole" class="form-label">Jobrole</label>
-                    <select id="jobrole" name="jobrole" class="form-select"
-                    style="width: 200px;">
-                        <option value="null">Choose your jobrole</option>
+                    <select id="jobrole" name="jobrole" class="form-select">
+                        <option th:if="${user == null}">Choose your jobrole</option>
                         <option value="ADMINISTRADOR">Administrator</option>
                         <option value="EMPLOYEE">Employee</option>
                         <option value="MANAGER">Manager</option>
@@ -28,12 +30,20 @@
                 </div>
                 <div class="col-12">
                     <label for="resultCenter" class="form-label">Result Center</label>
-                    <select id="resultCenter" name="resultCenter" class="form-select" 
-                    style="width: 200px;">
+                    <select id="resultCenter" name="codeRc" class="form-select" >
                         <option value="null">Choose your Result Center</option>
+                        <option th:if="${user != null}" th:value="${user?.resultCenter}"></option>
                         <option th:each="rc : ${resultCenter}"
                                 th:text="${rc.rc}"
                                 th:value="${rc.codeRc}"/>
+                    </select>
+                </div>
+                <div th:if="${user != null}" class="col-md-6">
+                    <label for="status" class="form-label">Status</label>
+                    <select  id="status" name="status" class="form-select">
+                        <option th:value="${user?.status}" th:text="${user.status}"></option>
+                        <option value="ACTIVE">Active</option>
+                        <option value="INACTIVE">Inactive</option>
                     </select>
                 </div>
 
