@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.dto.UpdateUser;
+import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
@@ -20,19 +20,20 @@ public class UserService {
 
     public void register(RegistrationUserRecord data){
         User user = new User(data);
-        ResultCenter rc = rcService.findById(data.resultCenter());
+        ResultCenter rc = rcService.findById(data.codeRc());
         user.setResultCenter(rc);
 
         userRepository.save(user);
     }
 
-    public void updateUser(Integer id, UpdateUser data){
+    public void updateUser(Integer id, UpdateUserRecord data){
         User user = userRepository.getReferenceById(id);
         if(data.jobRole() != null){
             user.setJobrole(data.jobRole());
         }
-        if (data.resultCenter() != null){
-            user.setResultCenter(data.resultCenter());
+        if (data.codeRc() != null){
+            ResultCenter resultCenter = rcService.findById(data.codeRc());
+            user.setResultCenter(resultCenter);
         }
         if (data.status() != null){
             user.setStatus(data.status());
@@ -41,7 +42,7 @@ public class UserService {
     }
 
     public List<ResultCenter> findAllResultCenter() {
-        List<ResultCenter> rc = rcService.findAllResultCenter();
+        List<ResultCenter> rc = rcService.findAll();
         return rc;
     }
 

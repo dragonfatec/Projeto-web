@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/consult")
-    public ResponseEntity<List<User>> consultUser(){
+    public ResponseEntity<List<User>> getUsers(){
         List<User> users = userService.findAllUsers();
         return ResponseEntity.ok(users);
     }

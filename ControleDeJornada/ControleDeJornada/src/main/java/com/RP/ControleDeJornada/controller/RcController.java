@@ -20,8 +20,8 @@ public class RcController {
     private RcService rcService;
 
     @GetMapping("/consult")
-    public ResponseEntity<List<ResultCenter>> getResultCenter(){
-        List<ResultCenter> resultCenters = rcService.findAllResultCenter();
+    public ResponseEntity<List<ResultCenter>> getResultCenters(){
+        List<ResultCenter> resultCenters = rcService.findAll();
         return ResponseEntity.ok(resultCenters);
     }
 
@@ -29,7 +29,6 @@ public class RcController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationTeamRecord data){
         rcService.register(data);
-
         return ResponseEntity.ok("Success!");
     }
 }
