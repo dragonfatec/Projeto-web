@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="container mt-5">
+            <h1 class="mb-4">Time Apontament</h1>
+            <form method="post">
+                <div class="form-group">
+                    <label for="idUser">User:</label>
+                    <select id="idUser" name="idUser" class="form-select">
+                        <option value="null">Select User</option>
+                        <option th:each="user : ${users}"
+                                th:text="${user.name}"
+                                th:value="${user.id}"/>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start date time:</label>
+                    <input id="startDate" name="startDate" type="datetime-local" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="finishDate">End date time:</label>
+                    <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="typeSend">Type Time:</label>
+                    <select id="typeSend" name="typeSend" class="form-select">
+                        <option value="null">Select User</option>
+                        <option value="EXTRA">Extra</option>
+                        <option value="WARNINGTIME">Warning Time</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="codeRc">Result Center:</label>
+                    <select id="codeRc" name="codeRc" class="form-select">
+                        <option value="null">Select Result Center</option>
+                        <option th:each="rc : ${rcs}"
+                                th:text="${rc.rc}"
+                                th:value="${rc.codeRc}"/>
+                    </select>
+                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="atividade">Client:</label>-->
+<!--                    <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade">-->
+<!--                </div>-->
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Register View</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h2 class="title">Register Client</h2>
+        <div class="container mt-3">
+            <form method="post" class="row g-3">
+
+                <input type="hidden" name="_method" value="put" th:if="${client != null}" >
+                <input type="hidden" name="id" th:value="${client?.cnpj}">
+
+                <div class="col-md-6" th:if="${client == null}">
+                    <label for="cnpj" class="form-label">CNPJ</label>
+                    <input id="cnpj" name="cnpj" type="text" class="form-control" placeholder="11222333000110">
+                </div>
+                <div class="col-md-6" th:if="${client == null}">
+                    <label for="razaoSocial" class="form-label">Razão Social</label>
+                    <input id="razaoSocial" name="razaoSocial" type="text" class="form-control" placeholder="Official name">
+                </div>
+                <div class="col-md-6">
+                    <label for="nameCompany" class="form-label">Name Company</label>
+                    <input id="nameCompany" name="nameCompany" type="text" class="form-control" placeholder="Popular Name" th:value="${client.nameCompany}">
+                </div>
+
+                <div th:if="${client != null}" class="col-md-6">
+                    <label for="status" class="form-label">Status</label>
+                    <select  id="status" name="status" class="form-select">
+                        <option th:text="${client.status}" th:value="${client.status}"></option>
+                        <option value="ACTIVE">Active</option>
+                        <option value="INACTIVE">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -35,6 +35,6 @@ public class UserController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
-        return ResponseEntity.ok("Sucesso!");
+        return ResponseEntity.ok("Success!");
     }
 }
