@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.controller;
 
-import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
+import com.RP.ControleDeJornada.domain.dto.RegistrationResultCenterRecord;
 import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.service.RcService;
 import jakarta.validation.Valid;
@@ -21,14 +21,21 @@ public class RcController {
 
     @GetMapping("/consult")
     public ResponseEntity<List<ResultCenter>> getResultCenters(){
+
         List<ResultCenter> resultCenters = rcService.findAll();
         return ResponseEntity.ok(resultCenters);
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity register(@RequestBody @Valid RegistrationTeamRecord data){
+    public ResponseEntity register(@RequestBody @Valid RegistrationResultCenterRecord data){
         rcService.register(data);
         return ResponseEntity.ok("Success!");
+    }
+
+    @GetMapping ("/list")  //Aqui pega a lista com os times
+    public List<ResultCenter> rcList () {
+        return rcService.findAllResultCenter();
+
     }
 }

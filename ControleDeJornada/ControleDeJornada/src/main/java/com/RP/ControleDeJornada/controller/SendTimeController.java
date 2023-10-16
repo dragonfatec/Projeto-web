@@ -10,9 +10,12 @@ import com.RP.ControleDeJornada.domain.service.SendTimeService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/sendtime")
@@ -30,7 +33,7 @@ public class SendTimeController {
 
     @GetMapping("/consult")
     public String Consult(Model model) {
-        model.addAttribute("apontaments", sendTimeService.findAll());
+        model.addAttribute("apontaments", sendTimeService.findAllSendTime());
 
         return "consult/consultHours";
     }

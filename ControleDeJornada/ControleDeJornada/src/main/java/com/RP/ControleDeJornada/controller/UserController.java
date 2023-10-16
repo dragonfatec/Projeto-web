@@ -37,4 +37,9 @@ public class UserController {
         userService.register(data);
         return ResponseEntity.ok("Success!");
     }
+
+    @GetMapping ("/rc/{codeRc}") // achar os usuarios daquele time.
+    public List<User> findUserByRc (@PathVariable String codeRc) {
+        return userService.findUserByRc(codeRc);
+    }
 }

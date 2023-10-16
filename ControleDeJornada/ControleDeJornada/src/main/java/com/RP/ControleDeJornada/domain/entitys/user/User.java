@@ -49,4 +49,8 @@ public class User {
     public String toString() {
         return name;
     }
+
+    public Integer getId() {
+        return id;
+    }
 }
