@@ -2,7 +2,10 @@ package com.RP.ControleDeJornada.controller;
 
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
+import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
+import com.RP.ControleDeJornada.domain.entitys.user.CustomResponse;
+import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.SendTimeService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

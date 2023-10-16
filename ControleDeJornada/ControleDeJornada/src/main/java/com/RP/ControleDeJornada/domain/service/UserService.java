@@ -42,7 +42,7 @@ public class UserService {
     }
 
     public List<ResultCenter> findAllResultCenter() {
-        List<ResultCenter> rc = rcService.findAllResultCenter();
+        List<ResultCenter> rc = rcService.findAll();
         return rc;
     }
 

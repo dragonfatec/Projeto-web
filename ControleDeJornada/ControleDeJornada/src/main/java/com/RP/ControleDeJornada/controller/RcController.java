@@ -21,7 +21,8 @@ public class RcController {
 
     @GetMapping("/consult")
     public ResponseEntity<List<ResultCenter>> getResultCenters(){
-        List<ResultCenter> resultCenters = rcService.findAllResultCenter();
+
+        List<ResultCenter> resultCenters = rcService.findAll();
         return ResponseEntity.ok(resultCenters);
     }
 
