@@ -34,28 +34,4 @@ public class SendTime {
         this.finishDate = dada.finishDate();
         this.typeSend = dada.typeSend();
     }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public LocalDateTime getFinishDate() {
-        return finishDate;
-    }
-
-    public TypeSend getTypeSend() {
-        return typeSend;
-    }
-
-    public ResultCenter getTeam() {
-        return team;
-    }
-
-    public User getUser() {
-        return user;
-    }
 }

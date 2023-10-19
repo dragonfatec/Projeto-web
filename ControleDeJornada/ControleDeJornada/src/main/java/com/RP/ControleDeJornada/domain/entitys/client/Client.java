@@ -2,7 +2,6 @@ package com.RP.ControleDeJornada.domain.entitys.client;
 
 import com.RP.ControleDeJornada.domain.Status;
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
-import com.RP.ControleDeJornada.domain.dto.UpdateClientRecord;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,12 +26,4 @@ public class Client {
         this.status = Status.ACTIVE;
     }
 
-    public void update(UpdateClientRecord data) {
-        if (data.nameCompany() != null){
-            this.nameCompany = data.nameCompany().toUpperCase().trim();
-        }
-        if (data.status() != null){
-            this.status = data.status();
-        }
-    }
 }

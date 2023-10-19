@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -35,11 +34,6 @@ public class UserController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
-        return ResponseEntity.ok("Success!");
-    }
-
-    @GetMapping ("/rc/{codeRc}") // achar os usuarios daquele time.
-    public List<User> findUserByRc (@PathVariable String codeRc) {
-        return userService.findUserByRc(codeRc);
+        return ResponseEntity.ok("Sucesso!");
     }
 }

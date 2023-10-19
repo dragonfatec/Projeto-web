@@ -11,13 +11,13 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@CrossOrigin("*")
 @RequestMapping("/sendtime")
 public class SendTimeController {
 
@@ -25,17 +25,13 @@ public class SendTimeController {
     private SendTimeService sendTimeService;
 
     @GetMapping
-    public String formRegister(Model model) {
-        model.addAttribute("rcs", sendTimeService.getAllResult());
-        model.addAttribute("users", sendTimeService.getAllUsers());
-        return "timeApontament/timeApontament";
-    }
+    public ResponseEntity<CustomResponse> formRegister() {
+        List<ResultCenter> rcs = sendTimeService.getAllResult();
+        List<User> users = sendTimeService.getAllUsers();
 
-    @GetMapping("/consult")
-    public String Consult(Model model) {
-        model.addAttribute("apontaments", sendTimeService.findAllSendTime());
+        CustomResponse cr = new CustomResponse(users,rcs);
 
-        return "consult/consultHours";
+        return ResponseEntity.ok(cr);
     }
 
     @GetMapping("/consult")
@@ -46,10 +42,8 @@ public class SendTimeController {
 
     @PostMapping
     @Transactional
-    public String sendTime(@Valid ResgistrationSendTimeRecord data) {
+    public ResponseEntity sendTime(@RequestBody @Valid ResgistrationSendTimeRecord data) {
         sendTimeService.saveTime(data);
-        return "timeApontament/timeApontament";
-
+        return ResponseEntity.ok("success!");
     }
-
 }

@@ -54,10 +54,4 @@ public class UserService {
         List<User> users = userRepository.findAll();
         return users;
     }
-
-    public List<User> findUserByRc(String codeRc) {
-        ResultCenter rc = rcService.findById(codeRc);
-        return userRepository.findByResultCenter(rc);
-
-    }
 }
