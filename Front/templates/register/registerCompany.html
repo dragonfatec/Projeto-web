@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Client</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="../../static/js/company/company.js" defer></script>
+</head>
+<body>
+    <div class="linebg">
+        <video autoplay muted loop id="linebg">
+            <source src="../../static/image/lines.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 px-sm-2 px-0 menuside">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                    <a href="../home/home.html">
+                        <img src="../../static/image/icon_2rp.png" class="image_icon" alt="Home">
+                    </a>
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav flex-sm-column mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="../timeApontament/timeApontament.html">Time Apontament</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Register
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="../register/registerUser.html">User</a></li>
+                                        <li><a class="dropdown-item" href="../register/registerRC.html">Result Center</a></li>
+                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Company</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Consult
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="../consult/consultUser.html">User</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultResultCenter.html">Result Center</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultCompany.html">Company</a></li>
+                                        <li><a class="dropdown-item" href="../consult/consultApontamentTime.html">Time Apontament</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div>
+                 <div class="container mt-3 registerclient">
+                    <h1 class="title">Register Company</h1>
+                    <form method="post" class="row g-3" id="form_client">
+                        <div class="col-md-6">
+                            <label for="cnpj" class="form-label">CNPJ</label>
+                            <input id="cnpj" name="cnpj" type="text" class="form-control" placeholder="11222333000110"
+                            style="width: 400px;">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="razaoSocial" class="form-label">Razão Social</label>
+                            <input id="razaoSocial" name="razaoSocial" type="text" class="form-control" placeholder="Official name"
+                            style="width: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nameCompany" class="form-label">Name Company</label>
+                            <input id="nameCompany" name="nameCompany" type="text" class="form-control" placeholder="Popular Name"
+                            style="width: 200px;">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

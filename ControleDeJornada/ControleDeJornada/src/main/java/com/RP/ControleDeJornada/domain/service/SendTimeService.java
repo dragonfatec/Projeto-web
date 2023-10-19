@@ -41,7 +41,6 @@ public class SendTimeService {
         return rcs;
     }
 
-
     public List<SendTime> findAllSendTime() {
         List<SendTime> sendTimes = repository.findAll();
         return sendTimes;
