@@ -37,7 +37,6 @@ public class User implements UserDetails {
     public User(RegistrationUserRecord data){
         this.name = data.name().toUpperCase().trim();
         this.email = data.email();
-        this.password = data.password();
         this.jobrole = data.jobrole();
         this.status = Status.ACTIVE;
     }

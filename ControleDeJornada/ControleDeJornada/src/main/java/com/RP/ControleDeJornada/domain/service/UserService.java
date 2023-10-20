@@ -7,6 +7,7 @@ import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,9 @@ public class UserService {
         User user = new User(data);
         ResultCenter rc = rcService.findById(data.codeRc());
         user.setResultCenter(rc);
+
+        String passwordCript = BCrypt.hashpw(data.password(),BCrypt.gensalt());
+        user.setPassword(passwordCript);
 
         userRepository.save(user);
     }
