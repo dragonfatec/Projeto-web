@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  web-front-end:
+    container_name: web-front-end
+    image: nginx
+    volumes:
+      - ./Front:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    networks:
+      - api-network
+  
+  mysql-db:
+    container_name: mysql-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dragon
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    volumes: 
+      -  mysql_volume:/var/lib/mysql
+    networks:
+      - api-network
+
+volumes:
+  mysql_volume:
+
+networks: 
+    api-network:
+        driver: bridge
