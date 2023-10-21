@@ -9,6 +9,7 @@ async function getTime(){
     console.log(data);
 
     data.map((resp) => {
+        const tr = document.createElement("tr");
         const user = document.createElement("td");
         const startDate = document.createElement("td");
         const finishDate = document.createElement("td");
@@ -19,10 +20,12 @@ async function getTime(){
         finishDate.innerText = resp.finishDate;
         typeSend.innerText = resp.typeSend;
 
-        table.appendChild(user);
-        table.appendChild(startDate);
-        table.appendChild(finishDate);
-        table.appendChild(typeSend);
+        tr.appendChild(user);
+        tr.appendChild(startDate);
+        tr.appendChild(finishDate);
+        tr.appendChild(typeSend);
+
+        table.appendChild(tr);
     })
 }
 
