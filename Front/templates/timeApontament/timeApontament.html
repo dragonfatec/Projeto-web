@@ -6,7 +6,7 @@
     <title>Time Apontament</title>
     <link rel="stylesheet" href="../../static/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="../../static/js/timeApontament.js" defer></script>
+    <script src="../../static/js/timeApontament/timeApontament.js" defer></script>
 </head>
 <body>
     <div class="linebg">
@@ -71,15 +71,15 @@
                         </div>
                         <div class="form-group">
                             <label for="startDate">Start date time:</label>
-                            <input id="startDate" name="startDate" type="datetime-local" class="form-control" style="width: 200px;" >
+                            <input id="startDate" name="startDate" type="datetime-local" class="form-control" style="width: 200px;" required>
                         </div>
                         <div class="form-group">
                             <label for="finishDate">End date time:</label>
-                            <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" style="width: 200px;">
+                            <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" style="width: 200px;" required>
                         </div>
                         <div class="form-group">
                             <label for="typeSend">Type Time:</label>
-                            <select id="typeSend" name="typeSend" class="form-select" style="width: 200px;">
+                            <select id="typeSend" name="typeSend" class="form-select" style="width: 200px;" required>
                                 <option value="null">Select User</option>
                                 <option value="EXTRA">Extra</option>
                                 <option value="WARNINGTIME">Warning Time</option>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="form-group">
                             <label for="codeRc">Result Center:</label>
-                            <select id="codeRc" name="codeRc" class="form-select" style="width: 200px;">
+                            <select id="codeRc" name="codeRc" class="form-select" style="width: 200px;" required>
                                 <option value="null">Select Result Center</option>
                             </select>
                         </div>
@@ -97,6 +97,26 @@
                        </div>
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </form>
+
+
+                    <div class="modal" tabindex="-1" id="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Apontament successfully</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Success Apontament!</p>
+                                </div>
+                                    <div class="modal-footer">
+                                    <a href="../timeApontament/timeApontament.html" class="btn btn-secondary">Ok</a>
+                                    <a href="../consult/consultApontamentTime.html" class="btn btn-primary">Consult</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div> 

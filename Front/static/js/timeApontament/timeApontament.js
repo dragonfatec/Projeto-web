@@ -47,6 +47,7 @@ async function save(idUser, startDate, finishDate, typeSend, codeRc){
             codeRc: codeRc
         })
     }).then(resp => console.log(resp)).catch(error => console.log(error))
+    $('#modal').modal('show');
 };
 
 async function getForm(eventSave){
@@ -60,7 +61,6 @@ async function getForm(eventSave){
 
     await save(idUser, startDate,finishDate,typeSend,codeRc);
     console.log(idUser, startDate,finishDate,typeSend,codeRc,);
-    window.alert(typeSend);
 }
 
 form.addEventListener("submit", eventSave => getForm(eventSave));

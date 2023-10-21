@@ -12,6 +12,7 @@ async function save(codeRc, rc, acronym){
             acronym: acronym
        })
    }).then(resposta => console.log(resposta)).catch(error => console.log(error));
+   $('#modal').modal('show');
 }
 
 const form = document.getElementById("form_rc");
@@ -25,7 +26,5 @@ async function getAttributes(evento){
    
    console.log(codeRc, rc, acronym);
    await save(codeRc, rc, acronym);
-   
-   window.alert(codeRc);
 }
 form.addEventListener("submit", evento => getAttributes(evento));

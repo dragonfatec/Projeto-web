@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/client/consult";
+const url = "http://localhost:8080/company/consult";
 
 const table = document.getElementById("tr");
 
@@ -9,6 +9,7 @@ async function getCompanys(){
     console.log(data);
 
     data.map((resp) => {
+        const tr = document.createElement("tr");
         const nameCompany = document.createElement("td");
         const razaoSocial = document.createElement("td");
         const cnpj = document.createElement("td");
@@ -19,10 +20,12 @@ async function getCompanys(){
         cnpj.innerText = resp.cnpj;
         status.innerText = resp.status;
 
-        table.appendChild(nameCompany);
-        table.appendChild(razaoSocial);
-        table.appendChild(cnpj);
-        table.appendChild(status);
+        tr.appendChild(nameCompany);
+        tr.appendChild(razaoSocial);
+        tr.appendChild(cnpj);
+        tr.appendChild(status);
+        
+        table.appendChild(tr);
     })
 }
 
