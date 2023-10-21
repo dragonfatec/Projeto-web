@@ -7,6 +7,7 @@ async function getUsers(){
     const data = await response.json();
 
     data.map((resp) => {
+        const tr = document.createElement("tr");
         const name = document.createElement("td");
         const jobrole = document.createElement("td");
         const email = document.createElement("td");
@@ -17,11 +18,12 @@ async function getUsers(){
         email.innerText = resp.email;
         status.innerText = resp.status;
 
-        table.appendChild(name);
-        table.appendChild(jobrole);
-        table.appendChild(email);
-        table.appendChild(status);
-
+        tr.appendChild(name);
+        tr.appendChild(jobrole);
+        tr.appendChild(email);
+        tr.appendChild(status);
+        
+        table.appendChild(tr);
     })
 }
 
