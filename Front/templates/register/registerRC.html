@@ -66,27 +66,46 @@
                         <div class="col-md-6">
                             <label for="codeRc" class="form-label">Code Result Center</label>
                             <input id="codeRc" name="codeRc" type="text" class="form-control" placeholder="123456"
-                            style="width: 200px;">
+                            style="width: 200px;" minlength="6" maxlength="6" required>
                         </div>
                         <div class="col-md-6">
                             <label for="rc" class="form-label">Result Center</label>
                             <input id="rc" name="rc" type="text" class="form-control" placeholder="Description of Result Center"
-                            style="width: 200px;">
+                            style="width: 200px;" minlength="3" required >
                         </div>
                         <div class="col-md-6">
                             <label for="acronym" class="form-label">Acronym</label>
                             <input id="acronym" name="acronym" type="text" class="form-control" placeholder="Acronym for your description"
-                            style="width: 200px;">
+                            style="width: 200px;" minlength="1" maxlength="3" required>
                         </div>
         
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Register</button>
                         </div>
                     </form>
+
+                    <div class="modal" tabindex="-1" id="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Saved successfully</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Success save Result Center!</p>
+                                </div>
+                                    <div class="modal-footer">
+                                    <a href="../register/registerRC.html" class="btn btn-secondary">Ok</a>
+                                    <a href="../consult/consultResultCenter.html" class="btn btn-primary">Consult</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div> 
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
