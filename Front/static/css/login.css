@@ -12,24 +12,43 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+.backmask{
+    position: inherit;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    /* opacity: 0.5; */
+    z-index: 1;
+}
 #myVideo{
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    filter: brightness(60%);
+
 }
 
 .wrapper{
+    background: transparent;
+    backdrop-filter: blur(8px) brightness(90%);
     position: relative;
     width: 420px;
-    background: transparent;
-    backdrop-filter: blur(20px);
     color: #fff;
     border: 2px solid rgba(255,255, 255, .2);
     border-radius: 10px;
     padding: 30px 40px;
 }
+
+.wrapperbg {
+    width: 420px;
+    background-color: rgb(14, 21, 119);
+    /* opacity: 0.5; */
+}
+
 .wrapper img{
     display: block;
     width: 55%;
