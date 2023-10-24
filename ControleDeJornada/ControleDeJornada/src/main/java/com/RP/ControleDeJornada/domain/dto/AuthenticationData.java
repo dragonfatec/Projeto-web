@@ -2,7 +2,7 @@ package com.RP.ControleDeJornada.domain.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record AutenticationData (
+public record AuthenticationData(
         @NotBlank
         String email,
         @NotBlank
