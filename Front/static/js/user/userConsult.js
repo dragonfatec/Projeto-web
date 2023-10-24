@@ -6,6 +6,8 @@ async function getUsers(){
     const response = await fetch(url);
     const data = await response.json();
 
+    console.log(data);
+
     data.map((resp) => {
         const tr = document.createElement("tr");
         const name = document.createElement("td");
