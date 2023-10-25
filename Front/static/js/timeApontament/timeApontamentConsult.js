@@ -3,7 +3,14 @@ const url = "http://localhost:8080/sendtime/consult";
 const table = document.getElementById("tr");
 
 async function getTime(){
-    const response = await fetch(url);
+
+    const response = await fetch(url, 
+        {
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    });
+    
     const data = await response.json();
 
     console.log(data);
