@@ -4,63 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Apontament</title>
-    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel="stylesheet" href="../../static/css/template.css">
+    <link rel="stylesheet" href="../../static/css/timeApontament.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="../../static/js/timeApontament/timeApontament.js" defer></script>
 </head>
 <body>
-    <div class="linebg">
-        <video autoplay muted loop id="linebg">
+    <!-- Background video -->
+    <div class="video-background-holder">
+        <!-- <div class="video-background-overlay"></div> -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="../../static/image/lines.mp4" type="video/mp4">
         </video>
-    </div>
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 px-sm-2 px-0 menuside">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
-                    <a href="../home/home.html">
-                        <img src="../../static/image/icon_2rp.png" class="image_icon" alt="Home">
-                    </a>
-                    <nav class="navbar navbar-expand-lg navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav flex-sm-column mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="../timeApontament/timeApontament.html">Time Apontament</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Register
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="../register/registerUser.html">User</a></li>
-                                        <li><a class="dropdown-item" href="../register/registerRC.html">Result Center</a></li>
-                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Company</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Consult
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="../consult/consultUser.html">User</a></li>
-                                        <li><a class="dropdown-item" href="../consult/consultResultCenter.html">Result Center</a></li>
-                                        <li><a class="dropdown-item" href="../consult/consultCompany.html">Company</a></li>
-                                        <li><a class="dropdown-item" href="../consult/consultApontamentTime.html">Time Apontament</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+    <!-- End -->
+
+
+        <!-- Menu Lateral -->
+        <div class="container-fluid conteudo-main">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="sidemenu">
+                        <a class="" href="#">
+                            <img src="../../static/image/icon_2rp.png" class="icon2rp" alt="Home">
+                        </a>
+                        <nav class="navbar navbar-expand-lg navbar-dark">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav flex-sm-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="../timeApontament/timeApontament.html">Time Apontament</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Register
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="../register/registerUser.html">User</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerRC.html">Result Center</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Company</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Consult
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="../consult/consultUser.html">User</a></li>
+                                            <li><a class="dropdown-item" href="../consult/consultResultCenter.html">Result Center</a></li>
+                                            <li><a class="dropdown-item" href="../consult/consultCompany.html">Company</a></li>
+                                            <li><a class="dropdown-item" href="../consult/consultApontamentTime.html">Time Apontament</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="container mt-5 timebody">
+                <div class="col" id="conteudo-pagina">
                     <h1 class="mb-4">Time Apontament</h1>
                     <form method="post" id="form_time">
                         <div class="form-group">
@@ -98,7 +103,6 @@
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </form>
 
-
                     <div class="modal" tabindex="-1" id="modal">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -116,11 +120,15 @@
                         </div>
                     </div>
 
-
                 </div>
             </div>
-        </div> 
+        </div>
+        <!-- End -->
+
     </div>
+
+
+
      <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
