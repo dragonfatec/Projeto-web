@@ -3,7 +3,14 @@ const url = "http://localhost:8080/rc/consult";
 const table = document.getElementById("tr");
 
 async function getResultCenter(){
-    const response = await fetch(url);
+
+    const response = await fetch(url, 
+        {
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    });
+    
     const data = await response.json();
 
     data.map((resp) => {

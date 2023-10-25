@@ -7,8 +7,6 @@ async function getResultCenter(event){
 
     const response = await fetch(url);
     const data = await response.json();
-    
-    console.log(data);
 
     data.map((rc)=>{
         const option = document.createElement("option");
