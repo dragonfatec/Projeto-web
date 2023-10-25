@@ -49,7 +49,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 <div align="center"> Modelagem </div>
 <details align="center">
  
- ![(1,n)-2023-10-11_21-30](https://github.com/dragonfatec/Projeto-web/assets/94874696/9f8c534e-7585-4cd6-a39d-1a679e2034f9)
+![image](https://github.com/dragonfatec/Projeto-web/assets/107444159/63630370-4875-4d81-932c-e9126994a1b0)
 
 </details>
 
