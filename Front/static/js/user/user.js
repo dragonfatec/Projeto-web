@@ -27,14 +27,23 @@ async function save(name, jobrole,codeRc){
     const response = await fetch(url,{
         method: "POST",
         headers:{
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": `Bearer ` + localStorage.getItem('token')
         },
         body: JSON.stringify({
             name:name,
             jobrole:jobrole,
             codeRc:codeRc
         })
-    }).then(response => console.log(response)).catch(error => console.log(error));
+    }).then(resp => {
+        console.log(resp)
+        if(resp.status == 200){
+            $('#modal').modal('show');
+        }else{
+            window.alert(`Error to salve: ${resp.status}`);
+        }
+    })
+    .catch(error => console.log(error));
 }
 
 const form = document.getElementById("form_user");

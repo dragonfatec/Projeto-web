@@ -6,15 +6,24 @@ async function save(cnpj, razaoSocial, nameCompany){
     const response = await fetch(url,{
         method: "POST",
         headers:{
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": `Bearer ` + localStorage.getItem('token')
         },
         body: JSON.stringify({
             cnpj: cnpj,
             razaoSocial: razaoSocial,
             nameCompany: nameCompany
         })
-    }).then(response => console.log(response)).catch(error => console.log(error));
-    $('#modal').modal('show');
+    }).then(resp => {
+        console.log(resp)
+        if(resp.status == 200){
+            $('#modal').modal('show');
+        }else{
+            window.alert(`Error to save: ${resp.status}`)
+        }
+    })
+    .catch(error => console.log(error));
+    
 }
 
 async function getAttributes(eventSave){
@@ -28,4 +37,3 @@ async function getAttributes(eventSave){
 }
 
 form.addEventListener("submit", eventSave => getAttributes(eventSave));
-

@@ -14,7 +14,8 @@ async function save(email, password){
             email:email,
             password: password
         })
-    });
+    }).catch(window.alert("Error to login, verify all informations!"));
+
     if(response.ok){
         const json = await response.json();
         const token = json.token;
