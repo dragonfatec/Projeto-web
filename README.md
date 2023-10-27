@@ -129,5 +129,5 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 </div>
 
 
-![Tecnologias](https://github.com/dragonfatec/Projeto-web/assets/94874696/05d865a0-3012-461a-965a-42a558a43b7a)
+![Tecnologias](https://github.com/dragonfatec/Projeto-web/assets/94874696/c147ce74-fc1a-41d8-b536-5dcf25e70ad4)
 
