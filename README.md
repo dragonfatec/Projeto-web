@@ -46,6 +46,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 
 </details>
 
+![Modelagem](https://github.com/dragonfatec/Projeto-web/assets/94874696/df8a6570-7ddc-4a6a-8568-8a24d873641d)
 <div align="center"> Modelagem </div>
 <details align="center">
  
@@ -53,6 +54,8 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 
 </details>
 
+
+![Burndown](https://github.com/dragonfatec/Projeto-web/assets/94874696/b70c8569-461d-40ef-93ed-637de1f103df)
 <div align="center"> Burndown 2ª Sprint </div>
 <details align="center">
 
