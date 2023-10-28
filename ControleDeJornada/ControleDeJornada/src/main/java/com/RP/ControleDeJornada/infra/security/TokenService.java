@@ -2,6 +2,7 @@ package com.RP.ControleDeJornada.infra.security;
 
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,9 +33,24 @@ public class TokenService {
     }
 
     private Instant expire(){
-        return LocalDateTime.now().plusMinutes(30l).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusMinutes(30).toInstant(ZoneOffset.of("-03:00"));
     }
 
+    public String extractJobRoleClaim(String token) {
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(secret);
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer("Dragons")
+                    .build();
+            // Decodificar o token para obter as claims
+            com.auth0.jwt.interfaces.DecodedJWT jwt = verifier.verify(token);
+            // Obter o valor do claim "jobrole"
+            return jwt.getClaim("jobrole").asString();
+        } catch (JWTVerificationException exception) {
+            // Tratar exceção, se necessário
+            return null;
+        }
+    }
     public String getSubject(String tokenJWT) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);

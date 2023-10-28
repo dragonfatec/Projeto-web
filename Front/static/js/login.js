@@ -14,13 +14,15 @@ async function save(email, password){
             email:email,
             password: password
         })
-    }).catch(window.alert("Error to login, verify all informations!"));
+    })
 
     if(response.ok){
         const json = await response.json();
         const token = json.token;
-        
+        const jobrole = json.jobrole;
+       
         localStorage.setItem('token', token);
+        localStorage.setItem('jobrole', jobrole);
 
         const tokenHeader = await fetch(url, 
             {
@@ -31,6 +33,8 @@ async function save(email, password){
         });
 
         return window.location.href = "../../templates/home/home.html";
+    }else{
+        window.alert("Error to login, verify all informations!")
     }
 }
 
