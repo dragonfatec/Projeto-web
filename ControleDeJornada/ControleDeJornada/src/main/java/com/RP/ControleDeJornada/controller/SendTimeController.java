@@ -2,7 +2,7 @@ package com.RP.ControleDeJornada.controller;
 
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
-import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.CustomResponse;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
@@ -11,7 +11,6 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

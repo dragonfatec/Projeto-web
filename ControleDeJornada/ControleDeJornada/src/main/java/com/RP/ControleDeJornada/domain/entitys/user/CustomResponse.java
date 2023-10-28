@@ -1,6 +1,6 @@
 package com.RP.ControleDeJornada.domain.entitys.user;
 
-import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
