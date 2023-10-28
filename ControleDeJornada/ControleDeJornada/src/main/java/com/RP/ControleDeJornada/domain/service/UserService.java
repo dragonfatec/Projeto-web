@@ -74,4 +74,6 @@ public class UserService {
         User user = userRepository.findByRegistration(registration);
         return  user;
     }
+
+
 }
