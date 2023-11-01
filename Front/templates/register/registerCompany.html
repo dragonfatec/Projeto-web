@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Client</title>
-    <link rel="stylesheet" href="../../static/css/styles.css">
+    <title>Register Company</title>
+    <link rel="stylesheet" href="../../static/css/template.css">
+    <link rel="stylesheet" href="../../static/css/regcompany.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="../../static/js/company/company.js" defer></script>
 </head>
@@ -69,6 +70,51 @@
               <!--    INICIO CONTEUDO ESPECIFICO -->
               <div class="col" id="conteudo-pagina">
 
+                <div class="container mt-3 registerclient">
+                    <form method="post" class="row g-3" id="form_client">
+                        <h1>Register Company</h1>
+                        <div class="col-md-6 titlelabel">
+                            <label for="cnpj" class="form-label">CNPJ</label>
+                            <input id="cnpj" name="cnpj" type="text" class="form-control" placeholder="11222333000110"
+                            style="width: 400px;" minlength="14" maxlength="18" required>
+                        </div>
+                        <div class="col-md-6 titlelabel">
+                            <label for="razaoSocial" class="form-label">Official Name</label>
+                            <input id="razaoSocial" name="razaoSocial" type="text" class="form-control" placeholder="Official name"
+                            style="width: 200px;" minlength="3" required>
+                        </div>
+                        <div class="col-md-6 titlelabel">
+                            <label for="nameCompany" class="form-label">Name Company</label>
+                            <input id="nameCompany" name="nameCompany" type="text" class="form-control" placeholder="Popular Name"
+                            style="width: 200px;" minlength="3" required>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+
+                    <div class="modal" tabindex="-1" id="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Saved successfully</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Success save company!</p>
+                                </div>
+                                    <div class="modal-footer">
+                                    <a href="../register/registerCompany.html" class="btn btn-secondary">Ok</a>
+                                    <a href="../consult/consultCompany.html" class="btn btn-primary">Consult</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
               </div>
 
                   <!-- FIM CONTEUDO ESPECIFICO -->
