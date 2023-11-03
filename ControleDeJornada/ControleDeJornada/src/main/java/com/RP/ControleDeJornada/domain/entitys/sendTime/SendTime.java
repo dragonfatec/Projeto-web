@@ -33,9 +33,11 @@ public class SendTime {
     private Integer budget1809;
     private Integer budget3000;
     private Integer budget3001;
-    private String justificativa;
+    private String justification;
     @Enumerated(EnumType.STRING)
     private TimeStatus status;
+    @Enumerated(EnumType.STRING)
+    private ApprovedStatus approvedStatus;
 
     public SendTime(@Valid ResgistrationSendTimeRecord dada){
         this.startDate = dada.startDate();
