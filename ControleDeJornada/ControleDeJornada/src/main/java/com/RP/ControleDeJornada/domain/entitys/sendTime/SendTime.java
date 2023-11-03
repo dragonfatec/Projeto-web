@@ -6,15 +6,13 @@ import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name =  "tb_sendtime")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class SendTime {
     @Id

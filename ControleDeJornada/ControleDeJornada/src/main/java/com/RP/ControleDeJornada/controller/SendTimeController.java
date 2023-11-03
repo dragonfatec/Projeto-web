@@ -2,17 +2,15 @@ package com.RP.ControleDeJornada.controller;
 
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
+import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
-import com.RP.ControleDeJornada.domain.entitys.user.CustomResponse;
-import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.SendTimeService;
-import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -23,15 +21,20 @@ public class SendTimeController {
     @Autowired
     private SendTimeService sendTimeService;
 
-    @GetMapping
-    public ResponseEntity<CustomResponse> formRegister() {
-        List<ResultCenter> rcs = sendTimeService.getAllResult();
-        List<User> users = sendTimeService.getAllUsers();
+    @GetMapping("/getClients")
+    public ResponseEntity<List<Client>> getClients() {
+        List<Client> clients = sendTimeService.getAllClients();
 
-        CustomResponse cr = new CustomResponse(users,rcs);
-
-        return ResponseEntity.ok(cr);
+        return ResponseEntity.ok(clients);
     }
+// PRECISA PRIMEIRO CORRIGIR O PROBLEMA DE RELACIONAMENTO ENTRE AS ENTIDADES PARA DPS REALIZAR ESTE MÉTODO
+//    @PostMapping("/getRCByClients")
+//    @Transactional
+//    public ResponseEntity<List<ResultCenter>> getRCByClients(@RequestBody String cnpj) {
+//        List<ResultCenter> rcs = sendTimeService.getRCByClients(cnpj);
+//
+//        return ResponseEntity.ok(rcs);
+//    }
 
     @GetMapping("/consult")
     public ResponseEntity<List<SendTime>> getSendTimes(){

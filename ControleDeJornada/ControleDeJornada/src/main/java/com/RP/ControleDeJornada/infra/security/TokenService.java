@@ -25,10 +25,11 @@ public class TokenService {
                     .withIssuer("Dragons")
                     .withSubject(user.getEmail())
                     .withClaim("jobrole", user.getJobrole().toString())
+                    .withClaim("registration",user.getRegistration().toString())
                     .withExpiresAt(expire())
                     .sign(algorithm);
         } catch (JWTCreationException exception){
-            throw new RuntimeException("Error to generated tocken:", exception);
+            throw new RuntimeException("Error to generated token:", exception);
         }
     }
 
@@ -42,15 +43,30 @@ public class TokenService {
             JWTVerifier verifier = JWT.require(algorithm)
                     .withIssuer("Dragons")
                     .build();
-            // Decodificar o token para obter as claims
+
             com.auth0.jwt.interfaces.DecodedJWT jwt = verifier.verify(token);
-            // Obter o valor do claim "jobrole"
+
             return jwt.getClaim("jobrole").asString();
         } catch (JWTVerificationException exception) {
-            // Tratar exceção, se necessário
-            return null;
+            throw new RuntimeException(exception);
         }
     }
+
+    public String extractRegistrationClaim(String token) {
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(secret);
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer("Dragons")
+                    .build();
+
+            com.auth0.jwt.interfaces.DecodedJWT jwt = verifier.verify(token);
+
+            return jwt.getClaim("registration").asString();
+        } catch (JWTVerificationException exception) {
+            throw new RuntimeException(exception);
+        }
+    }
+
     public String getSubject(String tokenJWT) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);

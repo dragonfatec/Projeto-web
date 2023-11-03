@@ -1,32 +1,33 @@
-package com.RP.ControleDeJornada.domain.entitys.relation.userResultCenter;
+package com.RP.ControleDeJornada.domain.entitys.relation.clientResulCenter;
 
+
+import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
-import com.RP.ControleDeJornada.domain.entitys.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "r_user_resultcenter")
-@Data
+@Table(name = "r_resultcenter_client")
 @NoArgsConstructor
-public class RelationUserRC {
+@Data
+public class RelationRCClient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Client client;
     @ManyToOne(fetch = FetchType.LAZY)
-    private ResultCenter rc;
+    private ResultCenter resultCenter;
     private LocalDate createDate;
 
-    public RelationUserRC(User user, ResultCenter rc){
-        this.user = user;
-        this.rc = rc;
+    public RelationRCClient(Client client, ResultCenter resultCenter){
+        this.client = client;
+        this.resultCenter = resultCenter;
         this.createDate = LocalDate.now();
     }
-
 
 }

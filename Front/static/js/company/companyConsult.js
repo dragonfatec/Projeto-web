@@ -18,17 +18,17 @@ async function getCompanys(){
     data.map((resp) => {
         const tr = document.createElement("tr");
         const nameCompany = document.createElement("td");
-        const razaoSocial = document.createElement("td");
+        const officialName = document.createElement("td");
         const cnpj = document.createElement("td");
         const status = document.createElement("td");
 
         nameCompany.innerText = resp.nameCompany;
-        razaoSocial.innerText = resp.razaoSocial;
+        officialName.innerText = resp.officialName;
         cnpj.innerText = resp.cnpj;
         status.innerText = resp.status;
 
         tr.appendChild(nameCompany);
-        tr.appendChild(razaoSocial);
+        tr.appendChild(officialName);
         tr.appendChild(cnpj);
         tr.appendChild(status);
         

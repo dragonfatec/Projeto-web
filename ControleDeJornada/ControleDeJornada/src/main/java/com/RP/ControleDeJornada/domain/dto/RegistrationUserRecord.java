@@ -13,7 +13,5 @@ public record RegistrationUserRecord(
         @NotBlank
         String password,
         @NotNull
-        JobRole jobrole,
-        @NotBlank
-        String codeRc) {
+        JobRole jobrole) {
 }
