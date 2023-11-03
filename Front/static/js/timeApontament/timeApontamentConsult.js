@@ -21,16 +21,20 @@ async function getTime(){
         const startDate = document.createElement("td");
         const finishDate = document.createElement("td");
         const typeSend = document.createElement("td");
+        const status = document.createElement("td");
 
         user.innerText = resp.user.name;
         startDate.innerText = resp.startDate;
         finishDate.innerText = resp.finishDate;
         typeSend.innerText = resp.typeSend;
+        status.innerText = resp.status;
+
 
         tr.appendChild(user);
         tr.appendChild(startDate);
         tr.appendChild(finishDate);
         tr.appendChild(typeSend);
+        tr.appendChild(status);
 
         table.appendChild(tr);
     })

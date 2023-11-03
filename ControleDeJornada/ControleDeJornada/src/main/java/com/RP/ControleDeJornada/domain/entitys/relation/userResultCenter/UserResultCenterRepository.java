@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserResultCenterRepository extends JpaRepository<RelationUserRC, CompoundKeyUserRC> {
+public interface UserResultCenterRepository extends JpaRepository<RelationUserRC, Integer> {
 }

@@ -4,36 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register User</title>
-    <link rel="icon" href="../../static/image/browser_icon.png">
-    <link rel="stylesheet" href="../../static/css/template.css">
-    <link rel="stylesheet" href="../../static/css/regUser.css">    
+    <link rel="stylesheet" href="../../static/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="../../static/js/user/user.js" defer></script>
 </head>
 <body>
-  <!-- BACKGROUND -->
-<div class="video-background-holder">
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="../../static/image/lines.mp4" type="video/mp4">
-    </video>
-<!-- FIM BACKGROUND -->
-
-<!-- INICIO PAGINA -->
-<div class="container-fluid conteudo-main">
-    <div class="row">
-        
-            <!-- INICIO MENU -->
-            <div class="col-sm-2" id="colnavbar">
-                <div class="sidemenu">
-                    <a class="" href="#">
-                        <img src="../../static/image/icon_2rp.png" class="icon2rp" alt="Home">
+    <div class="linebg">
+        <video autoplay muted loop id="linebg">
+            <source src="../../static/image/lines.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 px-sm-2 px-0 menuside">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                    <a href="../home/home.html">
+                        <img src="../../static/image/icon_2rp.png" class="image_icon" alt="Home">
                     </a>
-                    <nav class="navbar navbar-expand-lg navbar-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark ">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav flex-sm-column">
+                            <ul class="navbar-nav flex-sm-column mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
                                 </li>
@@ -66,80 +59,64 @@
                     </nav>
                 </div>
             </div>
-            <!-- FIM MENU -->
-
-            <!--    INICIO CONTEUDO ESPECIFICO -->
-            <div class="col" id="conteudo-pagina">
-
+            <div>
+                
                 <div class="container mt-3 registeruser">
-                    
+                    <h1 class="title">Register User</h1>
                     <form method="post" class="row g-3" id="form_user">
-
-                        <h1 class="title">Register User</h1>
-
-                        <div class="col-md-6 titlelabel">
+                        <div class="col-md-6">
                             <label for="name" class="form-label">Name</label>
                             <input id="name" name="name" type="text" class="form-control" placeholder="Name"
-                            style="width: 400px;">
+                            style="width: 400px;" required>
                         </div>
-                        <div class="col-md-6 titlelabel">
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" name="email" type="email" class="form-control" placeholder="name@email.com"
+                            style="width: 400px;" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" name="password" type="password" class="form-control" placeholder="*****"
+                            style="width: 400px;" required>
+                        </div>
+                        <div class="col-md-6">
                             <label for="jobrole" class="form-label">Jobrole</label>
                             <select id="jobrole" name="jobrole" class="form-select"
-                            style="width: 200px;">
+                            style="width: 200px;" required>
                                 <option value="null">Choose your jobrole</option>
                                 <option value="ADMINISTRADOR">Administrator</option>
                                 <option value="EMPLOYEE">Employee</option>
                                 <option value="MANAGER">Manager</option>
                             </select>
                         </div>
-                        <div class="col-12 titlelabel">
-                            <label for="codeRc" class="form-label">Result Center</label>
-                            <select id="codeRc" name="codeRc" class="form-select" style="width: 200px;">
-                                <option value="null">Choose your Result Center</option>
-                            </select>
-                        </div>
-
+                       
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Register</button>
                         </div>
                     </form>
                 </div>
+
+                <div class="modal" tabindex="-1" id="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Saved successfully</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>Success save User!</p>
+                            </div>
+                                <div class="modal-footer">
+                                <a href="registerUser.html" class="btn btn-secondary">Ok</a>
+                                <a href="../consult/consultUser.html" class="btn btn-primary">Consult</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div> 
-
-
-              </div>
-          </div>
-      </div>
-            </div>
-
-                <!-- FIM CONTEUDO ESPECIFICO -->
-            </div>
-        </div>
     </div>
-    
-
-</div>
-<!-- FIM PAGINA -->
-
-
- <!-- Arquivos JavaScript do Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
-
-    
-              
-
-                <!--                <div class="col-12">-->
-        <!--                    <div class="form-check">-->
-        <!--                        <input class="form-check-input" type="checkbox" id="gridCheck">-->
-        <!--                        <label class="form-check-label" for="gridCheck">-->
-        <!--                            Check me out-->
-        <!--                        </label>-->
-        <!--                    </div>-->
-        <!--                </div>-->

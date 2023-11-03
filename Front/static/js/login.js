@@ -18,17 +18,16 @@ async function save(email, password){
 
     if(response.ok){
         const json = await response.json();
-        const token = json.token;
-        const jobrole = json.jobrole;
        
-        localStorage.setItem('token', token);
-        localStorage.setItem('jobrole', jobrole);
+        localStorage.setItem('token', json.token);
+        localStorage.setItem('jobrole', json.jobrole);
+        localStorage.setItem('registration',json.registration);
 
         const tokenHeader = await fetch(url, 
             {
             method: "POST",
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + json.token
             }
         });
 

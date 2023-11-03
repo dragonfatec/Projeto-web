@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 public record ResgistrationSendTimeRecord(
         @NotNull
-        Integer idUser,
+        String registration,
         @NotNull
         @PastOrPresent
         LocalDateTime startDate,
@@ -19,4 +19,6 @@ public record ResgistrationSendTimeRecord(
         @NotNull
         TypeSend typeSend,
         @NotBlank
-        String codeRc){}
+        String resultCenters,
+        @NotBlank
+        String client){}

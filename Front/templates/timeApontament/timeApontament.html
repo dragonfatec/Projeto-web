@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../static/css/template.css">
     <link rel="stylesheet" href="../../static/css/timeApontament.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="../../static/js/timeApontament/timeApontament.js" defer></script>
 </head>
 
 <body>
@@ -73,12 +72,7 @@
                     <!-- INICIO CONTEUDO ESPECIFICO -->
                     <h1 class="mb-4">Time Apontament</h1>
                     <form method="post" id="form_time">
-                        <div class="form-group">
-                            <label for="idUser">User:</label>
-                            <select id="idUser" name="idUser" class="form-select" style="width: 200px;">
-                                <option value="null">Select User</option>
-                            </select>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="startDate">Start date time:</label>
                             <input id="startDate" name="startDate" type="datetime-local" class="form-control" style="width: 200px;" required>
@@ -96,15 +90,18 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="codeRc">Result Center:</label>
-                            <select id="codeRc" name="codeRc" class="form-select" style="width: 200px;" required>
+                            <label for="clients">Client:</label>
+                            <select id="clients" name="clients" class="form-select" style="width: 200px;" required>
+                             <option value="null">Select Client</option>
+                         </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resultCenters">Result Center:</label>
+                            <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
                                 <option value="null">Select Result Center</option>
                             </select>
                         </div>
-                       <div class="form-group">
-                           <label for="atividade">Client:</label>
-                           <input type="text" class="form-control" id="atividade" placeholder="Informe a atividade" style="width: 200px;">
-                       </div>
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </form>
 
@@ -135,11 +132,12 @@
 
 
 
-     <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
+     <!-- Arquivos JavaScript do Bootstrap (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-
+    <!-- JavaScript que adm os eventos -->
+    <script src="/static/js/timeApontament/timeApontament.js" type="module"></script>
 </body>
 </html>
