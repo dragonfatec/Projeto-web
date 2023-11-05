@@ -1,0 +1,22 @@
+h1 {
+    margin-top: 30px !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+#conteudo-pagina{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color:#fff;
+    text-shadow: 2px;
+}
+.tabelaapprove{
+    width: 90% !important;
+    margin: auto;
+    padding-top: 20px;
+}
+
+table caption {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+}

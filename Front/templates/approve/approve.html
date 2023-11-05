@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve</title>
     <link rel="icon" href="../../static/image/browser_icon.png">
     <link rel="stylesheet" href="../../static/css/template.css">
-    <link rel="stylesheet" href="../../static/css/consultresultcenter.css">
+    <link rel="stylesheet" href="../../static/css/approve.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="../../static/js/resultCenter/resultCenterConsult.js" defer></script>
+
 </head>
 <body>
-    <!-- Background -->
-    <div class="video-background-holder">
+      <!-- BACKGROUND -->
+      <div class="video-background-holder">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="../../static/image/lines.mp4" type="video/mp4">
         </video>
@@ -20,7 +21,8 @@
     <!-- INICIO PAGINA -->
     <div class="container-fluid conteudo-main">
         <div class="row">
-                <!-- INICIO MENU LATERAL -->
+            
+                <!-- INICIO MENU -->
                 <div class="col-sm-2" id="colnavbar">
                     <div class="sidemenu">
                         <a class="" href="#">
@@ -50,6 +52,15 @@
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Add Relation
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="../addRelation/UserRC.html">User with Result Center</a></li>
+                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Company with Result Center</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Consult
                                         </a>
                                         <ul class="dropdown-menu">
@@ -67,19 +78,23 @@
                         </nav>
                     </div>
                 </div>
-                <!-- FIM MENU LATERAL -->
+                <!-- FIM MENU -->
 
                 <div class="col" id="conteudo-pagina">
-                    <!-- INICIO CONTEUDO ESPECIFICO -->
-                    <div class="tabelausuario">
+                    <!--    INICIO CONTEUDO ESPECIFICO -->
+                    <div class="tabelaapprove">
                         <table class="table table-striped-columns caption-top">
-                            <caption>Result Center</caption>
+                            <caption>Approve Hours</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">Code Result Center</th>
-                                    <th scope="col">Result Center</th>
-                                    <th scope="col">Acronym</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Finish Date</th>
+                                    <th scope="col">Type Time</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col" class="active">
+                                        <input type="checkbox" class="select-all checkbox" name="select-all" />
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody id="tr">
@@ -87,23 +102,22 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- FIM CONTEUDO ESPECIFICO -->
                 </div>
 
-                    <!-- FIM CONTEUDO ESPECIFICO -->
                 </div>
             </div>
         </div>
-        <!-- FIM PAGINA -->
+        
 
     </div>
+<!-- FIM PAGINA -->
 
 
-
-     <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
+     <!-- Arquivos JavaScript do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-
-</body>
+</body> 
 </html>
