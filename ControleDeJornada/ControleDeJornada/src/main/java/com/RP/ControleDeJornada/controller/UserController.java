@@ -20,7 +20,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<ResultCenter>> formRegister(){
+    public ResponseEntity<List<ResultCenter>> getResultCenters(){
         List<ResultCenter> rcs = userService.findAllResultCenter();
         return ResponseEntity.ok(rcs);
     }

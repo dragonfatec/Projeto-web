@@ -2,7 +2,6 @@ package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
-import com.RP.ControleDeJornada.domain.entitys.relation.userResultCenter.RelationUserRC;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
@@ -35,14 +34,14 @@ public class UserService {
         if(data.jobRole() != null){
             user.setJobrole(data.jobRole());
         }
-        if (data.registration() != null && data.codeRc() != null){
-            User newUser = userRepository.getReferenceById(data.registration());
-            ResultCenter newRc = rcService.getReferenceById(data.codeRc());
-
-            RelationUserRC userResultCenter = new RelationUserRC(newUser, newRc);
-            List<RelationUserRC> list = new ArrayList<>();
-            list.add(userResultCenter);
-        }
+//        if (data.registration() != null && data.codeRc() != null){
+//            User newUser = userRepository.getReferenceById(data.registration());
+//            ResultCenter newRc = rcService.getReferenceById(data.codeRc());
+//
+//            RelationUserRC userResultCenter = new RelationUserRC(newUser, newRc);
+//            List<RelationUserRC> list = new ArrayList<>();
+//            list.add(userResultCenter);
+//        }
         if (data.status() != null){
             user.setStatus(data.status());
         }
@@ -75,6 +74,4 @@ public class UserService {
         User user = userRepository.findByRegistration(registration);
         return  user;
     }
-
-
 }

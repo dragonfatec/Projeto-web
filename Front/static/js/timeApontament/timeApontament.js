@@ -1,16 +1,12 @@
 import getClient from "./getClients.js";
-//import getRCByClient from "./getRCByClient.js";
-import getRCs from "../resultCenter/getRCs.js";
+import getRCByClient from "./getRCByClient.js";
 
 const url = "http://localhost:8080/sendtime";
 
 
 const selectClient = document.getElementById("clients");
 selectClient.addEventListener("click", eventUser => getClient(eventUser), { once: true });
-
-const selectRC = document.getElementById("resultCenters");
-selectRC.addEventListener("click", eventRc => getRCs(eventRc), { once : true});
-
+selectClient.addEventListener("change", eventGetRc => getRCByClient(eventGetRc, selectClient.value ,"resultCenters"));
 
 async function save(startDate, finishDate, typeSend, resultCenters, client){
     const response = await fetch(url, {

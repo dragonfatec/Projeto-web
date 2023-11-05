@@ -35,7 +35,7 @@ public class AuthenticationController {
         var jobrole = tokenService.extractJobRoleClaim(token);
         var resgitration = tokenService.extractRegistrationClaim(token);
         var tk = new TokenData(token, jobrole, resgitration);
-        System.out.println(tk);
+
         return ResponseEntity.ok(tk);
     }
 }

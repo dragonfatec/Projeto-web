@@ -2,7 +2,6 @@ package com.RP.ControleDeJornada.domain.entitys.user;
 
 import com.RP.ControleDeJornada.domain.Status;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.entitys.relation.userResultCenter.RelationUserRC;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -31,28 +30,25 @@ public class User implements UserDetails {
     private JobRole jobrole;
     @Enumerated(EnumType.STRING)
     private Status status;
-    private LocalDate createDate;
-    private LocalDate updateUser;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<RelationUserRC> relation;
+    private LocalDate createDate = LocalDate.now();
+    private LocalDate updateUser = LocalDate.now();
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<ResultCenter> resultCenters = new ArrayList<>();
 
     public User(RegistrationUserRecord data){
         this.name = data.name().toUpperCase().trim();
         this.email = data.email();
         this.jobrole = data.jobrole();
         this.status = Status.ACTIVE;
-        this.createDate = LocalDate.now();
-        this.updateUser = LocalDate.now();
     }
 
-    public void addRelation(RelationUserRC rurc){
-        rurc.setUser(this);
-        this.relation.add(rurc);
+    public void addResultCenter(ResultCenter resultCenter){
+        this.resultCenters.add(resultCenter);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.jobrole == JobRole.ADMINISTRADOR) {
+        if (this.jobrole == JobRole.ADMINISTRATOR) {
             return List.of(new SimpleGrantedAuthority("ROLE_ADMINISTRADOR"), new SimpleGrantedAuthority("ROLE_USER"));
         }else if (this.jobrole == JobRole.MANAGER){
             return List.of(new SimpleGrantedAuthority("ROLE_MANAGER"), new SimpleGrantedAuthority("ROLE_USER"));

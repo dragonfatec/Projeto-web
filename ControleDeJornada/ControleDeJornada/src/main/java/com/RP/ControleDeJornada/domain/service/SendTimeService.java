@@ -12,6 +12,7 @@ import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -52,15 +53,8 @@ public class SendTimeService {
         return sendTimes;
     }
 
-//    public List<ResultCenter> getRCByClients(String cnpj) {
-//        Client client = clientRepository.getReferenceById(cnpj);
-//        List<ResultCenter> rcs = new ArrayList<>();
-//        int value = client.getRelation().size();
-//        System.out.println(value);
-//        for (int i = value; i > 0; i--){
-//            rcs.add(client.getRelation().get(i).getResultCenter());
-//            System.out.println(rcs.size());
-//        }
-//        return rcs;
-//    }
+    public List<ResultCenter> getRCByClients(String cnpj) {
+        Client client = clientRepository.getReferenceById(cnpj);
+        return client.getResultCenter();
+    }
 }
