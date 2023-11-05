@@ -30,11 +30,11 @@ public class SendTime {
     private User user;
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
-    private Integer budget1601;
-    private Integer budget1602;
-    private Integer budget1809;
-    private Integer budget3000;
-    private Integer budget3001;
+    private double budget1601;
+    private double budget1602;
+    private double budget1809;
+    private double budget3000;
+    private double budget3001;
     private String justification;
     @Enumerated(EnumType.STRING)
     private TimeStatus status;
