@@ -1,9 +1,11 @@
 const url = "http://localhost:8080/rc/consult";
 
-const selectRC = document.getElementById("resultCenters");
 
-export default async function getResultCenter(eventRc){
+
+export default async function getResultCenter(eventRc, selectId){
     eventRc.preventDefault();
+
+    const selectRC = document.getElementById(selectId);
 
     const response = await fetch(url, 
         {

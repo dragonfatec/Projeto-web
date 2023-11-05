@@ -27,14 +27,6 @@ public class SendTimeController {
 
         return ResponseEntity.ok(clients);
     }
-// PRECISA PRIMEIRO CORRIGIR O PROBLEMA DE RELACIONAMENTO ENTRE AS ENTIDADES PARA DPS REALIZAR ESTE MÉTODO
-//    @PostMapping("/getRCByClients")
-//    @Transactional
-//    public ResponseEntity<List<ResultCenter>> getRCByClients(@RequestBody String cnpj) {
-//        List<ResultCenter> rcs = sendTimeService.getRCByClients(cnpj);
-//
-//        return ResponseEntity.ok(rcs);
-//    }
 
     @GetMapping("/consult")
     public ResponseEntity<List<SendTime>> getSendTimes(){
@@ -48,4 +40,13 @@ public class SendTimeController {
         sendTimeService.saveTime(data);
         return ResponseEntity.ok("success!");
     }
+
+    @PostMapping("/getRCByClients")
+    @Transactional
+    public ResponseEntity<List<ResultCenter>> getRCByClients(@RequestBody String cnpj) {
+        List<ResultCenter> rcs = sendTimeService.getRCByClients(cnpj);
+
+        return ResponseEntity.ok(rcs);
+    }
+
 }

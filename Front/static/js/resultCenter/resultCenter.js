@@ -18,11 +18,7 @@ async function save(codeRc, rc, acronym){
         $('#modal').modal('show');
     }else{
         window.alert(`Error to save ${resp.status}`);
-    }
-    
-})
-.catch(error => console.log(error));
-   
+    }})
 }
 
 const form = document.getElementById("form_rc");
@@ -37,4 +33,5 @@ async function getAttributes(evento){
    console.log(codeRc, rc, acronym);
    await save(codeRc, rc, acronym);
 }
+
 form.addEventListener("submit", evento => getAttributes(evento));
