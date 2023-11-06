@@ -16,10 +16,9 @@
         </video>
     <!-- FIM BACKGROUND -->
 
-    <!-- INICIO PAGINA -->
-    <div class="container-fluid conteudo-main">
-        <div class="row">
-            
+        <!-- INICIO PAGINA -->
+        <div class="container-fluid conteudo-main">
+            <div class="row">
                 <!-- INICIO MENU -->
                 <div class="col-sm-2" id="colnavbar">
                     <div class="sidemenu">
@@ -76,23 +75,62 @@
                         </nav>
                     </div>
                 </div>
-                <!-- FIM MENU -->
 
-                <!--    INICIO CONTEUDO ESPECIFICO -->
                 <div class="col" id="conteudo-pagina">
-  
-                </div>
+                    <div class="notification-card">
+                        <h2><b>Nome:</b> João da Silva</h2>
+                        <div class="details-container">
+                            <div class="details-left">
+                                <p><b>CR:</b> 12345</p>
+                                <p><b>Cliente:</b> Empresa XYZ</p>
+                            </div>
+                            <div class="details-right">
+                                <p><b>Data Inicial:</b> 2023-10-01</p>
+                                <p><b>Data Final:</b> 2023-10-15</p>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="close-button" title="Verificar depois">X</button>
+                            <button class="thumbs-up-button" title="Aprovar hora">👍</button>
+                            <button class="thumbs-down-button" title="Reprovar hora">👎</button>
+                        </div>
+                    </div>
 
-                    <!-- FIM CONTEUDO ESPECIFICO -->
+                    <div class="notification-card">
+                        <h2><b>Nome:</b> João não Silva</h2>
+                        <div class="details-container">
+                            <div class="details-left">
+                                <p><b>CR:</b> 12345</p>
+                                <p><b>Cliente:</b> Empresa XYZ</p>
+                            </div>
+                            <div class="details-right">
+                                <p><b>Data Inicial:</b> 2023-10-01</p>
+                                <p><b>Data Final:</b> 2023-10-15</p>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="close-button" title="Verificar depois">X</button>
+                            <button class="thumbs-up-button" title="Aprovar hora">👍</button>
+                            <button class="thumbs-down-button" title="Reprovar hora">👎</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        
-
-    </div>
+      </div>
 <!-- FIM PAGINA -->
 
+    <script>
+        const closeButtons = document.querySelectorAll('.close-button');
 
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const card = this.closest('.notification-card');
+                card.style.display = 'none';
+            });
+        });
+    </script>
      <!-- Arquivos JavaScript do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

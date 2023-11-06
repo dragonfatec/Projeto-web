@@ -88,3 +88,55 @@ li.nav-item {
 #colnavbar {
     padding-right: 0 !important;
 }
+
+.notification-card {
+    width: 40%;
+    height: 15%;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.notification-card h2 {
+    margin: 0;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details-left,
+.details-right {
+    flex: 1;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button,
+.thumbs-up-button,
+.thumbs-down-button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.thumbs-up-button:hover,
+.thumbs-down-button:hover {
+    background-color: #e0e0e0;
+}
