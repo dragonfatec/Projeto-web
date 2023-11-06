@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const data = {
+    labels: [], // Labels dos dados
+    datasets: [{
+      label: 'My First Dataset',
+      data: [], // Dados reais
+      backgroundColor: [
+        'rgb(200, 0, 0)',
+        'rgb(54, 0, 235)',
+        'rgb(255, 255, 0)',
+        'rgb(255, 150, 300)',
+        'rgb(0, 255, 0)'
+
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'doughnut', // Tipo de gráfico
+    data: data,
+  });
+
+  // Função para buscar dados do controlador Spring
+  function fetchChartData() {
+    const idUser = 1; // Substitua pelo ID do usuário desejado
+    fetch(`/${idUser}`)
+            .then(response => response.json())
+            .then(data => {
+              // Atualiza os dados do gráfico com os dados do controlador
+              myChart.data.labels = data.map(item => item.label);
+              myChart.data.datasets[0].data = data.map(item => item.value);
+              myChart.update(); // Atualiza o gráfico
+            })
+            .catch(error => {
+              console.error('Erro ao buscar dados do controlador:', error);
+            });
+  }
+
+
+  fetchChartData();
+</script>
+</body>
+</html>

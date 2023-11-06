@@ -1,5 +1,6 @@
 package com.RP.ControleDeJornada.domain.repository;
 
+import com.RP.ControleDeJornada.domain.dto.ChartDataDTO;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,15 +16,19 @@ public interface SendTypeRepository extends JpaRepository<SendTime, Integer> {
 
     List<SendTime> findByUser(User user);
 
-    @Query("SELECT " +
-                "sum(s.budget1601) as b1, " +
-                "sum (s.budget1602) as b2, " +
-                "sum(s.budget3000) as b3, " +
-                "sum(s.budget1809) as b4, " +
-                "sum(s.budget3001) as b5 " +
-            "FROM " +
-                "SendTime s " +
-            "WHERE " +
-                "s.user = :user")
-    List<SendTime> findSendTimesByUser(@Param("user") User user);
+    @Query("SELECT 'Budget 1601', SUM(s.budget1601) " +
+            "FROM SendTime s WHERE s.user = :user " +
+            "UNION " +
+            "SELECT 'Budget 1602', SUM(s.budget1602) " +
+            "FROM SendTime s WHERE s.user = :user " +
+            "UNION " +
+            "SELECT 'Budget 3000', SUM(s.budget3000) " +
+            "FROM SendTime s WHERE s.user = :user " +
+            "UNION " +
+            "SELECT 'Budget 1809', SUM(s.budget1809) " +
+            "FROM SendTime s WHERE s.user = :user " +
+            "UNION " +
+            "SELECT 'Budget 3001', SUM(s.budget3001) " +
+            "FROM SendTime s WHERE s.user = :user")
+    List<Object[]> findSendTimesByUser(@Param("user") User user);
 }
