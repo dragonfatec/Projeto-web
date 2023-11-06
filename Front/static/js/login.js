@@ -14,23 +14,26 @@ async function save(email, password){
             email:email,
             password: password
         })
-    }).catch(window.alert("Error to login, verify all informations!"));
+    })
 
     if(response.ok){
         const json = await response.json();
-        const token = json.token;
-        
-        localStorage.setItem('token', token);
+       
+        localStorage.setItem('token', json.token);
+        localStorage.setItem('jobrole', json.jobrole);
+        localStorage.setItem('registration',json.registration);
 
         const tokenHeader = await fetch(url, 
             {
             method: "POST",
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + json.token
             }
         });
 
         return window.location.href = "../../templates/home/home.html";
+    }else{
+        window.alert("Error to login, verify all informations!")
     }
 }
 

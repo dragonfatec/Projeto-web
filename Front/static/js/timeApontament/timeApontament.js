@@ -1,51 +1,27 @@
+import getClient from "./getClients.js";
+import getRCByClient from "./getRCByClient.js";
+
 const url = "http://localhost:8080/sendtime";
 
-const selectUser = document.getElementById("idUser");
-const selectRC =document.getElementById("codeRc");
 
+const selectClient = document.getElementById("clients");
+selectClient.addEventListener("click", eventUser => getClient(eventUser), { once: true });
+selectClient.addEventListener("change", eventGetRc => getRCByClient(eventGetRc, selectClient.value ,"resultCenters"));
 
-async function getObjects(eventUser){
-    eventUser.preventDefault();
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    data.user.map((obj) =>{
-        const optionUser = document.createElement("option");
-
-        optionUser.innerText = obj.name
-        optionUser.value = obj.id
-
-        selectUser.appendChild(optionUser);
-    });
-
-    data.rcs.map((obj) =>{
-       
-        const optionRC = document.createElement("option");
-        optionRC.innerText = obj.rc;
-        optionRC.value = obj.codeRc;
-
-        selectRC.appendChild(optionRC);
-    });
-}
-
-selectUser.addEventListener("click", eventUser => getObjects(eventUser), { once: true });
-
-const form = document.getElementById("form_time");
-
-async function save(idUser, startDate, finishDate, typeSend, codeRc){
+async function save(startDate, finishDate, typeSend, resultCenters, client){
     const response = await fetch(url, {
         method: "POST",
         headers: {
             "Content-type": "application/json",
-            "Authorization": `Bearer ` + localStorage.getItem('token')
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({
-            idUser: idUser,
+            registration: localStorage.getItem("registration"),
             startDate: startDate,
             finishDate: finishDate,
             typeSend: typeSend,
-            codeRc: codeRc
+            resultCenters: resultCenters,
+            client: client
         })
     }).then(resp => {
 
@@ -58,20 +34,20 @@ async function save(idUser, startDate, finishDate, typeSend, codeRc){
         }
     })
     .catch(error => console.log(error))
-    
-};
+}
 
 async function getForm(eventSave){
     eventSave.preventDefault();
 
-    const idUser = document.getElementById("idUser").value;
     const startDate = document.getElementById("startDate").value;
     const finishDate = document.getElementById("finishDate").value;
     const typeSend = document.getElementById("typeSend").value;
-    const codeRc = document.getElementById("codeRc").value;
+    const resultCenters = document.getElementById("resultCenters").value;
+    const client = document.getElementById("clients").value;
 
-    await save(idUser, startDate,finishDate,typeSend,codeRc);
-    console.log(idUser, startDate,finishDate,typeSend,codeRc,);
+    await save(startDate,finishDate,typeSend,resultCenters,client);
 }
 
+
+const form = document.getElementById("form_time");
 form.addEventListener("submit", eventSave => getForm(eventSave));

@@ -1,6 +1,7 @@
 package com.RP.ControleDeJornada.domain.entitys.user;
 
-import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.client.Client;
+import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class CustomResponse {
-    private List<User> user;
+    private List<Client> clients;
     private List<ResultCenter> rcs;
 }

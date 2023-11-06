@@ -2,14 +2,15 @@ package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
-import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
-
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,10 +20,12 @@ public class UserService {
     @Autowired
     private RcService rcService;
 
+    public static void main(String[] args) {
+        System.out.println(BCrypt.hashpw("admin",BCrypt.gensalt()));
+    }
+
     public void register(RegistrationUserRecord data){
         User user = new User(data);
-        ResultCenter rc = rcService.findById(data.codeRc());
-        user.setResultCenter(rc);
 
         String passwordCript = BCrypt.hashpw(data.password(),BCrypt.gensalt());
         user.setPassword(passwordCript);
@@ -35,13 +38,25 @@ public class UserService {
         if(data.jobRole() != null){
             user.setJobrole(data.jobRole());
         }
-        if (data.codeRc() != null){
-            ResultCenter resultCenter = rcService.findById(data.codeRc());
-            user.setResultCenter(resultCenter);
-        }
+//        if (data.registration() != null && data.codeRc() != null){
+//            User newUser = userRepository.getReferenceById(data.registration());
+//            ResultCenter newRc = rcService.getReferenceById(data.codeRc());
+//
+//            RelationUserRC userResultCenter = new RelationUserRC(newUser, newRc);
+//            List<RelationUserRC> list = new ArrayList<>();
+//            list.add(userResultCenter);
+//        }
         if (data.status() != null){
             user.setStatus(data.status());
         }
+        if (data.name() != null){
+            user.setName(data.name());
+        }
+        if (data.password() != null){
+            String passwordCript = BCrypt.hashpw(data.password(),BCrypt.gensalt());
+            user.setPassword(passwordCript);
+        }
+        user.setUpdateUser(LocalDate.now());
         userRepository.save(user);
     }
 
@@ -57,5 +72,10 @@ public class UserService {
     public List<User> findAllUsers() {
         List<User> users = userRepository.findAll();
         return users;
+    }
+
+    public User findByRegistration(Integer registration) {
+        User user = userRepository.findByRegistration(registration);
+        return  user;
     }
 }

@@ -32,6 +32,10 @@ public class AuthenticationController {
         var authentication = authenticationManager.authenticate(authenticationToken);
         var token = tokenService.tokenGeneration((User) authentication.getPrincipal());
 
-        return ResponseEntity.ok(new TokenData(token));
+        var jobrole = tokenService.extractJobRoleClaim(token);
+        var resgitration = tokenService.extractRegistrationClaim(token);
+        var tk = new TokenData(token, jobrole, resgitration);
+
+        return ResponseEntity.ok(tk);
     }
 }

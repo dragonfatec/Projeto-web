@@ -1,7 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
-import com.RP.ControleDeJornada.domain.entitys.ResultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.UserService;
 import jakarta.validation.Valid;
@@ -20,7 +20,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<ResultCenter>> formRegister(){
+    public ResponseEntity<List<ResultCenter>> getResultCenters(){
         List<ResultCenter> rcs = userService.findAllResultCenter();
         return ResponseEntity.ok(rcs);
     }
@@ -34,6 +34,7 @@ public class UserController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
-        return ResponseEntity.ok("Sucesso!");
+        return ResponseEntity.ok().build();
     }
 }
+

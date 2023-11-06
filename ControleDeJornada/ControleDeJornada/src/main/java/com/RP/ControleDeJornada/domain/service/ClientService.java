@@ -3,6 +3,7 @@ package com.RP.ControleDeJornada.domain.service;
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.repository.ClientRepository;
+import com.RP.ControleDeJornada.domain.repository.RcRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,10 @@ public class ClientService {
     public List<Client> findAllClients() {
         List<Client> clients = clientRepository.findAll();
         return clients;
+    }
+
+    public Client getReferenceById(String cnpj) {
+        Client client = clientRepository.getReferenceById(cnpj);
+        return client;
     }
 }

@@ -1,14 +1,15 @@
-package com.RP.ControleDeJornada.domain.entitys.ResultCenter;
+package com.RP.ControleDeJornada.domain.entitys.resultCenter;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
 import com.RP.ControleDeJornada.domain.Status;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_result_center")
-@Getter
+@Data
 @NoArgsConstructor
 public class ResultCenter {
 
@@ -18,6 +19,8 @@ public class ResultCenter {
     private String acronym;
     @Enumerated(EnumType.STRING)
     private Status status;
+    private LocalDate createDate = LocalDate.now();
+    private LocalDate updateRC = LocalDate.now();
 
     public ResultCenter(RegistrationTeamRecord data){
         this.codeRc = data.codeRc().toUpperCase().trim();
@@ -25,4 +28,5 @@ public class ResultCenter {
         this.acronym = data.acronym().toUpperCase().trim();
         this.status = Status.ACTIVE;
     }
+
 }
