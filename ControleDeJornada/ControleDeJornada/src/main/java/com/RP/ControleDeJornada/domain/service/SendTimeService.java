@@ -3,6 +3,7 @@ package com.RP.ControleDeJornada.domain.service;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.sendTime.Parameterization;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.ClientRepository;
@@ -35,6 +36,12 @@ public class SendTimeService {
         time.setUser(user);
         Client client = clientRepository.getReferenceById(data.client());
         time.setClient(client);
+        Parameterization parameterization = new Parameterization(data.startDate(), data.finishDate());
+        time.setBudget1601(parameterization.getBudget1601());
+        time.setBudget1602(parameterization.getBudget1602());
+        time.setBudget1809(parameterization.getBudget1809());
+        time.setBudget3000(parameterization.getBudget3000());
+        time.setBudget3001(parameterization.getBudget3001());
         repository.save(time);
     }
 

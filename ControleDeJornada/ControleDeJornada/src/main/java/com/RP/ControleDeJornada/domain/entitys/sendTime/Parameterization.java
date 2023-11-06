@@ -1,7 +1,6 @@
 package com.RP.ControleDeJornada.domain.entitys.sendTime;
 
 import java.time.*;
-import java.util.Date;
 import lombok.Getter;
 
 @Getter
@@ -10,9 +9,10 @@ public class Parameterization {
     private int minutesDayTime, minutesNightTime;
     private int startWorkTime = 8;
     private int endWorkTime = 17;
-    private double v1601, v1602, v3000, v3001, v1809;
 
-    Parameterization(){
+    private double budget1601, budget1602, budget3000, budget3001, budget1809;
+
+    public Parameterization(LocalDateTime startDate, LocalDateTime endDate){
         this.startDate = takeWorkPeriod(startDate, true);
         this.endDate = takeWorkPeriod(endDate, false);
         calculateMinutes();
@@ -51,13 +51,13 @@ public class Parameterization {
         double hoursLeft = (double) (allTimeWorkingInMinutes > min ? allTimeWorkingInMinutes - min : 0) / 60;
 
         if(isDayTime){
-            this.v1601 = hours;
-            this.v1602 = hoursLeft;
+            this.budget1601 = hours;
+            this.budget1602 = hoursLeft;
         }
         else{
-            this.v3000 = hours * nightHour;
-            this.v3001 = hoursLeft * nightHour;
-            this.v1809 = (hours + hoursLeft) * nightHour;
+            this.budget3000 = hours * nightHour;
+            this.budget3001 = hoursLeft * nightHour;
+            this.budget1809 = (hours + hoursLeft) * nightHour;
         }
     }
 

@@ -20,6 +20,10 @@ public class UserService {
     @Autowired
     private RcService rcService;
 
+    public static void main(String[] args) {
+        System.out.println(BCrypt.hashpw("admin",BCrypt.gensalt()));
+    }
+
     public void register(RegistrationUserRecord data){
         User user = new User(data);
 
