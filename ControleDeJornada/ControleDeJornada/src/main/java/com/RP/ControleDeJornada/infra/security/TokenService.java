@@ -34,7 +34,7 @@ public class TokenService {
     }
 
     private Instant expire(){
-        return LocalDateTime.now().plusMinutes(30).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(2l).toInstant(ZoneOffset.of("-03:00"));
     }
 
     public String extractJobRoleClaim(String token) {

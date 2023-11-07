@@ -1,6 +1,7 @@
 package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
+import com.RP.ControleDeJornada.domain.dto.ShowSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.Parameterization;
@@ -55,9 +56,23 @@ public class SendTimeService {
         return rcs;
     }
 
-    public List<SendTime> findAllSendTime() {
+    public List<ShowSendTimeRecord> findAllSendTime() {
         List<SendTime> sendTimes = repository.findAll();
-        return sendTimes;
+        List<ShowSendTimeRecord> sendTimeDTO = new ArrayList<>();
+        for(SendTime sendTime : sendTimes ){
+            ShowSendTimeRecord dto = new ShowSendTimeRecord(
+                    sendTime.getUser().getName(),
+                    sendTime.getStartDate(),
+                    sendTime.getFinishDate(),
+                    sendTime.getTypeSend().toString(),
+                    sendTime.getStatus().toString(),
+                    sendTime.getApprovedStatus().toString(),
+                    sendTime.getJustification());
+
+            sendTimeDTO.add(dto);
+        }
+
+        return sendTimeDTO;
     }
 
     public List<ResultCenter> getRCByClients(String cnpj) {

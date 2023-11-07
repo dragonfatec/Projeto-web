@@ -2,6 +2,7 @@ package com.RP.ControleDeJornada.controller;
 
 
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
+import com.RP.ControleDeJornada.domain.dto.ShowSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
@@ -29,8 +30,8 @@ public class SendTimeController {
     }
 
     @GetMapping("/consult")
-    public ResponseEntity<List<SendTime>> getSendTimes(){
-        List<SendTime> sendTimes = sendTimeService.findAllSendTime();
+    public ResponseEntity<List<ShowSendTimeRecord>> getSendTimes(){
+        List<ShowSendTimeRecord> sendTimes = sendTimeService.findAllSendTime();
         return ResponseEntity.ok(sendTimes);
     }
 
