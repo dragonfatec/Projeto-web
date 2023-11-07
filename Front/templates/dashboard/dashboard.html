@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../../static/css/dashboard.css">
 </head>
 <body>
 
@@ -14,10 +15,10 @@
 
 <script>
   const data = {
-    labels: [], // Labels dos dados
+    labels: ['verba 1601', 'verba 1602', 'verba 3000', 'verba 1809', 'verba 3001'],
     datasets: [{
-      label: 'My First Dataset',
-      data: [], // Dados reais
+      label: 'Dashboard de verbas',
+      data: [], 
       backgroundColor: [
         'rgb(200, 0, 0)',
         'rgb(54, 0, 235)',
@@ -26,7 +27,7 @@
         'rgb(0, 255, 0)'
 
       ],
-      hoverOffset: 4
+      hoverOffset: 5
     }]
   };
 
@@ -36,10 +37,12 @@
     data: data,
   });
 
-  // Função para buscar dados do controlador Spring
+
   function fetchChartData() {
-    const idUser = 1; // Substitua pelo ID do usuário desejado
-    fetch(`/${idUser}`)
+    const idUser = localStorage.getItem("registration"); // Substitua pelo ID do usuário desejado
+    fetch(`http://localhost:8080/dashboard/${idUser}`, {
+      headers: {"Authorization" : 'Bearer ' + localStorage.getItem('token')}
+    })
             .then(response => response.json())
             .then(data => {
               // Atualiza os dados do gráfico com os dados do controlador
