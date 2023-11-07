@@ -57,7 +57,7 @@ public class Parameterization {
         else{
             this.budget3000 = hours * nightHour;
             this.budget3001 = hoursLeft * nightHour;
-            this.budget1809 = (hours + hoursLeft) * nightHour;
+//            this.budget1809 = (hours + hoursLeft) * nightHour;
         }
     }
 
