@@ -14,29 +14,58 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 </br>
 
 
+![Backlog](https://github.com/dragonfatec/Projeto-web/assets/94874696/038072e3-d06f-4b44-b0b5-45d83e41e8e5)
+
+<div align="center"> Sprint 1 </div>
 <br>
 <div align="center">
 
-![Backlog](https://github.com/dragonfatec/Projeto-web/assets/94874696/038072e3-d06f-4b44-b0b5-45d83e41e8e5)
-
 | Prioridade | US | Sprint |
 | :-: | :----------: | :---: |
-| 1 | <a href="https://github.com/dragonfatec/Projeto-web/issues/34"> Como Admin quero cadastrar usuários, para que eles possam poder acessar o nosso site e lançar suas horas extras e sobreaviso </a> | Sprint 1 |
-| 2 | <a href="https://github.com/dragonfatec/Projeto-web/issues/35"> Como Admin quero cadastrar clientes, para que O usuario possa identificar qual cliente o acionou </a> | Sprint 1 |
-| 3 | <a href="https://github.com/dragonfatec/Projeto-web/issues/36"> Como Admin quero cadastrar CR, para que cada cliente tenha um grupo de pessoas para resolver problemas </a> | Sprint 1 |
-| 4 | <a href="https://github.com/dragonfatec/Projeto-web/issues/16"> Como Admin quero cadastrar usuários, CR e clientes. Assim eles vão poder acessar o nosso site e lançar suas horas extras e sobreaviso </a> | Sprint 1 |
-| 5 | <a href="https://github.com/dragonfatec/Projeto-web/issues/10"> Como Colaborador/Gerente quero poder lançar minhas horas extras e sobreaviso, para realizar o lançamento quero uma tela com as informações necessarias </a> | Sprint 2 |
-| 6 | <a href="https://dragonprojetos.atlassian.net/browse/DA-17"> Como Colaborador/Gerente quero poder lançar as minhas horas, para que meu supervisor possa aprovar/reprovar </a> | Sprint 2 |
-| 7 | <a href="https://dragonprojetos.atlassian.net/browse/DA-18"> Como Colaborador/Gerente quero poder ver o status das minhas horas extras/sobreaviso, assim poderei saber se foram aprovadas ou reprovadas </a> | Sprint 2 |
-| 8 | <a href=""> Como Admin quero uma parametrização, para que na hora do pagamento eu tenha todas as informações das horas e em quais verbas estão </a> | Sprint 2 |
-| 9 | <a href="https://dragonprojetos.atlassian.net/browse/DA-24"> Como Usuário quero poder Logar no sistema para ter acesso a todas as funcionalidades de acordo com o meu cargo </a> | Sprint 2 |
-| 10 | <a href="https://dragonprojetos.atlassian.net/browse/DA-30"> Como Gerente/Admin quero poder aprovar as horas extras e sobreaviso dos meus colaboradores </a> | Sprint 3 |
-| 11 | <a href="https://dragonprojetos.atlassian.net/browse/DA-32"> Como Admin quero poder editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 3 |
-| 12 | <a href="https://dragonprojetos.atlassian.net/browse/DA-38"> Como Admin quero poder visualizar em um dashboard as horas registradas, para fazer uma analise de como os colaboradores estão trabalhando e assim conseguir aplicar alguma estratégia de negócio </a> | Sprint 3 |
-| 13 | <a href="https://dragonprojetos.atlassian.net/browse/DA-50"> Como Admin quero poder extrair um relatório, para que eu consiga analisar/monitorar os lançamentos de horas </a> | Sprint 4 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-2"> Como Admin quero poder cadastrar usuários, para que eles possam poder acessar o nosso site e lançar suas horas extras e sobreaviso </a> | Sprint 1 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-3"> Como Admin quero poder cadastrar clientes, para que O usuario possa identificar qual cliente o acionou </a> | Sprint 1 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-7"> Como Admin quero poder cadastrar um CR, para que cada cliente tenha um grupo de pessoas para resolver problemas </a> | Sprint 1 |
 
 </div>
 </br>
+
+<div align="center"> Sprint 2 </div>
+<br>
+<div align="center">
+
+| Prioridade | US | Sprint |
+| :-: | :----------: | :---: |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-17"> Como Colaborador/Gerente quero poder lançar as minhas horas, para que meu supervisor possa aprovar/reprovar </a> | Sprint 2 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-18"> Como Colaborador/Gerente quero poder ver o status das minhas horas extras/sobreaviso, assim poderei saber se foram aprovadas ou reprovadas </a> | Sprint 2 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-24"> Como Usuário quero poder Logar no sistema para ter acesso a todas as funcionalidades de acordo com o meu cargo </a> | Sprint 2 |
+
+</div>
+</br>
+
+<div align="center"> Sprint 3 </div>
+<br>
+<div align="center">
+
+| Prioridade | US | Sprint |
+| :-: | :----------: | :---: |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-30"> Como Gerente/Admin quero poder aprovar as horas extras e sobreaviso dos meus colaboradores </a> | Sprint 3 |
+
+</div>
+</br>
+
+<div align="center"> Sprint 4 </div>
+<br>
+<div align="center">
+
+| Prioridade | US | Sprint |
+| :-: | :----------: | :---: |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-32"> Como Admin quero poder editar as informações dos usuários, clientes e CR para não precisar apagar e criar de novo se tiver alguma mudança nas informações </a> | Sprint 4 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-38"> Como Admin quero poder visualizar em um dashboard as horas registradas, para fazer uma analise de como os colaboradores estão trabalhando e assim conseguir aplicar alguma estratégia de negócio </a> | Sprint 4 |
+|  | <a href="https://dragonprojetos.atlassian.net/browse/DA-50"> Como Admin quero poder extrair um relatório, para que eu consiga analisar/monitorar os lançamentos de horas </a> | Sprint 4 |
+
+</div>
+</br>
+
 
 ![Mockup](https://github.com/dragonfatec/Projeto-web/assets/94874696/7ab90f1c-7cb0-42a8-9f45-41d55c9f3671)
 <div align="center"> Mockup </div>
