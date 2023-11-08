@@ -49,6 +49,7 @@ Acesso de administrador para o departamento de RH, gestor para aprovação e lan
 | Prioridade | US | Sprint |
 | :-: | :----------: | :---: |
 | 1 | <a href="https://dragonprojetos.atlassian.net/browse/DA-30"> Como Gerente/Admin quero poder aprovar as horas extras e sobreaviso dos meus colaboradores </a> | Sprint 3 |
+| 2 | <a href="https://dragonprojetos.atlassian.net/browse/DA-51"> Visualização das notificações quando lançada uma hora extra/sobreaviso </a> | Sprint 3 |
 
 </div>
 </br>
