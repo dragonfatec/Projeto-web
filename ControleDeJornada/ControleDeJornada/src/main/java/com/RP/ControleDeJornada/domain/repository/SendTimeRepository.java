@@ -1,16 +1,14 @@
 package com.RP.ControleDeJornada.domain.repository;
 
-import com.RP.ControleDeJornada.domain.dto.ChartDataDTO;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
 import java.util.List;
 import java.util.Optional;
 
-public interface SendTypeRepository extends JpaRepository<SendTime, Integer> {
+public interface SendTimeRepository extends JpaRepository<SendTime, Integer> {
 
     Optional<SendTime> findById(Integer idTime);
 
@@ -31,4 +29,10 @@ public interface SendTypeRepository extends JpaRepository<SendTime, Integer> {
             "SELECT 'Budget 3001', SUM(s.budget3001) " +
             "FROM SendTime s WHERE s.user = :user")
     List<Object[]> findSendTimesByUser(@Param("user") User user);
+
+    @Query(value = "select * from tb_sendtime where team_code_rc = :codeRc", nativeQuery = true)
+    List<SendTime> findAllByTeam(String codeRc);
+
+    @Query(value = "select * from tb_sendtime tbs where tbs.user_registration = :registration and tbs.team_code_rc = :codeRc", nativeQuery = true)
+    List<SendTime> getTime(Integer registration, String codeRc);
 }

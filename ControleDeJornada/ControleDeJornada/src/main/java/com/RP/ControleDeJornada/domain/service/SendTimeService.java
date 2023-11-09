@@ -9,25 +9,29 @@ import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.ClientRepository;
 import com.RP.ControleDeJornada.domain.repository.RcRepository;
-import com.RP.ControleDeJornada.domain.repository.SendTypeRepository;
+import com.RP.ControleDeJornada.domain.repository.SendTimeRepository;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
 public class SendTimeService {
 
     @Autowired
-    private SendTypeRepository repository;
+    private SendTimeRepository repository;
     @Autowired
     private RcRepository rcService;
     @Autowired
     private ClientRepository clientRepository;
     @Autowired
     private UserRepository userService;
+    @Autowired
+    private EntityManager em;
 
     public void saveTime(ResgistrationSendTimeRecord data) {
         SendTime time = new SendTime(data);
@@ -78,5 +82,36 @@ public class SendTimeService {
     public List<ResultCenter> getRCByClients(String cnpj) {
         Client client = clientRepository.getReferenceById(cnpj);
         return client.getResultCenter();
+    }
+
+    public List<SendTime> getSendTimeById(Integer registration) {
+        List<SendTime> list = repository.findAllById(Collections.singleton(registration));
+        return list;
+    }
+
+    public List<SendTime> getSendTimeByManagerTeam(Integer registration) {
+        User user = userService.getReferenceById(registration);
+        List<SendTime> list = new ArrayList<>();
+        for( ResultCenter rc : user.getResultCenters()){
+            // precisa verificar se adiciona ou sobre-escreve
+            list = repository.findAllByTeam(rc.getCodeRc());
+        }
+        return list;
+    }
+
+    public List<SendTime> getAllSendTime() {
+        List<SendTime> list = repository.findAll();
+        return list;
+    }
+
+    public List<SendTime> getSendTimeByResultCenter(String codeRc) {
+        //ResultCenter rc = rcService.getReferenceById(codeRc);
+        List<SendTime> sendTimes = repository.findAllByTeam(codeRc);
+        return  sendTimes;
+    }
+
+    public List<SendTime> getSendTimeByUserResultCenter(Integer registration, String codeRc) {
+        List<SendTime> sendTimes = repository.getTime(registration, codeRc);
+        return sendTimes;
     }
 }

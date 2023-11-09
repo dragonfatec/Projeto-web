@@ -78,4 +78,9 @@ public class UserService {
         User user = userRepository.findByRegistration(registration);
         return  user;
     }
+
+    public User getReferenceById(Integer register) {
+        User user = userRepository.getReferenceById(register);
+        return user;
+    }
 }

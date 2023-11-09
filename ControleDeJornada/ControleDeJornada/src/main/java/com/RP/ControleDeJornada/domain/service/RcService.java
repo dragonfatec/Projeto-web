@@ -34,4 +34,6 @@ public class RcService {
         ResultCenter rc = rcRepository.getReferenceById(codeRc);
         return rc;
     }
+
+
 }

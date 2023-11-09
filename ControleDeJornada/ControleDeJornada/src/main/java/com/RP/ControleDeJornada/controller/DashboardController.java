@@ -2,7 +2,7 @@ package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.ChartDataDTO;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
-import com.RP.ControleDeJornada.domain.repository.SendTypeRepository;
+import com.RP.ControleDeJornada.domain.repository.SendTimeRepository;
 import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import java.util.List;
 public class DashboardController {
 
     @Autowired
-    SendTypeRepository str;
+    SendTimeRepository str;
     @Autowired
     UserRepository ur;
 
