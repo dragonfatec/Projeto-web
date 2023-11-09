@@ -4,7 +4,7 @@ import com.RP.ControleDeJornada.domain.dto.ApprovedDTO;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.ApprovedStatus;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.TimeStatus;
-import com.RP.ControleDeJornada.domain.repository.SendTypeRepository;
+import com.RP.ControleDeJornada.domain.repository.SendTimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ApprovedService {
 
     @Autowired
-    private SendTypeRepository sendTypeRepository;
+    private SendTimeRepository sendTypeRepository;
     public ResponseEntity approvedHoursManager(Integer id, ApprovedDTO data ) {
         Optional<SendTime> hours = sendTypeRepository.findById(id);
         if (hours.isPresent()) {

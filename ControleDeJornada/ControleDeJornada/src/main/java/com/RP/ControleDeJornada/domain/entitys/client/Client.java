@@ -24,7 +24,7 @@ public class Client {
     private Status status;
     private LocalDate createDate = LocalDate.now();
     private LocalDate updateClient = LocalDate.now();
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     private List<ResultCenter> resultCenter = new ArrayList<>();
 
     public Client (RegistrationClientRecord data){

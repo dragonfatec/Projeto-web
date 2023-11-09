@@ -86,15 +86,25 @@
                 <div class="col" id="conteudo-pagina">
                     <!-- INICIO CONTEUDO ESPECIFICO -->
                     <div class="tabelaapontament">
+
+                        <!-- FILTRO DA TABELA -->
+                        <select id="select">
+                            <option>Selecionar</option>
+                        </select>
+                        <button id="consult">Consultar</button>
+
+                        <!-- INICIO DA TABELA -->
                         <table class="table table-striped-columns caption-top">
                             <caption>Time Apontament</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">User</th>
-                                    <th scope="col">Start Date</th>
-                                    <th scope="col">Finish Date</th>
-                                    <th scope="col">Type Time</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Data Inicial</th>
+                                    <th scope="col">Data Final</th>
+                                    <th scope="col">Tipo de Hora</th>
+                                    <th scope="col">Status da Hora</th>
+                                    <th scope="col">Quem aprovou</th>
+                                    <th scope="col">Justificativa</th>
                                 </tr>
                             </thead>
                             <tbody id="tr">

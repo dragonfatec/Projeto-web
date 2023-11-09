@@ -26,11 +26,11 @@ public class SendTime {
     private LocalDateTime finishDate;
     @Enumerated(EnumType.STRING)
     private TypeSend typeSend;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private ResultCenter team;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private User user;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Client client;
     private double budget1601;
     private double budget1602;
