@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Empresa</title>
+    <title>Cadastrar Cliente</title>
     <link rel="icon" href="../../static/image/browser_icon.png">
     <link rel="stylesheet" href="../../static/css/template.css">
     <link rel="stylesheet" href="../../static/css/regcompany.css">
@@ -49,7 +49,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../register/registerUser.html">Usuário</a></li>
                                         <li><a class="dropdown-item" href="../register/registerRC.html">Centro de Resultado</a></li>
-                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Empresa</a></li>
+                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Cliente</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown" id="addRelation">
@@ -58,7 +58,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../addRelation/UserRC.html">Usuário e Centro de Resultado</a></li>
-                                        <li><a class="dropdown-item" href="../addRelation/clientRC.html">Empresa e Centro de Resultado</a></li>
+                                        <li><a class="dropdown-item" href="../addRelation/clientRC.html">Cliente e Centro de Resultado</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -68,7 +68,7 @@
                                     <ul class="dropdown-menu">
                                         <li id="consultUser"><a class="dropdown-item" href="../consult/consultUser.html">Usuário</a></li>
                                         <li id="consultRC"><a class="dropdown-item" href="../consult/consultResultCenter.html">Centro de Resultado</a></li>
-                                        <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Empresa</a></li>
+                                        <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Cliente</a></li>
                                         <li id="consultTimeApontament"><a class="dropdown-item" href="../consult/consultApontamentTime.html">Horas Registradas</a></li>
                                     </ul>
                                 </li>
@@ -90,25 +90,25 @@
 
                 <div class="container mt-3 registerclient">
                     <form method="post" class="row g-3" id="form_client">
-                        <h1>Register Company</h1>
+                        <h1>Cadastrar Cliente</h1>
                         <div class="col-md-6 titlelabel">
                             <label for="cnpj" class="form-label">CNPJ</label>
                             <input id="cnpj" name="cnpj" type="text" class="form-control" placeholder="11222333000110"
                             style="width: 400px;" minlength="14" maxlength="18" required>
                         </div>
                         <div class="col-md-6 titlelabel">
-                            <label for="razaoSocial" class="form-label">Official Name</label>
+                            <label for="razaoSocial" class="form-label">Nome Empresarial</label>
                             <input id="razaoSocial" name="razaoSocial" type="text" class="form-control" placeholder="Official name"
                             style="width: 200px;" minlength="3" required>
                         </div>
                         <div class="col-md-6 titlelabel">
-                            <label for="nameCompany" class="form-label">Name Company</label>
+                            <label for="nameCompany" class="form-label">Nome Cliente</label>
                             <input id="nameCompany" name="nameCompany" type="text" class="form-control" placeholder="Popular Name"
                             style="width: 200px;" minlength="3" required>
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
 
@@ -116,14 +116,14 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title teste_PodeApagar">Saved successfully</h5>
+                                    <h5 class="modal-title teste_PodeApagar">Sucesso!</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="teste_PodeApagar">Success save company!</p>
+                                    <p class="teste_PodeApagar">Cliente cadastrado com sucesso!</p>
                                 </div>
                                     <div class="modal-footer">
                                     <a href="../register/registerCompany.html" class="btn btn-secondary">Ok</a>
-                                    <a href="../consult/consultCompany.html" class="btn btn-primary">Consult</a>
+                                    <a href="../consult/consultCompany.html" class="btn btn-primary">Consultar</a>
                                 </div>
                             </div>
                         </div>
