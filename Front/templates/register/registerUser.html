@@ -49,7 +49,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../register/registerUser.html">Usuário</a></li>
                                         <li><a class="dropdown-item" href="../register/registerRC.html">Centro de Resultado</a></li>
-                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Empresa</a></li>
+                                        <li><a class="dropdown-item" href="../register/registerCompany.html">Cliente</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown" id="addRelation">
@@ -58,7 +58,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../addRelation/UserRC.html">Usuário e Centro de Resultado</a></li>
-                                        <li><a class="dropdown-item" href="../addRelation/clientRC.html">Empresa e Centro de Resultado</a></li>
+                                        <li><a class="dropdown-item" href="../addRelation/clientRC.html">Cliente e Centro de Resultado</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -68,7 +68,7 @@
                                     <ul class="dropdown-menu">
                                         <li id="consultUser"><a class="dropdown-item" href="../consult/consultUser.html">Usuário</a></li>
                                         <li id="consultRC"><a class="dropdown-item" href="../consult/consultResultCenter.html">Centro de Resultado</a></li>
-                                        <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Empresa</a></li>
+                                        <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Cliente</a></li>
                                         <li id="consultTimeApontament"><a class="dropdown-item" href="../consult/consultApontamentTime.html">Horas Registradas</a></li>
                                     </ul>
                                 </li>
@@ -92,10 +92,10 @@
                     
                     <form method="post" class="row g-3" id="form_user">
 
-                        <h1 class="title">Register User</h1>
+                        <h1 class="title">Cadastrar Usuário</h1>
 
                         <div class="col-md-6 titlelabel">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Nome</label>
                             <input id="name" name="name" type="text" class="form-control" placeholder="Name"
                             style="width: 400px;" required>
                         </div>
@@ -105,18 +105,18 @@
                             style="width: 400px;" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Senha</label>
                             <input id="password" name="password" type="password" class="form-control" placeholder="*****"
                             style="width: 400px;" required>
                         </div>
                         <div class="col-md-6 titlelabel">
-                            <label for="jobrole" class="form-label">Jobrole</label>
+                            <label for="jobrole" class="form-label">Cargo</label>
                             <select id="jobrole" name="jobrole" class="form-select"
                             style="width: 200px;" required>
-                                <option value="null">Choose your jobrole</option>
-                                <option value="ADMINISTRADOR">Administrator</option>
-                                <option value="EMPLOYEE">Employee</option>
-                                <option value="MANAGER">Manager</option>
+                                <option value="null">Escolha o cargo</option>
+                                <option value="ADMINISTRADOR">Administrador</option>
+                                <option value="EMPLOYEE">Colaborador</option>
+                                <option value="MANAGER">Gestor</option>
                             </select>
                         </div>
 
@@ -129,7 +129,7 @@
 
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>
@@ -138,14 +138,14 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title teste_PodeApagar">Saved successfully</h5>
+                                <h5 class="modal-title teste_PodeApagar">Sucesso!</h5>
                             </div>
                             <div class="modal-body">
-                                <p class="teste_PodeApagar">Success save User!</p>
+                                <p class="teste_PodeApagar">Usuário cadastrado com sucesso!</p>
                             </div>
                                 <div class="modal-footer">
                                 <a href="registerUser.html" class="btn btn-secondary">Ok</a>
-                                <a href="../consult/consultUser.html" class="btn btn-primary">Consult</a>
+                                <a href="../consult/consultUser.html" class="btn btn-primary">Consultar</a>
                             </div>
                         </div>
                     </div>

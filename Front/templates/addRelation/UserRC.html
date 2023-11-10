@@ -45,7 +45,7 @@
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="../register/registerUser.html">Usuário</a></li>
                                             <li><a class="dropdown-item" href="../register/registerRC.html">Centro de Resultado</a></li>
-                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Empresa</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Cliente</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown" id="addRelation">
@@ -54,7 +54,7 @@
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="../addRelation/UserRC.html">Usuário e Centro de Resultado</a></li>
-                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Empresa e Centro de Resultado</a></li>
+                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Cliente e Centro de Resultado</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -64,7 +64,7 @@
                                         <ul class="dropdown-menu">
                                             <li id="consultUser"><a class="dropdown-item" href="../consult/consultUser.html">Usuário</a></li>
                                             <li id="consultRC"><a class="dropdown-item" href="../consult/consultResultCenter.html">Centro de Resultado</a></li>
-                                            <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Empresa</a></li>
+                                            <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Cliente</a></li>
                                             <li id="consultTimeApontament"><a class="dropdown-item" href="../consult/consultApontamentTime.html">Horas Registradas</a></li>
                                         </ul>
                                     </li>
@@ -86,20 +86,20 @@
                     <div class="container mt-3 registerclient">
                         <form method="post" class="row g-3" id="form">
                             <div class="form-group">
-                                <label for="users">User</label>
+                                <label for="users">Usuário</label>
                                 <select id="users" name="users" class="form-select" style="width: 200px;" required>
-                                    <option value="null">Select user</option>
+                                    <option value="null">Selecione o usuário</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="resultCenters">Result Center</label>
+                                <label for="resultCenters">Centro de Resultado</label>
                             <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
-                                <option value="null">Select Result Center</option>
+                                <option value="null">Selecione o CR</option>
                             </select>
                             </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary">Criar</button>
                             </div>
                         </form>
                     </div>
