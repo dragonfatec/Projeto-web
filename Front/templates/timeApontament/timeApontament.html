@@ -49,7 +49,7 @@
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="../register/registerUser.html">Usuário</a></li>
                                             <li><a class="dropdown-item" href="../register/registerRC.html">Centro de Resultado</a></li>
-                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Empresa</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Cliente</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown" id="addRelation">
@@ -58,7 +58,7 @@
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="../addRelation/UserRC.html">Usuário e Centro de Resultado</a></li>
-                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Empresa e Centro de Resultado</a></li>
+                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Cliente e Centro de Resultado</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -68,7 +68,7 @@
                                         <ul class="dropdown-menu">
                                             <li id="consultUser"><a class="dropdown-item" href="../consult/consultUser.html">Usuário</a></li>
                                             <li id="consultRC"><a class="dropdown-item" href="../consult/consultResultCenter.html">Centro de Resultado</a></li>
-                                            <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Empresa</a></li>
+                                            <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Cliente</a></li>
                                             <li id="consultTimeApontament"><a class="dropdown-item" href="../consult/consultApontamentTime.html">Horas Registradas</a></li>
                                         </ul>
                                     </li>
@@ -87,17 +87,17 @@
 
                 <div class="col" id="conteudo-pagina">
                     <!-- INICIO CONTEUDO ESPECIFICO -->
-                    <h1 class="mb-4" style="padding-top: 25px;">Time Apontament</h1>
+                    <h1 class="mb-4" style="padding-top: 25px;">Registrar Horas</h1>
                     <div class="container-fluid" style="padding-top: 50px;">
                         <div class="row">
                             <div class="col colform1">
                                 <form method="post" id="form_time">
                                     <div class="form-group">
-                                        <label for="startDate">Start date time:</label>
+                                        <label for="startDate">Horário de Início:</label>
                                         <input id="startDate" name="startDate" type="datetime-local" class="form-control" style="width: 200px;" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="finishDate">End date time:</label>
+                                        <label for="finishDate">Horário de Término:</label>
                                         <input id="finishDate" name="finishDate" type="datetime-local" class="form-control" style="width: 200px;" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary btnSubmit">Registrar</button>
@@ -106,24 +106,24 @@
                             <div class="col colform2">
                                 <form action="post" class="form_time2">
                                     <div class="form-group">
-                                        <label for="typeSend">Type Time:</label>
+                                        <label for="typeSend">Tipo de Hora:</label>
                                         <select id="typeSend" name="typeSend" class="form-select" style="width: 200px;" required>
-                                            <option value="null">Select User</option>
+                                            <option value="null">Selecione o tipo</option>
                                             <option value="EXTRA">Extra</option>
-                                            <option value="WARNINGTIME">Warning Time</option>
+                                            <option value="WARNINGTIME">Sobreaviso</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="clients">Client:</label>
+                                        <label for="clients">Cliente:</label>
                                         <select id="clients" name="clients" class="form-select" style="width: 200px;" required>
-                                         <option value="null">Select Client</option>
+                                         <option value="null">Selecione o cliente</option>
                                      </select>
                                     </div>
             
                                     <div class="form-group">
-                                        <label for="resultCenters">Result Center:</label>
+                                        <label for="resultCenters">Centro de Resultado:</label>
                                         <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
-                                            <option value="null">Select Result Center</option>
+                                            <option value="null">Selecione o CR</option>
                                         </select>
                                     </div>
                                 </form>
@@ -135,14 +135,14 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Apontament successfully</h5>
+                                    <h5 class="modal-title">Sucesso!</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Success Apontament!</p>
+                                    <p>Horas registradas com sucesso!</p>
                                 </div>
                                     <div class="modal-footer">
                                     <a href="../timeApontament/timeApontament.html" class="btn btn-secondary">Ok</a>
-                                    <a href="../consult/consultApontamentTime.html" class="btn btn-primary">Consult</a>
+                                    <a href="../consult/consultApontamentTime.html" class="btn btn-primary">Consultar</a>
                                 </div>
                             </div>
                         </div>
