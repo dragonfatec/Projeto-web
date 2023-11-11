@@ -1,16 +1,18 @@
 package com.RP.ControleDeJornada.controller;
 
-
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
+import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
+import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 import com.RP.ControleDeJornada.domain.service.SendTimeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -28,9 +30,21 @@ public class SendTimeController {
         return ResponseEntity.ok(clients);
     }
 
-    @GetMapping("/consult")
-    public ResponseEntity<List<SendTime>> getSendTimes(){
-        List<SendTime> sendTimes = sendTimeService.findAllSendTime();
+    @PostMapping("/consult")
+    @Transactional
+    public ResponseEntity<List<SendTime>> getSendTimesByJobAndResultCenter(@RequestBody @Valid ShowSendTimeByResultCenter data){
+
+        JobRole job = JobRole.valueOf(data.jobrole());
+        List<SendTime> sendTimes = new ArrayList<>();
+
+        if (job.equals(JobRole.MANAGER)){
+            sendTimes = sendTimeService.getSendTimeByManagerTeam(data.registration());
+        }else if(job.equals(JobRole.EMPLOYEE)){
+            sendTimes = sendTimeService.getSendTimeByUserResultCenter(data.registration(), data.codeRc());
+        }else {
+            sendTimes = sendTimeService.getSendTimeByResultCenter(data.codeRc());
+        }
+
         return ResponseEntity.ok(sendTimes);
     }
 

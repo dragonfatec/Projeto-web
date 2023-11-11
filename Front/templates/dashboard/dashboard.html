@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../../static/css/dashboard.css">
+</head>
+<body>
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const data = {
+    labels: ['verba 1601', 'verba 1602', 'verba 3000', 'verba 1809', 'verba 3001'],
+    datasets: [{
+      label: 'Dashboard de verbas',
+      data: [], 
+      backgroundColor: [
+        'rgb(200, 0, 0)',
+        'rgb(54, 0, 235)',
+        'rgb(255, 255, 0)',
+        'rgb(255, 150, 300)',
+        'rgb(0, 255, 0)'
+
+      ],
+      hoverOffset: 5
+    }]
+  };
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'doughnut', // Tipo de gráfico
+    data: data,
+  });
+
+
+  function fetchChartData() {
+    const idUser = localStorage.getItem("registration"); // Substitua pelo ID do usuário desejado
+    fetch(`http://localhost:8080/dashboard/${idUser}`, {
+      headers: {"Authorization" : 'Bearer ' + localStorage.getItem('token')}
+    })
+            .then(response => response.json())
+            .then(data => {
+              // Atualiza os dados do gráfico com os dados do controlador
+              myChart.data.labels = data.map(item => item.label);
+              myChart.data.datasets[0].data = data.map(item => item.value);
+              myChart.update(); // Atualiza o gráfico
+            })
+            .catch(error => {
+              console.error('Erro ao buscar dados do controlador:', error);
+            });
+  }
+
+
+  fetchChartData();
+</script>
+</body>
+</html>

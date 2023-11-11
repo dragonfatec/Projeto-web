@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bem Vindo!</title>
     <link rel="icon" href="../../static/image/browser_icon.png">
+
     <link rel="stylesheet" href="../../static/css/template.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+    <script src="/static/js/acess.js" defer></script>
 </head>
 <body>
       <!-- BACKGROUND -->
@@ -32,44 +35,50 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav flex-sm-column">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="../home/home.html">Início</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="../timeApontament/timeApontament.html">Time Apontament</a>
+                                    <li class="nav-item" id="timeApontament">
+                                        <a class="nav-link active" aria-current="page" href="../timeApontament/timeApontament.html">Registrar Horas</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Register
+                                    <li class="nav-item dropdown" id="register">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                            Cadastro
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="../register/registerUser.html">User</a></li>
-                                            <li><a class="dropdown-item" href="../register/registerRC.html">Result Center</a></li>
-                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Company</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerUser.html">Usuário</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerRC.html">Centro de Resultado</a></li>
+                                            <li><a class="dropdown-item" href="../register/registerCompany.html">Cliente</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown" id="addRelation">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                            Criar Relação
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="../addRelation/UserRC.html">Usuário e Centro de Resultado</a></li>
+                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Cliente e Centro de Resultado</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Add Relation
+                                            Consulta
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="../addRelation/UserRC.html">User with Result Center</a></li>
-                                            <li><a class="dropdown-item" href="../addRelation/clientRC.html">Company with Result Center</a></li>
+                                            <li id="consultUser"><a class="dropdown-item" href="../consult/consultUser.html">Usuário</a></li>
+                                            <li id="consultRC"><a class="dropdown-item" href="../consult/consultResultCenter.html">Centro de Resultado</a></li>
+                                            <li id="consultCompany"><a class="dropdown-item" href="../consult/consultCompany.html">Cliente</a></li>
+                                            <li id="consultTimeApontament"><a class="dropdown-item" href="../consult/consultApontamentTime.html">Horas Registradas</a></li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Consult
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="../consult/consultUser.html">User</a></li>
-                                            <li><a class="dropdown-item" href="../consult/consultResultCenter.html">Result Center</a></li>
-                                            <li><a class="dropdown-item" href="../consult/consultCompany.html">Company</a></li>
-                                            <li><a class="dropdown-item" href="../consult/consultApontamentTime.html">Time Apontament</a></li>
-                                        </ul>
+                                    <li class="nav-item" id="approve">
+                                        <a class="nav-link active" aria-current="page" href="../approve/approve.html">Aprovar</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="../approve/approve.html">Approve</a>
-                                    </li>
+                                    <li class="nav-item">                                
+                                        <a class="nav-link active" aria-current="page" href="../dashboard/dashboard.html">Dashboard</a>
+                                  </li>
+                                  <li>
+                                        <a class="nav-link active text-danger" aria-current="page" href="../login/loginScreen.html">Sair</a>
+                                  </li>
                                 </ul>
                             </div>
                         </nav>

@@ -32,7 +32,7 @@ public class User implements UserDetails {
     private Status status;
     private LocalDate createDate = LocalDate.now();
     private LocalDate updateUser = LocalDate.now();
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     private List<ResultCenter> resultCenters = new ArrayList<>();
 
     public User(RegistrationUserRecord data){
