@@ -1,15 +1,18 @@
 package com.RP.ControleDeJornada.controller;
 
+import com.RP.ControleDeJornada.domain.dto.ApprovedDTO;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
+import com.RP.ControleDeJornada.domain.service.ApprovedService;
 import com.RP.ControleDeJornada.domain.service.SendTimeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
@@ -22,6 +25,9 @@ public class SendTimeController {
 
     @Autowired
     private SendTimeService sendTimeService;
+
+    @Autowired
+    private ApprovedService approvedService;
 
     @GetMapping("/getClients")
     public ResponseEntity<List<Client>> getClients() {
@@ -63,4 +69,17 @@ public class SendTimeController {
         return ResponseEntity.ok(rcs);
     }
 
+    @PostMapping("/approved/manager")
+    @PreAuthorize("hasRole('MANAGER')")
+    public ResponseEntity approvedHoursManager(@RequestBody Integer id, ApprovedDTO data) {
+        approvedService.approvedHoursManager(id, data);
+        return ResponseEntity.ok("success!");
+    }
+
+    @PostMapping("/approved/admin")
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    public ResponseEntity approvedHoursAdmin(@RequestBody Integer id, ApprovedDTO data ) {
+        approvedService.approvedHoursAdmin(id, data);
+        return ResponseEntity.ok("success!");
+    }
 }

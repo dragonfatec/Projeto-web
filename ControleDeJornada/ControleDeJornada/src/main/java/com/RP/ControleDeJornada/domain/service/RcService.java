@@ -1,11 +1,13 @@
 package com.RP.ControleDeJornada.domain.service;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateRcRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.repository.RcRepository;
-import com.RP.ControleDeJornada.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -30,10 +32,19 @@ public class RcService {
         return rc;
     }
 
-    public ResultCenter getReferenceById(String codeRc) {
+    public void updateRc (String codeRc, UpdateRcRecord data) {
         ResultCenter rc = rcRepository.getReferenceById(codeRc);
-        return rc;
+        if (data.rc() != null) {
+            rc.setRc(data.rc());
+        }
+        if (data.acronym() != null) {
+            rc.setAcronym(data.acronym());
+        }
+        if (data.status() != null) {
+            rc.setStatus(data.status());
+        }
+        rc.setUpdateRC(LocalDate.now());
+        rcRepository.save(rc);
     }
-
 
 }
