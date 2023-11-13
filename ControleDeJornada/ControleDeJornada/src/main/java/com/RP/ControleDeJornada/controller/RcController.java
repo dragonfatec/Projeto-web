@@ -2,6 +2,7 @@ package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByUser;
+import com.RP.ControleDeJornada.domain.dto.UpdateRcRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.RcService;
@@ -44,6 +45,13 @@ public class RcController {
     public ResponseEntity register(@RequestBody @Valid RegistrationTeamRecord data){
         rcService.register(data);
 
+        return ResponseEntity.ok("Success!");
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateRc(@RequestBody @Valid String codeRc, UpdateRcRecord data) {
+        rcService.updateRc(codeRc, data);
         return ResponseEntity.ok("Success!");
     }
 }
