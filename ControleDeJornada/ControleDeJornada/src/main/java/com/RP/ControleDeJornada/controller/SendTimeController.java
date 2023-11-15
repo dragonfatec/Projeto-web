@@ -5,6 +5,7 @@ import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.sendTime.ApprovedStatus;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 import com.RP.ControleDeJornada.domain.service.ApprovedService;
@@ -38,7 +39,7 @@ public class SendTimeController {
 
     @PostMapping("/consult")
     @Transactional
-    public ResponseEntity<List<SendTime>> getSendTimesByJobAndResultCenter(@RequestBody @Valid ShowSendTimeByResultCenter data){
+    public ResponseEntity<List<SendTime>> getSendTimesByJobAndResultCenter(@RequestBody @Valid  ShowSendTimeByResultCenter data){
 
         JobRole job = JobRole.valueOf(data.jobrole());
         List<SendTime> sendTimes = new ArrayList<>();
@@ -48,7 +49,7 @@ public class SendTimeController {
         }else if(job.equals(JobRole.EMPLOYEE)){
             sendTimes = sendTimeService.getSendTimeByUserResultCenter(data.registration(), data.codeRc());
         }else {
-            sendTimes = sendTimeService.getSendTimeByResultCenter(data.codeRc());
+            sendTimes = sendTimeService.getSendTimeByResultCenterAndStatusWaiting(data.codeRc());
         }
 
         return ResponseEntity.ok(sendTimes);
@@ -72,14 +73,17 @@ public class SendTimeController {
     @PostMapping("/approved/manager")
     @PreAuthorize("hasRole('MANAGER')")
     public ResponseEntity approvedHoursManager(@RequestBody Integer id, ApprovedDTO data) {
-        approvedService.approvedHoursManager(id, data);
-        return ResponseEntity.ok("success!");
+        ApprovedStatus approvedStatus = ApprovedStatus.valueOf(data.approvedStatus());
+        approvedService.approvedHoursManager(id, approvedStatus, data.justification());
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/approved/admin")
     @PreAuthorize("hasRole('ADMINISTRATOR')")
-    public ResponseEntity approvedHoursAdmin(@RequestBody Integer id, ApprovedDTO data ) {
-        approvedService.approvedHoursAdmin(id, data);
-        return ResponseEntity.ok("success!");
+    public ResponseEntity approvedHoursAdmin(@RequestBody ApprovedDTO data ) {
+        System.out.println(data);
+        ApprovedStatus approvedStatus = ApprovedStatus.valueOf(data.approvedStatus());
+        approvedService.approvedHoursAdmin(data.id(), approvedStatus, data.justification());
+        return ResponseEntity.ok().build();
     }
 }
