@@ -1,6 +1,11 @@
 package com.RP.ControleDeJornada.domain.dto;
 
-import com.RP.ControleDeJornada.domain.entitys.sendTime.ApprovedStatus;
+import jakarta.validation.constraints.NotNull;
 
-public record ApprovedDTO(ApprovedStatus approvedStatus, String justification) {
+public record ApprovedDTO(
+        @NotNull
+        Integer id,
+        @NotNull
+        String approvedStatus,
+        String justification) {
 }

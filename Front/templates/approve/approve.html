@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../../static/css/template.css">
     <link rel="stylesheet" href="../../static/css/approve.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="/static/js/acess.js" defer></script>
+    <script src="../../static/js/acess.js" defer></script>
+    <script src="../../static/js/approve/approvation.js" defer></script>
 </head>
 <body>
       <!-- BACKGROUND -->
@@ -86,26 +87,68 @@
                 <div class="col" id="conteudo-pagina">
                     <!--    INICIO CONTEUDO ESPECIFICO -->
                     <div class="tabelaapprove">
-                        <table class="table table-striped-columns caption-top">
+
+                        <select id="selectRC">
+                            <option>Selecionar o CR</option>
+                        </select>
+
+                        <button id="consult">
+                            Consultar
+                        </button>
+
+                        <table class="table table-striped-columns caption-top" id="table">
                             <caption>Aprovar Horas</caption>
                             <thead>
                                 <tr>
+                                    <th scope="col">Identificador</th>
                                     <th scope="col">Usuário</th>
                                     <th scope="col">Horário de Início</th>
                                     <th scope="col">Horário de Término</th>
                                     <th scope="col">Tipo de Hora</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col" class="active">
+                                    <th scope="col">Check</th>
+                                    <!-- <th scope="col" class="active">
                                         <input type="checkbox" class="select-all checkbox" name="select-all" />
-                                    </th>
+                                    </th> -->
                                 </tr>
                             </thead>
                             <tbody id="tr">
                                 
                             </tbody>
                         </table>
+                        
                     </div>
                     <!-- FIM CONTEUDO ESPECIFICO -->
+
+                    <button id="aprovar">
+                        Aprovar
+                    </button>
+                    <button id="reprove">
+                        Reprovar
+                    </button>
+                    <!-- MODAL -->
+                    <div class="modal" tabindex="-1" id="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title teste_PodeApagar">Justificativa</h5>
+                                </div>
+                                
+                                <div class="modal-body">
+                                    <p class="alert alert-dark">Preencha a justificativa</p>
+                                </div>
+                                <div class="modal-body">
+                                    <textarea id="justifyText"></textarea>
+                                </div>
+                                    <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary" id="justify">Concluir</a>
+                                    <a href="../approve/approve.html" class="btn btn-secondary" >Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
                 </div>

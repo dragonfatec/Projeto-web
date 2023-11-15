@@ -16,22 +16,22 @@ public class ApprovedService {
 
     @Autowired
     private SendTimeRepository sendTypeRepository;
-    public ResponseEntity approvedHoursManager(Integer id, ApprovedDTO data ) {
+    public ResponseEntity approvedHoursManager(Integer id, ApprovedStatus approvedStatus, String justification ) {
         Optional<SendTime> hours = sendTypeRepository.findById(id);
         if (hours.isPresent()) {
             SendTime time = hours.get();
-            if (data.approvedStatus() != null) {
-                if (data.approvedStatus().equals(ApprovedStatus.APPROVED_MANAGER) ||
-                        data.approvedStatus().equals(ApprovedStatus.DENIED_MANAGER)) {
-                    if (data.approvedStatus().equals(ApprovedStatus.DENIED_MANAGER)) {
-                        if (data.justification() != null) {
-                            time.setApprovedStatus(data.approvedStatus());
-                            time.setJustification(data.justification());
+            if (approvedStatus != null) {
+                if (approvedStatus.equals(ApprovedStatus.APPROVED_MANAGER) ||
+                        approvedStatus.equals(ApprovedStatus.DENIED_MANAGER)) {
+                    if (approvedStatus.equals(ApprovedStatus.DENIED_MANAGER)) {
+                        if (justification != null) {
+                            time.setApprovedStatus(approvedStatus);
+                            time.setJustification(justification);
                             return ResponseEntity.ok("Time refused by manager");
                         }
                     }else {
-                        time.setApprovedStatus(data.approvedStatus());
-                        time.setJustification(data.justification());
+                        time.setApprovedStatus(approvedStatus);
+                        time.setJustification(justification);
                         return ResponseEntity.ok("Time approved by the manager!");
                     }
                 }
@@ -40,23 +40,23 @@ public class ApprovedService {
         return ResponseEntity.ok("Done");
     }
 
-    public ResponseEntity approvedHoursAdmin(Integer id, ApprovedDTO data ) {
+    public ResponseEntity approvedHoursAdmin(Integer id, ApprovedStatus approvedStatus, String justification) {
         Optional<SendTime> hours = sendTypeRepository.findById(id);
         if (hours.isPresent()) {
             SendTime time = hours.get();
-            if (data.approvedStatus() != null && time.getApprovedStatus().equals(ApprovedStatus.APPROVED_MANAGER)) {
-                if (data.approvedStatus().equals(ApprovedStatus.APPROVED_ADMINISTRADOR) ||
-                        data.approvedStatus().equals(ApprovedStatus.DENIED_ADMINISTRADOR)) {
-                    if (data.approvedStatus().equals(ApprovedStatus.DENIED_ADMINISTRADOR)) {
-                        if (data.justification() != null) {
-                            time.setApprovedStatus(data.approvedStatus());
-                            time.setJustification(data.justification());
+            if (approvedStatus != null && time.getApprovedStatus().equals(ApprovedStatus.APPROVED_MANAGER)) {
+                if (approvedStatus.equals(ApprovedStatus.APPROVED_ADMINISTRADOR) ||
+                        approvedStatus.equals(ApprovedStatus.DENIED_ADMINISTRADOR)) {
+                    if (approvedStatus.equals(ApprovedStatus.DENIED_ADMINISTRADOR)) {
+                        if (justification != null) {
+                            time.setApprovedStatus(approvedStatus);
+                            time.setJustification(justification);
                             return ResponseEntity.ok("Time refused by administrator");
                         }
                     }else {
 
-                        time.setApprovedStatus(data.approvedStatus());
-                        time.setJustification(data.justification());
+                        time.setApprovedStatus(approvedStatus);
+                        time.setJustification(justification);
                         time.setStatus(TimeStatus.APPROVED);
                         return ResponseEntity.ok("Time refused by administrator");
                     }

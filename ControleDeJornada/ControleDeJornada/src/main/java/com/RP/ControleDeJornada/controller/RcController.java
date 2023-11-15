@@ -4,6 +4,7 @@ import com.RP.ControleDeJornada.domain.dto.RegistrationTeamRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByUser;
 import com.RP.ControleDeJornada.domain.dto.UpdateRcRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.RcService;
 import com.RP.ControleDeJornada.domain.service.UserService;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,8 +37,13 @@ public class RcController {
     @Transactional
     public ResponseEntity<List<ResultCenter>> getResultCenterByUser(@RequestBody @Valid ShowSendTimeByUser data){
 
+        List<ResultCenter> resultCenters = new ArrayList<>();
         User user = userService.getReferenceById(data.registration());
-        List<ResultCenter> resultCenters = user.getResultCenters();
+        if (user.getJobrole().equals(JobRole.ADMINISTRATOR)){
+            resultCenters = rcService.findAll();
+        }else {
+            resultCenters = user.getResultCenters();
+        }
 
         return ResponseEntity.ok(resultCenters);
     }
