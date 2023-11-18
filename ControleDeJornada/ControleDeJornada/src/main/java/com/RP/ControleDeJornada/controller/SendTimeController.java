@@ -4,6 +4,8 @@ import com.RP.ControleDeJornada.domain.dto.ApprovedDTO;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
+import com.RP.ControleDeJornada.domain.entitys.excel.Excel;
+import com.RP.ControleDeJornada.domain.entitys.excel.SendTimeExport;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.ApprovedStatus;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
@@ -35,6 +37,32 @@ public class SendTimeController {
         List<Client> clients = sendTimeService.getAllClients();
 
         return ResponseEntity.ok(clients);
+    }
+
+    @PostMapping("/export")
+    @Transactional
+    public ResponseEntity exportExcel(@RequestBody ShowSendTimeByResultCenter data){
+
+        JobRole job = JobRole.valueOf(data.jobrole());
+        List<SendTime> sendTimes = new ArrayList<>();
+
+        if (job.equals(JobRole.MANAGER)){
+            sendTimes = sendTimeService.getSendTimeByManagerTeam(data.registration());
+
+        }else if(job.equals(JobRole.EMPLOYEE)){
+            sendTimes = sendTimeService.getSendTimeByUserResultCenter(data.registration(), data.codeRc());
+        }else {
+            sendTimes = sendTimeService.getSendTimeByResultCenterAndStatusWaiting(data.codeRc());
+        }
+
+        List<SendTimeExport> sendTimeExports = new ArrayList<>();
+        Excel excel = new Excel();
+        for (SendTime sendTime : sendTimes){
+            SendTimeExport send = new SendTimeExport(sendTime);
+            sendTimeExports.add(send);
+        }
+        excel.criarExcel(sendTimeExports);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/consult")

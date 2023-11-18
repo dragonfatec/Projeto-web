@@ -1,16 +1,17 @@
 const url = "http://localhost:8080/sendtime/consult";
 const urlAdmin = "http://localhost:8080/rc/consult";
 const urlById = "http://localhost:8080/rc/consult/by-id";
+const urlExportExcel = "http://localhost:8080/sendtime/export";
 
 
 const table = document.getElementById("tr");
 const select = document.getElementById("select");
 const button = document.getElementById("consult");
+const buttonExport = document.getElementById("exportExcel");
 
 
 async function getTime(eventGet){
     eventGet.preventDefault();
-
 
     const response = await fetch(url, 
         {
@@ -107,3 +108,23 @@ async function getResultCenter(eventoSelect){
 
 }
 select.addEventListener("click", eventoSelect => getResultCenter(eventoSelect), { once: true})
+
+// METODO DE EXPORTAR
+
+async function exportExcel(eventExport){
+    eventExport.preventDefault();
+
+    const response = await fetch(urlExportExcel, {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+            codeRc: select.value,
+            jobrole: localStorage.getItem("jobrole"),
+            registration: localStorage.getItem("registration")
+        })
+    })
+}
+buttonExport.addEventListener("click", eventExport => exportExcel(eventExport));
