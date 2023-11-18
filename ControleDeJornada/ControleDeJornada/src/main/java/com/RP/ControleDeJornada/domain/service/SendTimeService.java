@@ -104,9 +104,8 @@ public class SendTimeService {
         return list;
     }
 
-    public List<SendTime> getSendTimeByResultCenter(String codeRc) {
-        //ResultCenter rc = rcService.getReferenceById(codeRc);
-        List<SendTime> sendTimes = repository.findAllByTeam(codeRc);
+    public List<SendTime> getSendTimeByResultCenterAndStatusWaiting(String codeRc) {
+        List<SendTime> sendTimes = repository.findAllByTeamAndStatusWaiting(codeRc);
         return  sendTimes;
     }
 

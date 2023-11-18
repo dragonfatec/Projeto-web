@@ -27,6 +27,7 @@ public class SendTime {
     @Enumerated(EnumType.STRING)
     private TypeSend typeSend;
     @ManyToOne
+    @JoinColumn(name = "team_code_rc")
     private ResultCenter team;
     @ManyToOne
     private User user;

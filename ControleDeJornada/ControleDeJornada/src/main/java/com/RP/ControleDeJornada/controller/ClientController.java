@@ -1,6 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateClientRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.service.ClientService;
 import jakarta.validation.Valid;
@@ -27,6 +28,13 @@ public class ClientController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationClientRecord data){
         clientService.register(data);
+        return ResponseEntity.ok("Sucesso!");
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateClient (@RequestBody @Valid String cnpj, UpdateClientRecord data) {
+        clientService.updateClient(cnpj, data);
         return ResponseEntity.ok("Sucesso!");
     }
 }

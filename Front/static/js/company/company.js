@@ -15,7 +15,6 @@ async function save(cnpj, razaoSocial, nameCompany){
             nameCompany: nameCompany
         })
     }).then(resp => {
-        console.log(resp)
         if(resp.status == 200){
             $('#modal').modal('show');
         }else{

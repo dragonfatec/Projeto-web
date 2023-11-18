@@ -74,11 +74,6 @@ public class UserService {
         return users;
     }
 
-    public User findByRegistration(Integer registration) {
-        User user = userRepository.findByRegistration(registration);
-        return  user;
-    }
-
     public User getReferenceById(Integer register) {
         User user = userRepository.getReferenceById(register);
         return user;

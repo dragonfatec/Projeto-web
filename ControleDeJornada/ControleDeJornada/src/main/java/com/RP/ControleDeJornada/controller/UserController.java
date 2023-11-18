@@ -1,6 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.UserService;
@@ -35,6 +36,13 @@ public class UserController {
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
         return ResponseEntity.ok().build();
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateUser (@RequestBody @Valid Integer id, UpdateUserRecord data) {
+        userService.updateUser(id, data);
+        return ResponseEntity.ok("Success!");
     }
 }
 
