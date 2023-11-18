@@ -44,7 +44,7 @@ public class SendTimeController {
     public ResponseEntity exportExcel(@RequestBody ShowSendTimeByResultCenter data){
 
         JobRole job = JobRole.valueOf(data.jobrole());
-        List<SendTime> sendTimes = new ArrayList<>();
+        List<SendTime> sendTimes;
 
         if (job.equals(JobRole.MANAGER)){
             sendTimes = sendTimeService.getSendTimeByManagerTeam(data.registration());

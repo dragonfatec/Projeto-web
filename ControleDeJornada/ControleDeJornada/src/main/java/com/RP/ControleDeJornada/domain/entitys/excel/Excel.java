@@ -9,6 +9,7 @@ import java.util.List;
 public class Excel {
 
     public void criarExcel(List<SendTimeExport> sendTimes){
+        System.out.println("\n\nentrou no excel\n\n");
         try {
             // Inicializar um objeto Workbook
             Workbook workbook = new Workbook();
@@ -17,7 +18,7 @@ public class Excel {
             Worksheet worksheet = workbook.getWorksheets().get(0);
             String[] cabecalho = new String[] { "id", "data inicial", "data final", "tipo de hora", "centro de resultado", "nome usuario", "email", "cliente", "verba 1601", "verba 1602","verba 1809", "verba 3000", "verba 3001", "justificativa", "status", "status de aprovação" };
             // Exemplo com Lista de Objetos
-            worksheet.getCells().importCustomObjects((Collection)sendTimes,
+            worksheet.getCells().importCustomObjects(sendTimes,
                     cabecalho, // propertyNames
                     true, // isPropertyNameShown
                     0, // firstRow
@@ -35,14 +36,17 @@ public class Excel {
             style.getFont().setBold(true);
             style.getFont().setSize(12);
 
-            for (int i = 0; i < cabecalho.length-1 ; i++) {
+            for (int i = 0; i < cabecalho.length; i++) {
                 worksheet.getCells().get(0,i).setStyle(style);
             }
 
             // Salvando o arquivo Excel
-            workbook.save("C:/excel/relatorio.xlsx");
+            workbook.save("/home/lukas/relatorio.xlsx");
         }
-        catch (Exception e){}
+        catch (Exception e){
+            System.out.println("\n\ndeu erro no excel\n\n");
+            System.out.println(e);
+        }
     }
 
     void criarPDF(){

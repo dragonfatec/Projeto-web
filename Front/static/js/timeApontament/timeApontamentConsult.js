@@ -12,6 +12,7 @@ const buttonExport = document.getElementById("exportExcel");
 
 async function getTime(eventGet){
     eventGet.preventDefault();
+    console.log(localStorage.getItem("jobrole"))
 
     const response = await fetch(url, 
         {
@@ -99,6 +100,7 @@ async function getResultCenter(eventoSelect){
 
     const data = await response.json();
 
+    console.log(data)
     data.map(resp => {
         const option = document.createElement("option");
         option.innerText = resp.rc;
