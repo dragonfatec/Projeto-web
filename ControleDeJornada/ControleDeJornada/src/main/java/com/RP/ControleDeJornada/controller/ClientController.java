@@ -28,13 +28,14 @@ public class ClientController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationClientRecord data){
         clientService.register(data);
-        return ResponseEntity.ok("Sucesso!");
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity updateClient (@RequestBody @Valid String cnpj, UpdateClientRecord data) {
-        clientService.updateClient(cnpj, data);
-        return ResponseEntity.ok("Sucesso!");
+    public ResponseEntity updateClient (@RequestBody @Valid UpdateClientRecord data) {
+        System.out.println(data);
+        clientService.updateClient(data);
+        return ResponseEntity.ok().build();
     }
 }

@@ -174,6 +174,6 @@ async function toEdit(eventToEdit, registration, jobrole, status, name, email){
     }
 }
 form.addEventListener("submit", eventToEdit => {
-    console.log("chamou");
+    
     toEdit(eventToEdit, edit_registration.value, edit_jobrole.value, edit_status.value, edit_name.value, edit_email.value);
 });

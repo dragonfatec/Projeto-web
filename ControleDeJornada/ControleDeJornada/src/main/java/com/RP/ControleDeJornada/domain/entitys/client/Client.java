@@ -36,7 +36,6 @@ public class Client {
 
     public void addResultCenter(ResultCenter rc){
         this.resultCenter.add((rc));
-
     }
 
 }
