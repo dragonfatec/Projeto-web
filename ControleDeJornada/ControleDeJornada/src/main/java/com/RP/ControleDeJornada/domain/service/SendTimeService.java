@@ -93,7 +93,6 @@ public class SendTimeService {
         User user = userService.getReferenceById(registration);
         List<SendTime> list = new ArrayList<>();
         for( ResultCenter rc : user.getResultCenters()){
-            // precisa verificar se adiciona ou sobre-escreve
             list = repository.findAllByTeam(rc.getCodeRc());
         }
         return list;

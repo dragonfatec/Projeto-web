@@ -37,6 +37,13 @@ public class SendTimeController {
         return ResponseEntity.ok(clients);
     }
 
+    @PostMapping
+    @Transactional
+    public ResponseEntity sendTime(@RequestBody @Valid ResgistrationSendTimeRecord data) {
+        sendTimeService.saveTime(data);
+        return ResponseEntity.ok("success!");
+    }
+
     @PostMapping("/consult")
     @Transactional
     public ResponseEntity<List<SendTime>> getSendTimesByJobAndResultCenter(@RequestBody @Valid  ShowSendTimeByResultCenter data){
@@ -55,13 +62,6 @@ public class SendTimeController {
         return ResponseEntity.ok(sendTimes);
     }
 
-    @PostMapping
-    @Transactional
-    public ResponseEntity sendTime(@RequestBody @Valid ResgistrationSendTimeRecord data) {
-        sendTimeService.saveTime(data);
-        return ResponseEntity.ok("success!");
-    }
-
     @PostMapping("/getRCByClients")
     @Transactional
     public ResponseEntity<List<ResultCenter>> getRCByClients(@RequestBody String cnpj) {
@@ -72,6 +72,7 @@ public class SendTimeController {
 
     @PostMapping("/approved/manager")
     @PreAuthorize("hasRole('MANAGER')")
+    @Transactional
     public ResponseEntity approvedHoursManager(@RequestBody Integer id, ApprovedDTO data) {
         ApprovedStatus approvedStatus = ApprovedStatus.valueOf(data.approvedStatus());
         approvedService.approvedHoursManager(id, approvedStatus, data.justification());
@@ -80,6 +81,7 @@ public class SendTimeController {
 
     @PostMapping("/approved/admin")
     @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @Transactional
     public ResponseEntity approvedHoursAdmin(@RequestBody ApprovedDTO data ) {
         System.out.println(data);
         ApprovedStatus approvedStatus = ApprovedStatus.valueOf(data.approvedStatus());
