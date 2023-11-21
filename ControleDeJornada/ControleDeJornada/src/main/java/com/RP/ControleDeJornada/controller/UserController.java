@@ -40,8 +40,9 @@ public class UserController {
 
     @PutMapping
     @Transactional
-    public ResponseEntity updateUser (@RequestBody @Valid Integer id, UpdateUserRecord data) {
-        userService.updateUser(id, data);
+    public ResponseEntity updateUser (@RequestBody @Valid UpdateUserRecord data) {
+        System.out.println(data);
+        userService.updateUser(data);
         return ResponseEntity.ok("Success!");
     }
 }

@@ -92,7 +92,6 @@ async function getSendTime(eventGetTime, codeRc){
         })
     }
 
-
     const response = await fetch(urlGetSendTime, {
         method: "POST",
         headers: {

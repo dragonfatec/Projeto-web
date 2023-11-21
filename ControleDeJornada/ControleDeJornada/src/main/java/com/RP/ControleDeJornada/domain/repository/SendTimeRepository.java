@@ -30,10 +30,10 @@ public interface SendTimeRepository extends JpaRepository<SendTime, Integer> {
             "FROM SendTime s WHERE s.user = :user")
     List<Object[]> findSendTimesByUser(@Param("user") User user);
 
-    @Query(value = "select * from tb_sendtime where team_code_rc = :codeRc", nativeQuery = true)
+    @Query(value = "select * from tb_sendtime tbs where tbs.team_code_rc = :codeRc and tbs.status = 'WAITING'", nativeQuery = true)
     List<SendTime> findAllByTeam(String codeRc);
 
-    @Query(value = "select * from tb_sendtime tbs where tbs.user_registration = :registration and tbs.team_code_rc = :codeRc", nativeQuery = true)
+    @Query(value = "select * from tb_sendtime tbs where tbs.user_registration = :registration and tbs.team_code_rc = :codeRc and tbs.status = 'WAITING'", nativeQuery = true)
     List<SendTime> getTime(Integer registration, String codeRc);
 
     @Query(value = "select * from tb_sendtime tbs where tbs.team_code_rc = :codeRc and tbs.status = 'WAITING'", nativeQuery = true)

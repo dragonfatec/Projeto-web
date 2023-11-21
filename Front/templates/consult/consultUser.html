@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../static/css/consultuser.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="../../static/js/user/userConsult.js" defer></script>
-    <script src="/static/js/acess.js" defer></script>
+    <script src="../../static/js/acess.js" defer></script>
 </head>
 <body>
     <!-- Background video -->
@@ -92,10 +92,12 @@
                             <caption>Usuários Cadastrados</caption>
                             <thead>
                                 <tr>
+                                    <th scope="col">Registro</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Cargo</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Editar</th>
                                 </tr>
                             </thead>
                         <tbody id="tr">
@@ -110,6 +112,49 @@
         </div>
         <!-- FIM PAGINA -->
 
+    </div>
+
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title teste_PodeApagar">Editar Usuário!</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="registration" class="form-label">Registro</label>
+                            <input id="registration" name="registration" type="text" readonly class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome do Usuário</label>
+                            <input id="name" name="name" type="text" class="form-control" minlength="3" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="jobrole" class="form-label">Cargo</label>
+                            <select id="jobrole" name="jobrole" class="form-select"></select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" name="email" type="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select id="status" name="status" class="form-select"></select>
+                        </div> 
+
+                        <div class="modal-footer">
+                            <input type="submit" value="Editar" class="btn btn-primary">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 
