@@ -94,6 +94,7 @@
                                     <th scope="col">Nome do CR</th>
                                     <th scope="col">Sigla</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Editar</th>
                                 </tr>
                             </thead>
                             <tbody id="tr">
@@ -102,13 +103,49 @@
                         </table>
                     </div>
                 </div>
-
                     <!-- FIM CONTEUDO ESPECIFICO -->
                 </div>
             </div>
         </div>
         <!-- FIM PAGINA -->
 
+    </div>
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title teste_PodeApagar">Editar Centro de Resultado!</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="codeRc" class="form-label">Código CR</label>
+                            <input id="codeRc" name="codeRc" type="text" readonly class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rc" class="form-label">Nome do CR</label>
+                            <input id="rc" name="rc" type="text" class="form-control" minlength="3" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="acronym" class="form-label">Sigla</label>
+                            <input id="acronym" name="acronym" type="text" class="form-control" minlength="2" maxlength="3" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select id="status" name="status" class="form-select" required></select>
+                        </div> 
+
+                        <div class="modal-footer">
+                            <input type="submit" value="Editar" class="btn btn-primary">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 

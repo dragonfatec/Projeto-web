@@ -31,6 +31,7 @@ public class UserController {
         List<User> users = userService.findAllUsers();
         return ResponseEntity.ok(users);
     }
+
     @PostMapping
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){

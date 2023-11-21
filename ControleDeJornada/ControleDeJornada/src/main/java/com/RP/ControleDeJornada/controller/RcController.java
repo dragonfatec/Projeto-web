@@ -44,7 +44,6 @@ public class RcController {
         }else {
             resultCenters = user.getResultCenters();
         }
-
         return ResponseEntity.ok(resultCenters);
     }
 
@@ -58,8 +57,9 @@ public class RcController {
 
     @PutMapping
     @Transactional
-    public ResponseEntity updateRc(@RequestBody @Valid String codeRc, UpdateRcRecord data) {
-        rcService.updateRc(codeRc, data);
+    public ResponseEntity updateRc(@RequestBody @Valid UpdateRcRecord data) {
+        System.out.println(data);
+        rcService.updateRc(data);
         return ResponseEntity.ok("Success!");
     }
 }

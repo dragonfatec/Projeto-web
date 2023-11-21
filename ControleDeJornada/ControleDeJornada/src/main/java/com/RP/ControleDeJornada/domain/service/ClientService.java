@@ -30,8 +30,8 @@ public class ClientService {
         return client;
     }
 
-    public void updateClient(String cnpj, UpdateClientRecord data) {
-        Client client = clientRepository.getReferenceById(cnpj);
+    public void updateClient(UpdateClientRecord data) {
+        Client client = clientRepository.getReferenceById(data.cnpj());
         if (data.officialName() != null) {
             client.setOfficialName(data.officialName());
         }

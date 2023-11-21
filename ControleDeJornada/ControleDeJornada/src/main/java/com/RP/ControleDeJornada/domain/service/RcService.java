@@ -32,8 +32,8 @@ public class RcService {
         return rc;
     }
 
-    public void updateRc (String codeRc, UpdateRcRecord data) {
-        ResultCenter rc = rcRepository.getReferenceById(codeRc);
+    public void updateRc (UpdateRcRecord data) {
+        ResultCenter rc = rcRepository.getReferenceById(data.codeRc());
         if (data.rc() != null) {
             rc.setRc(data.rc());
         }
