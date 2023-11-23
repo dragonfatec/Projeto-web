@@ -113,7 +113,9 @@ body{
 
 }
 .wrapper .btn {
-    width: 100%;
+    margin-top: 8px;
+    margin-left: 34px;
+    width: 80%;
     height: 45px;
     background: #fff;
     border: none;
@@ -125,6 +127,10 @@ body{
     color: #333;
     font-weight: 600;
 
+}
+.volt{
+    text-decoration: none;
+    color: #333;
 }
 
 .wrapper .register-link {
