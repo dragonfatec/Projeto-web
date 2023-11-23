@@ -1,5 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationClientRCRecord;
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationUserRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateClientRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
@@ -34,8 +36,15 @@ public class ClientController {
     @PutMapping
     @Transactional
     public ResponseEntity updateClient (@RequestBody @Valid UpdateClientRecord data) {
-        System.out.println(data);
         clientService.updateClient(data);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity deleteRelation(@RequestBody @Valid ModifierRelationClientRCRecord data) {
+        System.out.println(data);
+        clientService.deleteRelation(data);
         return ResponseEntity.ok().build();
     }
 }

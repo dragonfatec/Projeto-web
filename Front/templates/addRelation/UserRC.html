@@ -102,13 +102,44 @@
                                 <button type="submit" class="btn btn-primary">Criar</button>
                             </div>
                         </form>
+
+                        <hr>
+                        <!-- TABELA -->
+                        <div class="form-group">
+                            <select id="resultCentersConsult" name="resultCenters" class="form-select" style="width: 200px;" required>
+                                <option value="null">Selecione o CR</option>
+                            </select>
+                            <div class="col-12">
+                                <button class="btn btn-primary" id="consult">Consultar</button>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped-columns caption-top">
+                            <caption>Relacionamentos</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código do CR</th>
+                                    <th scope="col">Registro</th>
+                                    <th scope="col">Usuário</th>
+                                    <th scope="col">Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                
+                            </tbody>
+                        </table>
                     </div>
+
+                    
+
                 </div>
             </div>
                 <!-- FIM CONTEUDO ESPECIFICO -->
+
+            
+            
         </div>
     </div>
-        
 
 </div>
 <!-- FIM PAGINA -->

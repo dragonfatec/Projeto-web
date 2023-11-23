@@ -1,5 +1,6 @@
 package com.RP.ControleDeJornada.controller;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationUserRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
@@ -45,6 +46,13 @@ public class UserController {
         System.out.println(data);
         userService.updateUser(data);
         return ResponseEntity.ok("Success!");
+    }
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity deleteRelation(@RequestBody @Valid ModifierRelationUserRCRecord data){
+        userService.deleteRelation(data);
+        return ResponseEntity.ok().build();
     }
 }
 

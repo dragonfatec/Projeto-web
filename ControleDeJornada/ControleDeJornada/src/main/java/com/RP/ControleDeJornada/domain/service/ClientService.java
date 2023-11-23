@@ -1,5 +1,6 @@
 package com.RP.ControleDeJornada.domain.service;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationClientRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateClientRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
@@ -43,5 +44,9 @@ public class ClientService {
         }
         client.setUpdateClient(LocalDate.now());
         clientRepository.save(client);
+    }
+
+    public void deleteRelation(ModifierRelationClientRCRecord data) {
+        clientRepository.deleteRelation(data.cnpj(), data.codeRc());
     }
 }
