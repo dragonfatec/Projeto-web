@@ -15,7 +15,7 @@ public class Excel {
 
             // Obtendo a referência da planilha
             Worksheet worksheet = workbook.getWorksheets().get(0);
-            String[] cabecalho = new String[] { "Data_inicial", "Data_final", "Tipo_de_hora", "Centro_de_resultado", "Nome_usuario", "Email_usuario", "Cliente", "Verba_1601", "vVerba_1602", "Verba_809", "Verba_3000", "Verba_3001", "Justificativa", "Status"};
+            String[] cabecalho = new String[] { "Data_inicial", "Data_final", "Tipo_de_hora", "Centro_de_resultado", "Nome_usuario", "Email_usuario", "Cliente", "Verba_1601", "Verba_1602", "Verba_809", "Verba_3000", "Verba_3001", "Justificativa", "Status"};
             // Exemplo com Lista de Objetos
             worksheet.getCells().importCustomObjects(
                     sendTimeList,
@@ -84,7 +84,7 @@ public class Excel {
             ListObjectCollection listObjects = workbook.getWorksheets().get(0).getListObjects();
             listObjects.add(0, 0, sendTimeList.size(), cabecalho.length-1, true);
 
-            workbook.save("/home/lukas/relatorio.xlsx");
+            workbook.save("C:\\Users\\pablo\\Documents\\Programas\\Faculdade\\API\\excelTest\\relatorio.xlsx");
         }
         catch (Exception e){
             System.out.println(e);
