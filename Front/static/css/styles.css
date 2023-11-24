@@ -109,7 +109,7 @@ h1{
   font-family: 'Poppins', sans-serif;
   /* display: flex; */
   position: relative;
-  font-weight: bold;
+
 }
 .registerclient{
     font-family: 'Poppins', sans-serif;
@@ -126,4 +126,8 @@ h1{
 .consultap{
     font-family: 'Poppins', sans-serif;
     position: relative;
+}
+
+.teste_PodeApagar{
+    color: black;
 }

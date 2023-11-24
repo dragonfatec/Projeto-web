@@ -1,12 +1,14 @@
 package com.RP.ControleDeJornada.domain.service;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationClientRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationClientRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateClientRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.repository.ClientRepository;
-import com.RP.ControleDeJornada.domain.repository.RcRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,5 +29,24 @@ public class ClientService {
     public Client getReferenceById(String cnpj) {
         Client client = clientRepository.getReferenceById(cnpj);
         return client;
+    }
+
+    public void updateClient(UpdateClientRecord data) {
+        Client client = clientRepository.getReferenceById(data.cnpj());
+        if (data.officialName() != null) {
+            client.setOfficialName(data.officialName());
+        }
+        if (data.nameCompany() != null) {
+            client.setNameCompany(data.nameCompany());
+        }
+        if (data.status() != null) {
+            client.setStatus(data.status());
+        }
+        client.setUpdateClient(LocalDate.now());
+        clientRepository.save(client);
+    }
+
+    public void deleteRelation(ModifierRelationClientRCRecord data) {
+        clientRepository.deleteRelation(data.cnpj(), data.codeRc());
     }
 }

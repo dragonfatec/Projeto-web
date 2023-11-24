@@ -1,5 +1,6 @@
 package com.RP.ControleDeJornada.domain.service;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationUserRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
@@ -33,19 +34,11 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void updateUser(Integer id, UpdateUserRecord data){
-        User user = userRepository.getReferenceById(id);
+    public void updateUser(UpdateUserRecord data){
+        User user = userRepository.getReferenceById(data.registration());
         if(data.jobRole() != null){
             user.setJobrole(data.jobRole());
         }
-//        if (data.registration() != null && data.codeRc() != null){
-//            User newUser = userRepository.getReferenceById(data.registration());
-//            ResultCenter newRc = rcService.getReferenceById(data.codeRc());
-//
-//            RelationUserRC userResultCenter = new RelationUserRC(newUser, newRc);
-//            List<RelationUserRC> list = new ArrayList<>();
-//            list.add(userResultCenter);
-//        }
         if (data.status() != null){
             user.setStatus(data.status());
         }
@@ -55,6 +48,9 @@ public class UserService {
         if (data.password() != null){
             String passwordCript = BCrypt.hashpw(data.password(),BCrypt.gensalt());
             user.setPassword(passwordCript);
+        }
+        if (data.email() != null){
+            user.setEmail(data.email());
         }
         user.setUpdateUser(LocalDate.now());
         userRepository.save(user);
@@ -74,8 +70,12 @@ public class UserService {
         return users;
     }
 
-    public User findByRegistration(Integer registration) {
-        User user = userRepository.findByRegistration(registration);
-        return  user;
+    public User getReferenceById(Integer register) {
+        User user = userRepository.getReferenceById(register);
+        return user;
+    }
+
+    public void deleteRelation(ModifierRelationUserRCRecord data) {
+        userRepository.deleteRelation(data.registration(), data.codeRc());
     }
 }

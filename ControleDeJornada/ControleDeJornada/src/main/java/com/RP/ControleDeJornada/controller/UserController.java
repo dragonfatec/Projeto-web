@@ -1,6 +1,8 @@
 package com.RP.ControleDeJornada.controller;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationUserRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
+import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.service.UserService;
@@ -30,10 +32,26 @@ public class UserController {
         List<User> users = userService.findAllUsers();
         return ResponseEntity.ok(users);
     }
+
     @PostMapping
     @Transactional
     public ResponseEntity register(@RequestBody @Valid RegistrationUserRecord data){
         userService.register(data);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateUser (@RequestBody @Valid UpdateUserRecord data) {
+        System.out.println(data);
+        userService.updateUser(data);
+        return ResponseEntity.ok("Success!");
+    }
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity deleteRelation(@RequestBody @Valid ModifierRelationUserRCRecord data){
+        userService.deleteRelation(data);
         return ResponseEntity.ok().build();
     }
 }

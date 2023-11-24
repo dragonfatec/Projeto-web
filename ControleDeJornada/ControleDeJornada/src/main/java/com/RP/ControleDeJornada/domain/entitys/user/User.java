@@ -32,7 +32,7 @@ public class User implements UserDetails {
     private Status status;
     private LocalDate createDate = LocalDate.now();
     private LocalDate updateUser = LocalDate.now();
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     private List<ResultCenter> resultCenters = new ArrayList<>();
 
     public User(RegistrationUserRecord data){
@@ -49,7 +49,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (this.jobrole == JobRole.ADMINISTRATOR) {
-            return List.of(new SimpleGrantedAuthority("ROLE_ADMINISTRADOR"), new SimpleGrantedAuthority("ROLE_USER"));
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMINISTRATOR"), new SimpleGrantedAuthority("ROLE_USER"));
         }else if (this.jobrole == JobRole.MANAGER){
             return List.of(new SimpleGrantedAuthority("ROLE_MANAGER"), new SimpleGrantedAuthority("ROLE_USER"));
         }else {

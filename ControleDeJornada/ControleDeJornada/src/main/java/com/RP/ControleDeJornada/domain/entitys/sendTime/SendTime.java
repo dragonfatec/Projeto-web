@@ -4,11 +4,12 @@ import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,16 +20,18 @@ import java.time.LocalDateTime;
 public class SendTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Integer id;
     private LocalDateTime startDate;
     private LocalDateTime finishDate;
     @Enumerated(EnumType.STRING)
     private TypeSend typeSend;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "team_code_rc")
     private ResultCenter team;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private User user;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Client client;
     private double budget1601;
     private double budget1602;
@@ -46,5 +49,7 @@ public class SendTime {
         this.finishDate = dada.finishDate();
         this.typeSend = dada.typeSend();
         this.status = TimeStatus.WAITING;
+        this.approvedStatus = ApprovedStatus.WAITING_FOR_APPROVAL;
+        this.justification = "-";
     }
 }
