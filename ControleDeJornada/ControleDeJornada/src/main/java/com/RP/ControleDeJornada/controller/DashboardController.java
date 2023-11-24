@@ -28,7 +28,7 @@ public class DashboardController {
         return ResponseEntity.ok().body(hourPerUser);
     }
 
-    public ResponseEntity<List<SendTime>> rcHourToDashboard(String idResultCenter){
-        List<ResultCenter> peopleOfRC = rcRepository.findAllById(Collections.singleton(idResultCenter));
-    }
+//    public ResponseEntity<List<SendTime>> rcHourToDashboard(String idResultCenter){
+//        List<User> peopleOfRC = rcRepository.
+//    }
 }
