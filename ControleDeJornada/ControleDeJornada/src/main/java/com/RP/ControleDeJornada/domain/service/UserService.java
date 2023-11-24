@@ -1,5 +1,6 @@
 package com.RP.ControleDeJornada.domain.service;
 
+import com.RP.ControleDeJornada.domain.dto.ModifierRelationUserRCRecord;
 import com.RP.ControleDeJornada.domain.dto.RegistrationUserRecord;
 import com.RP.ControleDeJornada.domain.dto.UpdateUserRecord;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
@@ -72,5 +73,9 @@ public class UserService {
     public User getReferenceById(Integer register) {
         User user = userRepository.getReferenceById(register);
         return user;
+    }
+
+    public void deleteRelation(ModifierRelationUserRCRecord data) {
+        userRepository.deleteRelation(data.registration(), data.codeRc());
     }
 }

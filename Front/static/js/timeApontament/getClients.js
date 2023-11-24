@@ -1,9 +1,9 @@
 const url = "http://localhost:8080/sendtime/getClients";
 
-const selectClient = document.getElementById("clients");
-
-export default async function getClient(eventClient){
+export default async function getClient(eventClient, idSelect){
     eventClient.preventDefault();
+
+    const selectClient = document.getElementById(idSelect);
 
     const response = await fetch(url,{
         headers: {
