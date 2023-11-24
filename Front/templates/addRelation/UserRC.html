@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../static/image/browser_icon.png">
     <title>Criar Relação</title>
+    <link rel="stylesheet" href="../../static/css/relation.css">
     <link rel="stylesheet" href="../../static/css/template.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="/static/js/acess.js" defer></script>
@@ -12,7 +14,7 @@
       <!-- BACKGROUND -->
       <div class="video-background-holder">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../../static/image/lines.mp4" type="video/mp4">
+            <source src="../../static/image/linesdark.mp4" type="video/mp4">
         </video>
     <!-- FIM BACKGROUND -->
 
@@ -85,13 +87,14 @@
                 <div class="col" id="conteudo-pagina">
                     <div class="container mt-3 registerclient">
                         <form method="post" class="row g-3" id="form">
-                            <div class="form-group">
+                            <h1>Criar Relação - Usuário</h1>
+                            <div class="form-group"  id="usuariotform">
                                 <label for="users">Usuário</label>
                                 <select id="users" name="users" class="form-select" style="width: 200px;" required>
                                     <option value="null">Selecione o usuário</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id="centroresuldiv">
                                 <label for="resultCenters">Centro de Resultado</label>
                             <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
                                 <option value="null">Selecione o CR</option>
@@ -99,7 +102,7 @@
                             </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Criar</button>
+                                <button type="submit" class="btn btn-primary" id="criarbtn">Criar</button>
                             </div>
                         </form>
 

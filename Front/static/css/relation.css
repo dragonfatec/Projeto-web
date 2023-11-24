@@ -9,10 +9,35 @@ h1 {
     color:#fff;
     text-shadow: 2px;
 }
-.registerrc{
+#centroresuldiv{
+    margin-top: 35px;
+}
+
+/* #form{
+    margin-top: 15px;
+} */
+
+#criarbtn{
+    margin-top: 30px;
+}
+
+.registerclient{
     width: 90% !important;
+    margin-top: 35px;
     margin: auto;
     padding-top: 20px;
+}
+
+#clientform{
+    margin-top: 60px;
+}
+
+#usuariotform{
+    margin-top: 60px;
+}
+
+.form-select{
+    margin-left: 40%;
 }
 
 caption {
@@ -22,4 +47,5 @@ caption {
 }
 .titlelabel{
     text-align: left;
+    /* font-weight: bold; */
 }
