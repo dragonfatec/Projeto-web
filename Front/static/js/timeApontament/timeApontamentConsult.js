@@ -1,16 +1,18 @@
 const url = "http://localhost:8080/sendtime/consult";
 const urlAdmin = "http://localhost:8080/rc/consult";
 const urlById = "http://localhost:8080/rc/consult/by-id";
+const urlExportExcel = "http://localhost:8080/sendtime/export";
 
 
 const table = document.getElementById("tr");
 const select = document.getElementById("select");
 const button = document.getElementById("consult");
+const buttonExport = document.getElementById("exportExcel");
 
 
 async function getTime(eventGet){
     eventGet.preventDefault();
-
+    console.log(localStorage.getItem("jobrole"))
 
     const response = await fetch(url, 
         {
@@ -98,6 +100,7 @@ async function getResultCenter(eventoSelect){
 
     const data = await response.json();
 
+    console.log(data)
     data.map(resp => {
         const option = document.createElement("option");
         option.innerText = resp.rc;
@@ -107,3 +110,28 @@ async function getResultCenter(eventoSelect){
 
 }
 select.addEventListener("click", eventoSelect => getResultCenter(eventoSelect), { once: true})
+
+// METODO DE EXPORTAR
+
+async function exportExcel(eventExport){
+    eventExport.preventDefault();
+
+    const response = await fetch(urlExportExcel, {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+            codeRc: select.value,
+            jobrole: localStorage.getItem("jobrole"),
+            registration: localStorage.getItem("registration")
+        })
+    })
+    if(response.ok){
+        window.alert("Arquivo exportado com sucesso!");
+    }else{
+        window.alert(`Erro ao exportar o arquivo: ${response.status}`);
+    }
+}
+buttonExport.addEventListener("click", eventExport => exportExcel(eventExport));
