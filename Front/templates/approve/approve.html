@@ -15,7 +15,7 @@
       <!-- BACKGROUND -->
       <div class="video-background-holder">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../../static/image/lines.mp4" type="video/mp4">
+            <source src="../../static/image/linesdark.mp4" type="video/mp4">
         </video>
     <!-- FIM BACKGROUND -->
 
@@ -86,38 +86,43 @@
 
                 <div class="col" id="conteudo-pagina">
                     <!--    INICIO CONTEUDO ESPECIFICO -->
-                    <div class="tabelaapprove">
-
-                        <select id="selectRC">
-                            <option>Selecionar o CR</option>
-                        </select>
-
-                        <button id="consult">
-                            Consultar
-                        </button>
-
-                        <table class="table table-striped-columns caption-top" id="table">
-                            <caption>Aprovar Horas</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Identificador</th>
-                                    <th scope="col">Usuário</th>
-                                    <th scope="col">Horário de Início</th>
-                                    <th scope="col">Horário de Término</th>
-                                    <th scope="col">Tipo de Hora</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Check</th>
-                                    <!-- <th scope="col" class="active">
-                                        <input type="checkbox" class="select-all checkbox" name="select-all" />
-                                    </th> -->
-                                </tr>
-                            </thead>
-                            <tbody id="tr">
-                                
-                            </tbody>
-                        </table>
-                        
+                    <div class="col">
+                        <div class="tabelaapprove">
+                            
+                            <div class="botoes">
+                                <select id="selectRC">
+                                    <option>Selecionar o CR</option>
+                                </select>
+        
+                                <button id="consult">
+                                    Consultar
+                                </button>
+                            </div>
+                            
+                            <table class="table table-striped-columns caption-top" id="table">
+                                <caption>Aprovar Horas</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Identificador</th>
+                                        <th scope="col">Usuário</th>
+                                        <th scope="col">Horário de Início</th>
+                                        <th scope="col">Horário de Término</th>
+                                        <th scope="col">Tipo de Hora</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Check</th>
+                                        <!-- <th scope="col" class="active">
+                                            <input type="checkbox" class="select-all checkbox" name="select-all" />
+                                        </th> -->
+                                    </tr>
+                                </thead>
+                                <tbody id="tr">
+                                    
+                                </tbody>
+                            </table>
+                            
+                        </div>
                     </div>
+                    
                     <!-- FIM CONTEUDO ESPECIFICO -->
 
                     <button id="aprovar">
