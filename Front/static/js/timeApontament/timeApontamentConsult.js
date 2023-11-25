@@ -128,5 +128,10 @@ async function exportExcel(eventExport){
             registration: localStorage.getItem("registration")
         })
     })
+    if(response.ok){
+        window.alert("Arquivo exportado com sucesso!");
+    }else{
+        window.alert(`Erro ao exportar o arquivo: ${response.status}`);
+    }
 }
 buttonExport.addEventListener("click", eventExport => exportExcel(eventExport));
