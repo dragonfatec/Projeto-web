@@ -1,4 +1,4 @@
-const urlApproved = "http://localhost:8080/sendtime/approved/admin";
+const urlApproved = "http://localhost:8080/sendtime/action";
 const urlGetSendTime = "http://localhost:8080/sendtime/consult";
 const urlGetRC = "http://localhost:8080/rc/consult/by-id";
 
@@ -12,7 +12,7 @@ const buttonJustify = document.getElementById("justify");
 
 
 // SALVA A APROVACAO OU REPROVACAO
-async function approvation(eventSave, id, justification){
+async function approvation(eventSave, id, status, justification){
     eventSave.preventDefault();
   
     const response = await fetch(urlApproved, {
@@ -23,7 +23,8 @@ async function approvation(eventSave, id, justification){
         },
         body: JSON.stringify({
             id: id,
-            approvedStatus: selectedStatus,
+            status: status,
+            jobrole: localStorage.getItem("jobrole"),
             justification: justification
         })
     });
@@ -31,6 +32,9 @@ async function approvation(eventSave, id, justification){
         window.location.href = "../../../templates/approve/approve.html";
     }
 }
+
+
+
 // ABRE O MODAL E PEGA OS DADOS PARA APROVAR OU REPROVAR
 function getContent(action){
     
@@ -49,9 +53,9 @@ function getContent(action){
             identify = row.cells[0].textContent;
             $('#modal').modal('show');
 
-            if(action == "APPROVE"){
-                selectedStatus = "APPROVED_ADMINISTRADOR";
-                console.log("Selected Status: ", selectedStatus);
+            if(action == "APPROVED"){
+                
+                
                 buttonJustify.addEventListener("click", eventSave => {
 
                     justify = justifyText.value;
@@ -60,17 +64,17 @@ function getContent(action){
                         justify="-";
                     }
                     
-                    approvation(eventSave, identify, justify);
+                    approvation(eventSave, identify, "APPROVED",justify);
                     window.alert("Enviado com sucesso!");
                 }); 
             }else{
-                selectedStatus = "DENIED_ADMINISTRADOR";
+                
                 buttonJustify.addEventListener("click", eventSave => {
                     justify = justifyText.value;
-                    if(justify == "" || justify == "-" || justify == null){
+                    if(justify == "" || justify == "-" || justify == null || justify == " "){
                         window.alert("Informe a justificativa de sua reprovação!");
                     }else{
-                        approvation(eventSave, identify, justify);
+                        approvation(eventSave, identify, "DISAPPROVED", justify);
                         window.alert("Enviado com sucesso!");
                     }
                 }); 
@@ -80,8 +84,11 @@ function getContent(action){
         }
     });
 }
-buttonApprove.addEventListener("click", () => getContent("APPROVE"));
+buttonApprove.addEventListener("click", () => getContent("APPROVED"));
 buttonReprove.addEventListener("click", () => getContent("REPROVE"));
+
+
+
 // POPULA A TABELA
 async function getSendTime(eventGetTime, codeRc){
     eventGetTime.preventDefault();
@@ -165,6 +172,8 @@ async function getSendTime(eventGetTime, codeRc){
     }
 }
 buttonConsult.addEventListener("click", eventGetTime => getSendTime(eventGetTime, selectRC.value));
+
+
 
 // POPULA O SELECT
 async function getRC(){

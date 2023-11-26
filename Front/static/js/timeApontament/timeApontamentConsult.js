@@ -14,7 +14,7 @@ async function getTime(eventGet){
     eventGet.preventDefault();
     console.log(localStorage.getItem("jobrole"))
 
-    const response = await fetch(url, 
+    const response = await fetch(url,
         {
         method: "POST",
         headers: {
@@ -70,7 +70,6 @@ button.addEventListener("click", eventGet => {
     }
     getTime(eventGet);
 });
-
 
 //  METODO DE LISTAR AS HORAS DE ACORDO COM O CARGO
 

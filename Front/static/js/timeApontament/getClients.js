@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/sendtime/getClients";
+const url = "http://localhost:8080/company/consult";
 
 export default async function getClient(eventClient, idSelect){
     eventClient.preventDefault();

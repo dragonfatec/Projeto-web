@@ -1,11 +1,11 @@
-import getClient from "./getClients.js";
-import getRCByClient from "./getRCByClient.js";
+import getClient from "../timeApontament/getClients.js";
+import getRCByClient from "../timeApontament/getRCByClient.js"
 
 const url = "http://localhost:8080/sendtime";
 
 
 const selectClient = document.getElementById("clients");
-selectClient.addEventListener("click", eventUser => getClient(eventUser), { once: true });
+selectClient.addEventListener("click", eventUser => getClient(eventUser, "clients"), { once: true });
 selectClient.addEventListener("change", eventGetRc => getRCByClient(eventGetRc, selectClient.value ,"resultCenters"));
 
 async function save(startDate, finishDate, typeSend, resultCenters, client){

@@ -1,6 +1,7 @@
 package com.RP.ControleDeJornada.controller;
 
 import com.RP.ControleDeJornada.domain.dto.ApprovedDTO;
+import com.RP.ControleDeJornada.domain.dto.AprovationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeByResultCenter;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
@@ -103,10 +104,18 @@ public class SendTimeController {
     @PostMapping("/approved/admin")
     @PreAuthorize("hasRole('ADMINISTRATOR')")
     @Transactional
-    public ResponseEntity approvedHoursAdmin(@RequestBody ApprovedDTO data ) {
+    public ResponseEntity approvedHoursAdmin(@RequestBody ApprovedDTO data ){
         System.out.println(data);
         ApprovedStatus approvedStatus = ApprovedStatus.valueOf(data.approvedStatus());
         approvedService.approvedHoursAdmin(data.id(), approvedStatus, data.justification());
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/action")
+    @Transactional
+    public ResponseEntity approvation(@RequestBody @Valid AprovationSendTimeRecord data){
+        sendTimeService.approvation(data);
+
+        return  ResponseEntity.ok().build();
     }
 }

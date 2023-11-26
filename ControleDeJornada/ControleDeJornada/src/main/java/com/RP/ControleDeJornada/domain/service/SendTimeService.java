@@ -1,11 +1,15 @@
 package com.RP.ControleDeJornada.domain.service;
 
+import com.RP.ControleDeJornada.domain.Status;
+import com.RP.ControleDeJornada.domain.dto.AprovationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ResgistrationSendTimeRecord;
 import com.RP.ControleDeJornada.domain.dto.ShowSendTimeRecord;
 import com.RP.ControleDeJornada.domain.entitys.client.Client;
 import com.RP.ControleDeJornada.domain.entitys.resultCenter.ResultCenter;
+import com.RP.ControleDeJornada.domain.entitys.sendTime.ApprovedStatus;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.Parameterization;
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
+import com.RP.ControleDeJornada.domain.entitys.user.JobRole;
 import com.RP.ControleDeJornada.domain.entitys.user.User;
 import com.RP.ControleDeJornada.domain.repository.ClientRepository;
 import com.RP.ControleDeJornada.domain.repository.RcRepository;
@@ -111,5 +115,23 @@ public class SendTimeService {
     public List<SendTime> getSendTimeByUserResultCenter(Integer registration, String codeRc) {
         List<SendTime> sendTimes = repository.getTime(registration, codeRc);
         return sendTimes;
+    }
+
+    public void approvation(AprovationSendTimeRecord data) {
+        System.out.println(data);
+        JobRole job = JobRole.valueOf(data.jobrole());
+        if(job.equals(JobRole.ADMINISTRATOR)){
+            if (data.status() == "APPROVED"){
+                repository.approvation(ApprovedStatus.APPROVED_ADMINISTRADOR.toString(), data.status(), data.justification(), data.id());
+            }else {
+                repository.approvation(ApprovedStatus.DENIED_ADMINISTRADOR.toString(), data.status(), data.justification(), data.id());
+            }
+        }else {
+            if (data.status() == "APPROVED") {
+                repository.approvation(ApprovedStatus.APPROVED_MANAGER.toString(), data.status(), data.justification(), data.id());
+            } else {
+                repository.approvation(ApprovedStatus.DENIED_MANAGER.toString(), data.status(), data.justification(), data.id());
+            }
+        }
     }
 }
