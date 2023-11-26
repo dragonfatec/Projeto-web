@@ -1,43 +1,65 @@
-h1 {
-    margin-top: 30px !important;
+h6 {
     color: white !important;
-
 }
 #conteudo-pagina{
     font-family: 'Poppins', sans-serif;
-    position: relative;
     color:#fff;
     text-shadow: 2px;
-}
-#centroresuldiv{
-    margin-top: 35px;
-}
-
-/* #form{
-    margin-top: 15px;
-} */
-
-#criarbtn{
-    margin-top: 30px;
+    text-align: left !important;
 }
 
 .registerclient{
     width: 90% !important;
-    margin-top: 35px;
+    height: 100vh;
+    /* margin-top: 35px; */
     margin: auto;
     padding-top: 20px;
+    margin-bottom: 20px !important;
 }
 
-#clientform{
-    margin-top: 60px;
+.rowForm {
+    text-align: center !important;
+    height: inherit !important;
 }
 
-#usuariotform{
-    margin-top: 60px;
+.rowTituloTabela {
+    height: 10% !important;
+    margin: auto;
 }
 
-.form-select{
-    margin-left: 40%;
+h3 {
+    margin: auto;
+}
+
+#form {
+    width: 100%;
+    display: inline !important;
+}
+
+.rowForm select {
+    margin: auto !important;
+}
+
+.colTituloSelect {
+    padding-left: 13% !important;
+}
+
+/* .colTituloBtn {
+    padding-left: 10% !important;
+} */
+
+.table-wrapper {
+    position: relative;
+    height: 80%;
+    overflow: auto;
+}
+
+#clientform, #usuarioform {
+    padding-left: 10%;
+}
+
+#btnform {
+    padding-right: 10%;
 }
 
 caption {
@@ -45,7 +67,26 @@ caption {
     font-family: 'Poppins', sans-serif;
     font-size: 3em;
 }
+
 .titlelabel{
     text-align: left;
     /* font-weight: bold; */
+}
+
+.rowTopoRelation {
+    position: relative;
+    height: 10% !important;
+    text-align: center;
+}
+
+.rowBaixoRelation {
+    margin-top: 20px;
+    height: 90% !important;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+table {
+    height: 400px !important;
+    margin: 0px !important;
 }

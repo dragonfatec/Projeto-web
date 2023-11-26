@@ -23,7 +23,7 @@ async function approvation(eventSave, id, justification){
         },
         body: JSON.stringify({
             id: id,
-            approvedStatus: "WAITING_FOR_APPROVAL",
+            approvedStatus: selectedStatus,
             justification: justification
         })
     });
@@ -50,6 +50,8 @@ function getContent(action){
             $('#modal').modal('show');
 
             if(action == "APPROVE"){
+                selectedStatus = "APPROVED_ADMINISTRADOR";
+                console.log("Selected Status: ", selectedStatus);
                 buttonJustify.addEventListener("click", eventSave => {
 
                     justify = justifyText.value;
@@ -62,6 +64,7 @@ function getContent(action){
                     window.alert("Enviado com sucesso!");
                 }); 
             }else{
+                selectedStatus = "DENIED_ADMINISTRADOR";
                 buttonJustify.addEventListener("click", eventSave => {
                     justify = justifyText.value;
                     if(justify == "" || justify == "-" || justify == null){

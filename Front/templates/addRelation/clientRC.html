@@ -11,17 +11,15 @@
     <script src="../../static/js/acess.js" defer></script>
 </head>
 <body>
-      <!-- BACKGROUND -->
-      <div class="video-background-holder">
+    <!-- BACKGROUND -->
+    <div class="video-background-holder">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="../../static/image/linesdark.mp4" type="video/mp4">
         </video>
-    <!-- FIM BACKGROUND -->
 
-    <!-- INICIO PAGINA -->
-    <div class="container-fluid conteudo-main">
-        <div class="row">
-            
+        <!-- INICIO PAGINA -->
+        <div class="container-fluid conteudo-main">
+            <div class="row">
                 <!-- INICIO MENU -->
                 <div class="col-sm-2" id="colnavbar">
                     <div class="sidemenu">
@@ -86,63 +84,71 @@
                 <!--    INICIO CONTEUDO ESPECIFICO -->
                 <div class="col" id="conteudo-pagina">
                     <div class="container mt-3 registerclient">
-                        <form method="post" class="row g-3" id="form">
-                            <h1>Criar Relação - Cliente</h1>
-                            <div class="form-group" id="clientform">
-                                <label for="clients">Cliente</label>
-                                <select id="clients" name="clients" class="form-select" style="width: 200px;" required>
-                                    <option value="null">Selecione o cliente</option>
-                                </select>
-                            </div>
-                            <div class="form-group" id="centroresuldiv">
-                                <label for="resultCenters">Centro de Resultado</label>
-                            <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
-                                <option value="null">Selecione o CR</option>
-                            </select>
-                            </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary" id="criarbtn">Criar</button>
-                            </div>
-                        </form>
-
-                        <hr>
-                        <!-- TABELA -->
-                        <div class="form-group">
-                            <select id="selectClientConsult" name="selectClientConsult" class="form-select" style="width: 200px;" required>
-                                <option value="null">Selecione o Cliente</option>
-                            </select>
-                            <div class="col-12">
-                                <button class="btn btn-primary" id="consult">Consultar</button>
+                        <div class="row rowTopoRelation">
+                            <div class="form-topo">
+                                <h6>Criar Relação - Cliente</h6>
+                                <form method="post" class="form-inline" id="form">
+                                    <div class="row rowForm">
+                                        <div class="col form-group" id="clientform">
+                                            <select id="clients" name="clients" class="form-select" style="width: 200px;" required>
+                                                <option value="null">Selecione o cliente</option>
+                                            </select>
+                                        </div>
+                                        <div class="col form-group" id="crform">
+                                            <select id="resultCenters" name="resultCenters" class="form-select" style="width: 200px;" required>
+                                                <option value="null">Selecione o CR</option>
+                                            </select>
+                                        </div>
+            
+                                        <div class="col form-group" id="btnform">
+                                            <button type="submit" class="btn btn-primary" id="criarbtn">Criar</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
 
-                        <table class="table table-striped-columns caption-top">
-                            <caption>Relacionamentos</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">CNPJ</th>
-                                    <th scope="col">Código do CR</th>
-                                    <th scope="col">Nome do CR</th>
-                                    <th scope="col">Excluir</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody">
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                        <hr class="hr">
 
+                        <div class="rowBaixoRelation">
+                            <!-- TABELA -->
+                            <div class="row rowTituloTabela">
+                                <div class="col colTituloH3">
+                                    <h3>Relacionamentos</h3>
+                                </div>
+                                <div class="col colTituloSelect">
+                                    <select id="selectClientConsult" name="selectClientConsult" class="form-select" style="width: 200px;" required>
+                                        <option value="null">Selecione o Cliente</option>
+                                    </select>
+                                </div>
+                                <div class="col colTituloBtn">
+                                    <button class="btn btn-primary" id="consult">Consultar</button>
+                                </div>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="table table-striped-columns tabelaRelations">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">CNPJ</th>
+                                            <th scope="col">Código do CR</th>
+                                            <th scope="col">Nome do CR</th>
+                                            <th scope="col">Excluir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <!-- FIM CONTEUDO ESPECIFICO -->
+            </div>
         </div>
+        <!-- FIM PAGINA -->
     </div>
-        
-
-</div>
-<!-- FIM PAGINA -->
+    <!-- FIM BACKGROUND -->
 
 
      <!-- Arquivos JavaScript do Bootstrap -->
