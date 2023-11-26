@@ -71,7 +71,6 @@ button.addEventListener("click", eventGet => {
     getTime(eventGet);
 });
 
-
 //  METODO DE LISTAR AS HORAS DE ACORDO COM O CARGO
 
 async function getResultCenter(eventoSelect){
