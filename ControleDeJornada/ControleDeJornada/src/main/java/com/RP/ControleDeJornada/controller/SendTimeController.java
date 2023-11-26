@@ -39,6 +39,14 @@ public class SendTimeController {
         return ResponseEntity.ok(clients);
     }
 
+    @PostMapping
+    @Transactional
+    public ResponseEntity saveHours(@RequestBody @Valid ResgistrationSendTimeRecord data){
+        sendTimeService.saveTime(data);
+
+        return ResponseEntity.ok().build();
+    }
+
     @PostMapping("/export")
     @Transactional
     public ResponseEntity exportExcel(@RequestBody ShowSendTimeByResultCenter data){
