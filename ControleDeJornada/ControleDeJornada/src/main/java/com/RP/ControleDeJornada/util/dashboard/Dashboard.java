@@ -1,4 +1,4 @@
-package com.RP.ControleDeJornada.domain.entitys.dashboard;
+package com.RP.ControleDeJornada.util.dashboard;
 
 import com.RP.ControleDeJornada.domain.entitys.sendTime.SendTime;
 import com.RP.ControleDeJornada.domain.entitys.user.User;

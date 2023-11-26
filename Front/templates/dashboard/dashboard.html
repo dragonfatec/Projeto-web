@@ -25,11 +25,13 @@
         'rgb(255, 255, 0)',
         'rgb(255, 150, 300)',
         'rgb(0, 255, 0)'
-
       ],
       hoverOffset: 5
     }]
+    
   };
+
+    
 
   const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
@@ -39,24 +41,43 @@
 
 
   function fetchChartData() {
-    const idUser = localStorage.getItem("registration"); // Substitua pelo ID do usuário desejado
+    const idUser = localStorage.getItem("registration");
+  
+    if (!idUser) {
+      console.error('ID do usuário não encontrado.');
+      return;
+    }
+  
     fetch(`http://localhost:8080/dashboard/${idUser}`, {
       headers: {"Authorization" : 'Bearer ' + localStorage.getItem('token')}
     })
-            .then(response => response.json())
-            .then(data => {
-              // Atualiza os dados do gráfico com os dados do controlador
-              myChart.data.labels = data.map(item => item.label);
-              myChart.data.datasets[0].data = data.map(item => item.value);
-              myChart.update(); // Atualiza o gráfico
-            })
-            .catch(error => {
-              console.error('Erro ao buscar dados do controlador:', error);
-            });
+      .then(response => response.json())
+      .then(data => {
+        console.log('Dados recebidos da API:', data);
+  
+        if (typeof data === 'object' && data !== null) {
+          const keys = Object.keys(data);
+          const values = Object.values(data);
+  
+          console.log('Chaves:', keys);
+          console.log('Valores:', values);
+  
+          myChart.data.labels = keys;
+          myChart.data.datasets[0].data = values;
+  
+          console.log('Dados atualizados para o gráfico:', myChart.data);
+  
+          myChart.update();
+        } else {
+          console.error('Formato de dados da API inesperado:', data);
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao buscar dados do controlador:', error);
+      });
   }
 
-
-  fetchChartData();
+  window.onload = fetchChartData;
 </script>
 </body>
 </html>
