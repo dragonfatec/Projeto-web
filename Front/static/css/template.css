@@ -60,6 +60,8 @@ div.row{
     font-family: 'Poppins', sans-serif;
     height: 100%;
     line-height: 100%;
+    position: relative; /* Adicione esta linha */
+    z-index: 2;
 }
 
 li.nav-item {
@@ -79,12 +81,28 @@ li.nav-item {
 #conteudo-pagina {
     font-family: 'Poppins', sans-serif;
     position: relative;
-    width: 100%;
+    width: 70%; /* Ajustado para acomodar o painel transparente e o restante do espaço */
     height: 100%;
     text-align: center;
     padding: 0 !important;
+    overflow: auto;
 }
 
 #colnavbar {
     padding-right: 0 !important;
+}
+
+.transparent-panel {
+    position: fixed;
+    top: 20px; /* Adicione um espaço acima */
+    right: 20px; /* Posiciona à direita com um espaço à direita */
+    bottom: 20px; /* Adicione um espaço abaixo */
+    width: 80%; /* Ajuste a largura conforme necessário */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.transparent-panel-content {
+    padding: 20px;
+    color: white;
 }

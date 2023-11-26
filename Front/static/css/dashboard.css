@@ -1,13 +1,15 @@
 #myChart {
-    width: 100%;
+    width: 35%;
     max-width: 600px; /* Define uma largura máxima para evitar que o gráfico fique muito largo em telas maiores */
     margin: 0 auto; /* Centraliza o gráfico horizontalmente no contêiner */
   }
   
   canvas {
-    width: 100%;
+    position: relative;
+    width: 50%;
     height: auto; /* Mantém a proporção original da altura para o gráfico Chart.js */
-    background-color: #f5f5f5; /* Define uma cor de fundo para o gráfico */
+    background-color: transparent; /* Define uma cor de fundo transparente para o gráfico */
+    border: 2px solid #ccc; /* Adiciona uma borda sólida ao redor do gráfico */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao gráfico */
-    border-radius: 10px; /* Arredonda as bordas do gráfico */
+    border-radius: 10px;
   }
